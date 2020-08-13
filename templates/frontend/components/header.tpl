@@ -23,7 +23,7 @@
 {if !$pageTitleTranslated}{capture assign="pageTitleTranslated"}{translate key=$pageTitle}{/capture}{/if}
 {include file="frontend/components/headerHead.tpl"}
 <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
+{* <script type="text/javascript" >
     (function (d, w, c) {
         (w[c] = w[c] || []).push(function() {
             try {
@@ -48,7 +48,7 @@
         } else { f(); }
     })(document, window, "yandex_metrika_callbacks");
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/47688874" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/47688874" style="position:absolute; left:-9999px;" alt="" /></div></noscript> *}
 <!-- /Yandex.Metrika counter -->
 <body class="pkp_page_{$requestedPage|escape|default:"index"} pkp_op_{$requestedOp|escape|default:"index"}{if $showingLogo} has_site_logo{/if}">
 	<div class="pkp_structure_page">

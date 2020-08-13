@@ -8,8 +8,6 @@ class MbjThemePlugin extends ThemePlugin {
 	 */
 	public function init() {
 		//$this->setParent('bootstrapthreethemeplugin');
-		
-
         $this->removeOption('bootstrapTheme');
 		
 		// Load jQuery from a CDN or, if CDNs are disabled, from a local copy.

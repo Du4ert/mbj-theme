@@ -73,20 +73,6 @@
 					<nav aria-label="{translate|escape key="common.navigation.user"}">
 						{load_menu name="user" id="navigationUser" ulClass="nav nav-pills tab-list pull-right"}
 						<div class="block" id="sidebarLanguageToggle">
-						<script type="text/javascript">
-							<!--
-							function changeLanguage() {ldelim}
-								var e = document.getElementById('languageSelect');
-								var new_locale = e.options[e.selectedIndex].value;
-
-								var redirect_url = '{url|escape:"javascript" page="user" op="setLocale" path="NEW_LOCALE" source=$smarty.server.REQUEST_URI escape=false}';
-								redirect_url = redirect_url.replace("NEW_LOCALE", new_locale);
-
-								window.location.href = redirect_url;
-							{rdelim}
-							//-->
-						</script>
-
 						<span class="blockTitle" style="display:none;">{translate key="common.language"}</span>
 						<ul class="langul pull-right">
 						
@@ -94,7 +80,7 @@
 								{foreach from=$languageToggleLocales item=localeName key=localeKey}
 									<li class="pull-left locale_{$localeKey|escape}{if $localeKey == $currentLocale} current{/if} langli">
 										<a href="{url router=$smarty.const.ROUTE_PAGE page="user" op="setLocale" path=$localeKey source=$smarty.server.REQUEST_URI}">
-											<img title="{$localeName}" src="/plugins/themes/mbj/locale/{$localeKey}/flag.png" />
+											<img title="{$localeName}" src="/plugins/themes/{$contextSettings.themePluginPath}/locale/{$localeKey}/flag.png" />
 										</a>
 									</li>
 								{/foreach}

@@ -1,0 +1,110 @@
+// Edtorial / Редколлегия
+ol.editorial-list-custom {
+
+    padding: 0;
+    list-style-type: none; /* Убираем исходные маркеры */
+    counter-reset:  item; /* Обнуляем счетчик списка */
+
+  li.editorial-item-custom{
+    margin: 5px;
+    &:before {
+      content: counter(item) ') '; /* Добавляем к числам скобку */
+      counter-increment: item; /* Задаём имя счетчика */
+      margin-right: 5px;
+    }
+
+  }
+}
+
+.footer-custom {
+  font-size: 0.8em;
+}
+
+// Bio custom
+
+div#editorialTeamBio {
+
+  .profile-moreinfo-custom {
+    margin-top: -6px;
+  }
+
+#profilePicContent {
+  img {
+    width: 150px;
+    height: auto;
+    margin: 15px;
+    border-radius: 50%;
+  }
+
+}
+
+.bio-content {
+  p {
+    margin-bottom: 5px;
+  }
+  .bio-fullName-custom {
+    font-weight: 400;
+    font-size: 20px;
+  }
+  .bio-fieldName-custom {
+    font-weight: 600 ;
+    font-size: 15px;
+  }
+  .bio-profiles-custom {
+    clear: both;
+
+     .bio-profile-item-custom {
+      margin: 5px 0px 5px 0px;
+       &:before {
+         content: '';
+         margin: 0 8px 0 0;
+         display: inline-block;
+         vertical-align: middle;
+         background-size: cover;
+       }
+     }
+     .bio-orcid-custom:before {
+       width: 20px;
+       height: 20px;
+       background-image: url('@{path_to_img}/orcid.png');
+     }
+       .bio-scopus-custom:before {
+        width: 20px;
+        height: 20px;
+        background-image: url('@{path_to_img}/scopus.png');
+      }
+     .bio-researchid-custom:before {
+       width: 20px;
+       height: 20px;
+       background-image: url('@{path_to_img}/publons.svg');
+     }
+     .bio-spin-custom:before {
+       width: 20px;
+       height: 20px;
+       background-image: url('@{path_to_img}/elibrary.svg');
+     }
+    .bio-rinc-custom:before {
+       width: 20px;
+       height: 20px;
+       background-image: url('@{path_to_img}/elibrary.svg');
+     }
+     .bio-researchGate-custom:before {
+       position: relative;
+       top: -2px;
+       left: -1px;
+       width: 20px;
+       height: 25px;
+       background-image: url('@{path_to_img}/researchGate.png');
+     }
+     .bio-googleScholar-custom:before {
+       width: 20px;
+       height: 20px;
+       background-image: url('@{path_to_img}/googleScholar.png');
+     }
+  }
+
+}}
+
+ul.editorialTeam-custom li+li{
+  margin-top: 5px;
+}

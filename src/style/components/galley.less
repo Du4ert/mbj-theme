@@ -1,0 +1,46 @@
+// Гранки
+.download {
+  //text-align: left !important;
+}
+.download a.galley-link {
+  display: inline-block !important;
+}
+.galley-link {
+   padding: 5px ;
+  text-align: left ;
+  display: inline-block ;
+  background: none ;
+  border: none ;
+  color: #000 ;
+  &:before {
+      vertical-align: middle;
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      margin: 0;
+      padding: 0px;
+      background: url('@{path_to_img}/download-icon32.png') center top no-repeat;
+      background-size: contain ;
+    }
+    &:hover {
+      color: inherit;
+      background: inherit;
+    }
+  &.pdf:before {
+    background: url('@{path_to_img}/pdf-icon32.png') center top no-repeat;
+}
+
+
+}
+.download.list-group-item .galley-link {
+  &.ENG {
+    position: relative;
+    right: 15px;
+  }
+  // &.RUS:before {
+  //   position: relative;
+  //   right: 5px;
+  // }
+}
+//...........

@@ -1,0 +1,52 @@
+// Article
+.article-summary .media-heading {
+  font-weight: 400;
+}
+
+.article-main .authors {
+  text-align: left;
+
+  .author-biography p{
+    margin: 0;
+  }
+}
+
+.article-links-custom {
+  margin-bottom: 10px;
+  .article-rinc-custom, .article-orcid-custom {
+      margin: 0 0px 1px 0;
+       &:before {
+         content: '';
+         margin: 0 0 0 0;
+         display: inline-block;
+         vertical-align: middle;
+         background-size: cover;
+         width: 15px;
+         height: 15px;
+       }
+  }
+  .article-rinc-custom:before {
+    background-image: url('@{path_to_img}/elibrary.svg');
+  }
+  .article-orcid-custom:before {
+    background-image: url('@{path_to_img}/orcid.png');
+  }
+}
+
+.list-group-item.doi a {
+  font-weight: 400;
+}
+
+#copy {
+  float: right;
+  width: 30px;
+  height: 30px;
+  margin: 4px;
+  background: url('@{path_to_img}/clipboard30px.png');
+  cursor: pointer;
+  &:active {
+    position: relative;
+    top: 1px;
+    right: 1px;
+  }
+}

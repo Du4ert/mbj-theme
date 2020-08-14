@@ -39,8 +39,8 @@
     <table class="issues-custom">
     <thead>
       <tr class="issues-head-custom">
-        <td class="issues-year-custom">{translate key="plugins.themes.mbj.issue.archive.year"}</td>
-        <td class="issues-series-custom">{translate key="plugins.themes.mbj.issue.archive.issue"}</td>
+        <td class="issues-year-custom">{translate key="plugins.themes.bootstrapChild.issue.archive.year"}</td>
+        <td class="issues-series-custom">{translate key="plugins.themes.bootstrapChild.issue.archive.issue"}</td>
       </tr>
     </thead>
     <tbody class="issues-body-custom">      {assign var=first value=true}
@@ -58,9 +58,9 @@
       </td></tr>
          {assign var=currentYear value=$year}
         <td  class="issues-year-custom">{$currentYear}</td>
-        <td  class="issues-series-custom"><a href="{url op="view" path=$issue->getBestIssueId($currentJournal)}">{translate key="plugins.themes.mbj.issue.archive.vol"} {$vol} {translate key="plugins.themes.mbj.issue.archive.number"} {$num}</a>
+        <td  class="issues-series-custom"><a href="{url op="view" path=$issue->getBestIssueId($currentJournal)}">{translate key="plugins.themes.bootstrapChild.issue.archive.vol"} {$vol} {translate key="plugins.themes.bootstrapChild.issue.archive.number"} {$num}</a>
 				{else}
-        <a href="{url op="view" path=$issue->getBestIssueId($currentJournal)}">{translate key="plugins.themes.mbj.issue.archive.vol"} {$vol} {translate key="plugins.themes.mbj.issue.archive.number"} {$num}</a>
+        <a href="{url op="view" path=$issue->getBestIssueId($currentJournal)}">{translate key="plugins.themes.bootstrapChild.issue.archive.vol"} {$vol} {translate key="plugins.themes.bootstrapChild.issue.archive.number"} {$num}</a>
     {/if}
 
 

@@ -23,7 +23,7 @@
     </li>
     <li>
       <a href="{url router=$smarty.const.ROUTE_PAGE page="about" op="editorialTeam"}">
-        {translate key="plugins.themes.bootstrapChild.editorial.title"}
+        {translate key="plugins.themes.mbj.editorial.title"}
       </a>
     </li>
     <li class="active">

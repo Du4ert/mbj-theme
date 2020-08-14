@@ -2,7 +2,7 @@
 <!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
 
 <!--
-  * plugins/themes/bootstrapChild/locale/en_US/locale.xml
+  * plugins/themes/mbj/locale/en_US/locale.xml
   *
   * Copyright (c) 2014-2017 Simon Fraser University Library
   * Copyright (c) 2003-2017 John Willinsky
@@ -13,83 +13,83 @@
 
 <!-- Custom -->
 <locale name="ru_RU" full_name="Русский">
-  <message key="plugins.themes.bootstrapChild.editorial.title">РЕДАКЦИОННАЯ КОЛЛЕГИЯ МОРСКОГО БИОЛОГИЧЕСКОГО ЖУРНАЛА</message>
-  <message key="plugins.themes.bootstrapChild.editorial.date">по состоянию на март 2018 г.</message>
-  <message key="plugins.themes.bootstrapChild.editorial.teamTitle">члены редакционной коллегии</message>
-  <message key="plugins.themes.bootstrapChild.editorial.role.editorinchief">Главный редактор</message>
-  <message key="plugins.themes.bootstrapChild.editorial.role.editorsinchief">Главные редакторы</message>
-  <message key="plugins.themes.bootstrapChild.editorial.role.deputyeditorinchief">Заместитель главного редактора</message>
-  <message key="plugins.themes.bootstrapChild.editorial.role.deputyesditorinchief">Заместители главного редактора</message>
-  <message key="plugins.themes.bootstrapChild.editorial.role.executivesecretary">Ответственный секретарь</message>
-  <message key="plugins.themes.bootstrapChild.editorial.role.executivesecretaries">Ответственные секретари</message>
+  <message key="plugins.themes.mbj.editorial.title">РЕДАКЦИОННАЯ КОЛЛЕГИЯ МОРСКОГО БИОЛОГИЧЕСКОГО ЖУРНАЛА</message>
+  <message key="plugins.themes.mbj.editorial.date">по состоянию на март 2018 г.</message>
+  <message key="plugins.themes.mbj.editorial.teamTitle">члены редакционной коллегии</message>
+  <message key="plugins.themes.mbj.editorial.role.editorinchief">Главный редактор</message>
+  <message key="plugins.themes.mbj.editorial.role.editorsinchief">Главные редакторы</message>
+  <message key="plugins.themes.mbj.editorial.role.deputyeditorinchief">Заместитель главного редактора</message>
+  <message key="plugins.themes.mbj.editorial.role.deputyesditorinchief">Заместители главного редактора</message>
+  <message key="plugins.themes.mbj.editorial.role.executivesecretary">Ответственный секретарь</message>
+  <message key="plugins.themes.mbj.editorial.role.executivesecretaries">Ответственные секретари</message>
 
-  <message key="plugins.themes.bootstrapChild.issue.fullIssue">Полный выпуск</message>
-  <message key="plugins.themes.bootstrapChild.issue.summary.pages">Страницы</message>
-  <message key="plugins.themes.bootstrapChild.issue.published">Опубликован</message>
-  <message key="plugins.themes.bootstrapChild.submissions.published">Опубликован онлайн</message>
-  <message key="plugins.themes.bootstrapChild.issue.fulltext">Скачать полный текст</message>
-  <message key="plugins.themes.bootstrapChild.issue.supplementary">Приложение</message>
-  <message key="plugins.themes.bootstrapChild.editorial.principle">Положение о редколлегии МБЖ</message>
-  <message key="plugins.themes.bootstrapChild.editorial.statute">Устав редакции МБЖ</message>
-  <message key="plugins.themes.bootstrapChild.editorial.bio.biography">Должность, степень, звание</message>
-  <message key="plugins.themes.bootstrapChild.editorial.bio.profiles">Профили</message>
-  <message key="plugins.themes.bootstrapChild.editorial.bio.country">Страна</message>
-  <message key="plugins.themes.bootstrapChild.editorial.title">Редколлегия</message>
-  <message key="plugins.themes.bootstrapChild.editorial.bio.title">Член редколлегии</message>
-  <message key="plugins.themes.bootstrapChild.editorial.bio.address">Адрес</message>
-  <message key="plugins.themes.bootstrapChild.editorial.bio.profileon">Профиль на</message>
-  <message key="plugins.themes.bootstrapChild.editorial.bio.elibrary">Публикации на eLibrary.ru</message>
-  <message key="plugins.themes.bootstrapChild.issue.archive.year">Год</message>
+  <message key="plugins.themes.mbj.issue.fullIssue">Полный выпуск</message>
+  <message key="plugins.themes.mbj.issue.summary.pages">Страницы</message>
+  <message key="plugins.themes.mbj.issue.published">Опубликован</message>
+  <message key="plugins.themes.mbj.submissions.published">Опубликован онлайн</message>
+  <message key="plugins.themes.mbj.issue.fulltext">Скачать полный текст</message>
+  <message key="plugins.themes.mbj.issue.supplementary">Приложение</message>
+  <message key="plugins.themes.mbj.editorial.principle">Положение о редколлегии МБЖ</message>
+  <message key="plugins.themes.mbj.editorial.statute">Устав редакции МБЖ</message>
+  <message key="plugins.themes.mbj.editorial.bio.biography">Должность, степень, звание</message>
+  <message key="plugins.themes.mbj.editorial.bio.profiles">Профили</message>
+  <message key="plugins.themes.mbj.editorial.bio.country">Страна</message>
+  <message key="plugins.themes.mbj.editorial.title">Редколлегия</message>
+  <message key="plugins.themes.mbj.editorial.bio.title">Член редколлегии</message>
+  <message key="plugins.themes.mbj.editorial.bio.address">Адрес</message>
+  <message key="plugins.themes.mbj.editorial.bio.profileon">Профиль на</message>
+  <message key="plugins.themes.mbj.editorial.bio.elibrary">Публикации на eLibrary.ru</message>
+  <message key="plugins.themes.mbj.issue.archive.year">Год</message>
 >
-  <message key="plugins.themes.bootstrapChild.issue.archive.issue">Выпуск</message>
-  <message key="plugins.themes.bootstrapChild.issue.archive.vol">Том</message>
-  <message key="plugins.themes.bootstrapChild.issue.archive.number">№</message>
+  <message key="plugins.themes.mbj.issue.archive.issue">Выпуск</message>
+  <message key="plugins.themes.mbj.issue.archive.vol">Том</message>
+  <message key="plugins.themes.mbj.issue.archive.number">№</message>
 
-  <message key="plugins.themes.bootstrapChild.issue.details.issue">выпуск</message>
-  <message key="plugins.themes.bootstrapChild.issue.details.vol">т</message>
-  <message key="plugins.themes.bootstrapChild.issue.details.number">№</message>
-  <message key="plugins.themes.bootstrapChild.issue.details.pp">с</message>
-  <message key="plugins.themes.bootstrapChild.issue.details.no">№</message>
-  <message key="plugins.themes.bootstrapChild.issue.details.amp">и</message>
-  <message key="plugins.themes.bootstrapChild.submission.published">Опубликована</message>
-  <message key="plugins.themes.bootstrapChild.submissions.unregistered.send">Отправьте материал по адресу</message>
-  <message key="plugins.themes.bootstrapChild.submissions.registered.send">Или отправьте материал по адресу</message>
-  <message key="plugins.themes.bootstrapChild.submissions.title">Отправка материала</message>
+  <message key="plugins.themes.mbj.issue.details.issue">выпуск</message>
+  <message key="plugins.themes.mbj.issue.details.vol">т</message>
+  <message key="plugins.themes.mbj.issue.details.number">№</message>
+  <message key="plugins.themes.mbj.issue.details.pp">с</message>
+  <message key="plugins.themes.mbj.issue.details.no">№</message>
+  <message key="plugins.themes.mbj.issue.details.amp">и</message>
+  <message key="plugins.themes.mbj.submission.published">Опубликована</message>
+  <message key="plugins.themes.mbj.submissions.unregistered.send">Отправьте материал по адресу</message>
+  <message key="plugins.themes.mbj.submissions.registered.send">Или отправьте материал по адресу</message>
+  <message key="plugins.themes.mbj.submissions.title">Отправка материала</message>
 
-  <message key="plugins.themes.bootstrapChild.registration">В данный момент регистрация недоступна</message>
-  <message key="plugins.themes.bootstrapChild.submissions.cite">Формат цитирования</message>
+  <message key="plugins.themes.mbj.registration">В данный момент регистрация недоступна</message>
+  <message key="plugins.themes.mbj.submissions.cite">Формат цитирования</message>
   <message key="search.advancedFilters">Дополнительные фильтры</message>
-  <message key="plugins.themes.bootstrapChild.submissionPreparationChecklist.description">В качестве одного из этапов процесса отправки авторы должны проверить соответствие их материала следующим пунктам. Авторам могут быть возвращены материалы, не удовлетворяющие следующим требованиям:</message>
+  <message key="plugins.themes.mbj.submissionPreparationChecklist.description">В качестве одного из этапов процесса отправки авторы должны проверить соответствие их материала следующим пунктам. Авторам могут быть возвращены материалы, не удовлетворяющие следующим требованиям:</message>
 
-  <message key="plugins.themes.bootstrapChild.about.contacts.tel">Телефон</message>
+  <message key="plugins.themes.mbj.about.contacts.tel">Телефон</message>
 
     <!-- Navigation -->
-    <message key="plugins.themes.bootstrapChild.article.views">Просмотров</message>
-  <message key="plugins.themes.bootstrapChild.article.downloads">Скачиваний</message>
-  <message key="plugins.themes.bootstrapChild.article.ru_RU">RUS</message>
-  <message key="plugins.themes.bootstrapChild.article.en_US">ENG</message>
-  <message key="plugins.themes.bootstrapChild.article.video">Видео</message>
-  <message key="plugins.themes.bootstrapChild.article.supplementary">Приложение</message>
+    <message key="plugins.themes.mbj.article.views">Просмотров</message>
+  <message key="plugins.themes.mbj.article.downloads">Скачиваний</message>
+  <message key="plugins.themes.mbj.article.ru_RU">RUS</message>
+  <message key="plugins.themes.mbj.article.en_US">ENG</message>
+  <message key="plugins.themes.mbj.article.video">Видео</message>
+  <message key="plugins.themes.mbj.article.supplementary">Приложение</message>
 
 
-  <message key="plugins.themes.bootstrapChild.navigation.issues">Выпуски</message>
-  <message key="plugins.themes.bootstrapChild.navigation.aboutTheJournal">О журнале</message>
-  <message key="plugins.themes.bootstrapChild.navigation.aim">Цели и задачи</message>
-  <message key="plugins.themes.bootstrapChild.navigation.editorialPolicies">Редакционная политика</message>
-  <message key="plugins.themes.bootstrapChild.navigation.peerReview">Процедура опубликования</message>
-  <message key="plugins.themes.bootstrapChild.navigation.publicationEthics">Публикационная этика</message>
-  <message key="plugins.themes.bootstrapChild.submissions.forauthors">Правила для авторов</message>
-  <message key="plugins.themes.bootstrapChild.navigation.forauthors">Авторам</message>
-  <message key="plugins.themes.bootstrapChild.navigation.metadata">Метаданные авторов</message>
-  <message key="plugins.themes.bootstrapChild.navigation.agreement">Авторский договор</message>
-  <message key="plugins.themes.bootstrapChild.navigation.license">Лицензионное соглашение</message>
-  <message key="plugins.themes.bootstrapChild.navigation.adoptions">Заимствования и плагиат</message>
-  <message key="plugins.themes.bootstrapChild.navigation.conflict">Конфликт интересов</message>
-  <message key="plugins.themes.bootstrapChild.navigation.toReviewers">Рецензентам</message>
-  <message key="plugins.themes.bootstrapChild.navigation.access">Политика открытого доступа</message>
-  <message key="plugins.themes.bootstrapChild.navigation.archiving">Архивирование</message>
-  <message key="plugins.themes.bootstrapChild.navigation.fee">Плата за публикацию</message>
-  <message key="plugins.themes.bootstrapChild.navigation.retraction">Порядок ретракции</message>
+  <message key="plugins.themes.mbj.navigation.issues">Выпуски</message>
+  <message key="plugins.themes.mbj.navigation.aboutTheJournal">О журнале</message>
+  <message key="plugins.themes.mbj.navigation.aim">Цели и задачи</message>
+  <message key="plugins.themes.mbj.navigation.editorialPolicies">Редакционная политика</message>
+  <message key="plugins.themes.mbj.navigation.peerReview">Процедура опубликования</message>
+  <message key="plugins.themes.mbj.navigation.publicationEthics">Публикационная этика</message>
+  <message key="plugins.themes.mbj.submissions.forauthors">Правила для авторов</message>
+  <message key="plugins.themes.mbj.navigation.forauthors">Авторам</message>
+  <message key="plugins.themes.mbj.navigation.metadata">Метаданные авторов</message>
+  <message key="plugins.themes.mbj.navigation.agreement">Авторский договор</message>
+  <message key="plugins.themes.mbj.navigation.license">Лицензионное соглашение</message>
+  <message key="plugins.themes.mbj.navigation.adoptions">Заимствования и плагиат</message>
+  <message key="plugins.themes.mbj.navigation.conflict">Конфликт интересов</message>
+  <message key="plugins.themes.mbj.navigation.toReviewers">Рецензентам</message>
+  <message key="plugins.themes.mbj.navigation.access">Политика открытого доступа</message>
+  <message key="plugins.themes.mbj.navigation.archiving">Архивирование</message>
+  <message key="plugins.themes.mbj.navigation.fee">Плата за публикацию</message>
+  <message key="plugins.themes.mbj.navigation.retraction">Порядок ретракции</message>
 
 	<message key="default.groups.name.author">автор</message>
 </locale>

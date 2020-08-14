@@ -55,7 +55,7 @@
 			{* Page numbers for this article *}
 			{if $article->getPages()}
 				<p class="pages">
-					{translate key="plugins.themes.bootstrapChild.issue.summary.pages"}: {$article->getPages()|replace: '-' : '–'|escape}
+					{translate key="plugins.themes.mbj.issue.summary.pages"}: {$article->getPages()|replace: '-' : '–'|escape}
 				</p>
 			{/if}
 

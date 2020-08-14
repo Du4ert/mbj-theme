@@ -2,7 +2,7 @@
 <!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
 
 <!--
-  * plugins/themes/bootstrapChild/locale/en_US/locale.xml
+  * plugins/themes/mbj/locale/en_US/locale.xml
   *
   * Copyright (c) 2014-2017 Simon Fraser University Library
   * Copyright (c) 2003-2017 John Willinsky
@@ -12,87 +12,87 @@
   -->
 
 <locale name="en_US" full_name="U.S. English">
-  <message key="plugins.themes.bootstrapChild.editorial.title">EDITORIAL BOARD OF MARINE BIOLOGICAL JOURNAL</message>
-  <message key="plugins.themes.bootstrapChild.editorial.teamTitle">editorial team members</message>
-  <message key="plugins.themes.bootstrapChild.editorial.date">march 2018</message>
-  <message key="plugins.themes.bootstrapChild.issue.summary.pages">Pages</message>
+  <message key="plugins.themes.mbj.editorial.title">EDITORIAL BOARD OF MARINE BIOLOGICAL JOURNAL</message>
+  <message key="plugins.themes.mbj.editorial.teamTitle">editorial team members</message>
+  <message key="plugins.themes.mbj.editorial.date">march 2018</message>
+  <message key="plugins.themes.mbj.issue.summary.pages">Pages</message>
 
   <!-- Custom -->
-  <message key="plugins.themes.bootstrapChild.issue.fullIssue">Full issue</message>
-  <message key="plugins.themes.bootstrapChild.issue.published">Published</message>
-  <message key="plugins.themes.bootstrapChild.submissions.published">Published online</message>
-  <message key="plugins.themes.bootstrapChild.issue.fulltext">Download fulltext</message>
-  <message key="plugins.themes.bootstrapChild.issue.supplementary">Supplementary</message>
-  <message key="plugins.themes.bootstrapChild.editorial.principle">The principle of the Editorial Board (RU)</message>
-  <message key="plugins.themes.bootstrapChild.editorial.statute">Editorial statute (RU)</message>
-  <message key="plugins.themes.bootstrapChild.editorial.bio.biography">Position, academic degree, rank</message>
-  <message key="plugins.themes.bootstrapChild.editorial.bio.profiles">Profiles</message>
-  <message key="plugins.themes.bootstrapChild.editorial.bio.country">Country</message>
-  <message key="plugins.themes.bootstrapChild.editorial.title">Editorial Board</message>
-  <message key="plugins.themes.bootstrapChild.editorial.bio.title">Editorial Board member</message>
-  <message key="plugins.themes.bootstrapChild.editorial.bio.address">Address</message>
-  <message key="plugins.themes.bootstrapChild.editorial.bio.profileon">Profile on</message>
-  <message key="plugins.themes.bootstrapChild.editorial.bio.elibrary">Papers on eLibrary.ru</message>
-  <message key="plugins.themes.bootstrapChild.editorial.role.editorinchief">Editor-in-Chief</message>
-  <message key="plugins.themes.bootstrapChild.editorial.role.deputyeditorinchief">Deputy Editor-in-Chief</message>
-  <message key="plugins.themes.bootstrapChild.editorial.role.executivesecretary">Executive Secretary</message>
+  <message key="plugins.themes.mbj.issue.fullIssue">Full issue</message>
+  <message key="plugins.themes.mbj.issue.published">Published</message>
+  <message key="plugins.themes.mbj.submissions.published">Published online</message>
+  <message key="plugins.themes.mbj.issue.fulltext">Download fulltext</message>
+  <message key="plugins.themes.mbj.issue.supplementary">Supplementary</message>
+  <message key="plugins.themes.mbj.editorial.principle">The principle of the Editorial Board (RU)</message>
+  <message key="plugins.themes.mbj.editorial.statute">Editorial statute (RU)</message>
+  <message key="plugins.themes.mbj.editorial.bio.biography">Position, academic degree, rank</message>
+  <message key="plugins.themes.mbj.editorial.bio.profiles">Profiles</message>
+  <message key="plugins.themes.mbj.editorial.bio.country">Country</message>
+  <message key="plugins.themes.mbj.editorial.title">Editorial Board</message>
+  <message key="plugins.themes.mbj.editorial.bio.title">Editorial Board member</message>
+  <message key="plugins.themes.mbj.editorial.bio.address">Address</message>
+  <message key="plugins.themes.mbj.editorial.bio.profileon">Profile on</message>
+  <message key="plugins.themes.mbj.editorial.bio.elibrary">Papers on eLibrary.ru</message>
+  <message key="plugins.themes.mbj.editorial.role.editorinchief">Editor-in-Chief</message>
+  <message key="plugins.themes.mbj.editorial.role.deputyeditorinchief">Deputy Editor-in-Chief</message>
+  <message key="plugins.themes.mbj.editorial.role.executivesecretary">Executive Secretary</message>
 
-  <message key="plugins.themes.bootstrapChild.editorial.role.editorsinchief">Editors-in-Chief</message>
-  <message key="plugins.themes.bootstrapChild.editorial.role.deputyesditorinchief">Deputy Editors-in-Chief</message>
-  <message key="plugins.themes.bootstrapChild.editorial.role.executivesecretaries">Executive Secretaries</message>
+  <message key="plugins.themes.mbj.editorial.role.editorsinchief">Editors-in-Chief</message>
+  <message key="plugins.themes.mbj.editorial.role.deputyesditorinchief">Deputy Editors-in-Chief</message>
+  <message key="plugins.themes.mbj.editorial.role.executivesecretaries">Executive Secretaries</message>
 
 
 
-  <message key="plugins.themes.bootstrapChild.issue.archive.year">Year</message>
-  <message key="plugins.themes.bootstrapChild.issue.archive.number">No</message>
+  <message key="plugins.themes.mbj.issue.archive.year">Year</message>
+  <message key="plugins.themes.mbj.issue.archive.number">No</message>
 
-  <message key="plugins.themes.bootstrapChild.issue.archive.issue">Issue</message>
-  <message key="plugins.themes.bootstrapChild.issue.archive.vol">Vol</message>
+  <message key="plugins.themes.mbj.issue.archive.issue">Issue</message>
+  <message key="plugins.themes.mbj.issue.archive.vol">Vol</message>
 
-  <message key="plugins.themes.bootstrapChild.issue.details.issue">issue</message>
-  <message key="plugins.themes.bootstrapChild.issue.details.vol">vol</message>
-  <message key="plugins.themes.bootstrapChild.issue.details.number">№</message>
-  <message key="plugins.themes.bootstrapChild.issue.details.pp">pp</message>
-  <message key="plugins.themes.bootstrapChild.issue.details.no">no.</message>
-  <message key="plugins.themes.bootstrapChild.issue.details.amp">&amp;</message>
-  <message key="plugins.themes.bootstrapChild.submission.published">Published</message>
-  <message key="plugins.themes.bootstrapChild.submissions.unregistered.send">You can send all the files to</message>
-  <message key="plugins.themes.bootstrapChild.submissions.registered.send">You can send all the files to</message>
-  <message key="plugins.themes.bootstrapChild.submissions.title">Submissions</message>
-  <message key="plugins.themes.bootstrapChild.submissionPreparationChecklist.description">As part of the submission process, Authors are required to check off their submission's compliance with all of the following items. Submissions may be returned to Authors that do not adhere to these guidelines:</message>
-  <message key="plugins.themes.bootstrapChild.about.contacts.tel">Tel.</message>
+  <message key="plugins.themes.mbj.issue.details.issue">issue</message>
+  <message key="plugins.themes.mbj.issue.details.vol">vol</message>
+  <message key="plugins.themes.mbj.issue.details.number">№</message>
+  <message key="plugins.themes.mbj.issue.details.pp">pp</message>
+  <message key="plugins.themes.mbj.issue.details.no">no.</message>
+  <message key="plugins.themes.mbj.issue.details.amp">&amp;</message>
+  <message key="plugins.themes.mbj.submission.published">Published</message>
+  <message key="plugins.themes.mbj.submissions.unregistered.send">You can send all the files to</message>
+  <message key="plugins.themes.mbj.submissions.registered.send">You can send all the files to</message>
+  <message key="plugins.themes.mbj.submissions.title">Submissions</message>
+  <message key="plugins.themes.mbj.submissionPreparationChecklist.description">As part of the submission process, Authors are required to check off their submission's compliance with all of the following items. Submissions may be returned to Authors that do not adhere to these guidelines:</message>
+  <message key="plugins.themes.mbj.about.contacts.tel">Tel.</message>
 
   <!-- Navigation -->
-  <message key="plugins.themes.bootstrapChild.navigation.issues">Issues</message>
-  <message key="plugins.themes.bootstrapChild.navigation.aboutTheJournal">About the journal</message>
-  <message key="plugins.themes.bootstrapChild.navigation.aim">Aim and scope</message>
-  <message key="plugins.themes.bootstrapChild.navigation.editorialPolicies">Editorial Policies</message>
-  <message key="plugins.themes.bootstrapChild.navigation.peerReview">Peer-review</message>
-  <message key="plugins.themes.bootstrapChild.navigation.publicationEthics">Publication Ethics</message>
-  <message key="plugins.themes.bootstrapChild.navigation.forauthors">For Authors</message>
-  <message key="plugins.themes.bootstrapChild.submissions.forauthors">Guidelines for Authors</message>
-  <message key="plugins.themes.bootstrapChild.submissions.cite">Citation format</message>
+  <message key="plugins.themes.mbj.navigation.issues">Issues</message>
+  <message key="plugins.themes.mbj.navigation.aboutTheJournal">About the journal</message>
+  <message key="plugins.themes.mbj.navigation.aim">Aim and scope</message>
+  <message key="plugins.themes.mbj.navigation.editorialPolicies">Editorial Policies</message>
+  <message key="plugins.themes.mbj.navigation.peerReview">Peer-review</message>
+  <message key="plugins.themes.mbj.navigation.publicationEthics">Publication Ethics</message>
+  <message key="plugins.themes.mbj.navigation.forauthors">For Authors</message>
+  <message key="plugins.themes.mbj.submissions.forauthors">Guidelines for Authors</message>
+  <message key="plugins.themes.mbj.submissions.cite">Citation format</message>
 
 
-  <message key="plugins.themes.bootstrapChild.navigation.metadata">Metadata of the Authors</message>
-  <message key="plugins.themes.bootstrapChild.navigation.license">License Agreement</message>
-  <message key="plugins.themes.bootstrapChild.navigation.agreement">Authors agreement</message>
-  <message key="plugins.themes.bootstrapChild.navigation.adoptions">Adoptions and Plagiarism</message>
-  <message key="plugins.themes.bootstrapChild.navigation.conflict">Conflict of Interest</message>
-  <message key="plugins.themes.bootstrapChild.navigation.toReviewers">For Reviewers</message>
-  <message key="plugins.themes.bootstrapChild.navigation.access">Open-Access Policy</message>
-  <message key="plugins.themes.bootstrapChild.navigation.archiving">Archiving</message>
-  <message key="plugins.themes.bootstrapChild.navigation.fee">No Publication Fee</message>
-  <message key="plugins.themes.bootstrapChild.navigation.retraction">The Order of Retraction</message>
+  <message key="plugins.themes.mbj.navigation.metadata">Metadata of the Authors</message>
+  <message key="plugins.themes.mbj.navigation.license">License Agreement</message>
+  <message key="plugins.themes.mbj.navigation.agreement">Authors agreement</message>
+  <message key="plugins.themes.mbj.navigation.adoptions">Adoptions and Plagiarism</message>
+  <message key="plugins.themes.mbj.navigation.conflict">Conflict of Interest</message>
+  <message key="plugins.themes.mbj.navigation.toReviewers">For Reviewers</message>
+  <message key="plugins.themes.mbj.navigation.access">Open-Access Policy</message>
+  <message key="plugins.themes.mbj.navigation.archiving">Archiving</message>
+  <message key="plugins.themes.mbj.navigation.fee">No Publication Fee</message>
+  <message key="plugins.themes.mbj.navigation.retraction">The Order of Retraction</message>
 
   <message key="default.groups.name.author">author</message>
 
 
-  <message key="plugins.themes.bootstrapChild.article.views">Views</message>
-  <message key="plugins.themes.bootstrapChild.article.downloads">Downloads</message>
-  <message key="plugins.themes.bootstrapChild.article.ru_RU">RUS</message>
-  <message key="plugins.themes.bootstrapChild.article.en_US">ENG</message>
-  <message key="plugins.themes.bootstrapChild.article.video">Video</message>
-  <message key="plugins.themes.bootstrapChild.article.supplementary">Supplementary</message>
+  <message key="plugins.themes.mbj.article.views">Views</message>
+  <message key="plugins.themes.mbj.article.downloads">Downloads</message>
+  <message key="plugins.themes.mbj.article.ru_RU">RUS</message>
+  <message key="plugins.themes.mbj.article.en_US">ENG</message>
+  <message key="plugins.themes.mbj.article.video">Video</message>
+  <message key="plugins.themes.mbj.article.supplementary">Supplementary</message>
 
 </locale>

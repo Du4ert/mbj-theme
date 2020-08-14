@@ -54,7 +54,7 @@
 				{* Published date *}
 				{if $article->getDatePublished()}
 					<div class="list-group-item date-published">
-						{capture assign=translatedDatePublished}{translate key="plugins.themes.bootstrapChild.submission.published"}{/capture}
+						{capture assign=translatedDatePublished}{translate key="plugins.themes.mbj.submission.published"}{/capture}
 						<strong>{translate key="semicolon" label=$translatedDatePublished}</strong>
 						{$article->getDatePublished()|date_format}
 					</div>
@@ -82,7 +82,7 @@
 					{/if}
 				{/foreach}
 				<div class="list-group-item pages">
-					<strong>{translate key="plugins.themes.bootstrapChild.issue.summary.pages"}:</strong>
+					<strong>{translate key="plugins.themes.mbj.issue.summary.pages"}:</strong>
 					{$article->getStartingPage()|escape}–{$article->getEndingPage()|escape}
 				</div>
 
@@ -104,8 +104,8 @@
 					</div>
 				{/if}
 				<div class="list-group-item article-views">
-					<strong>{translate key="plugins.themes.bootstrapChild.article.views"}:</strong> {$article->getViews()|escape}
-					<strong>{translate key="plugins.themes.bootstrapChild.article.downloads"}:</strong>	{$fullTextDownloads}
+					<strong>{translate key="plugins.themes.mbj.article.views"}:</strong> {$article->getViews()|escape}
+					<strong>{translate key="plugins.themes.mbj.article.downloads"}:</strong>	{$fullTextDownloads}
 				</div>
 
 
@@ -185,7 +185,7 @@
 									{break}
 								{/if}
 							{/foreach}
-						<button  id="citation-button" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{translate key="plugins.themes.bootstrapChild.submissions.cite"} (<span class="citation-style"> {$primaryCite} </span>)
+						<button  id="citation-button" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{translate key="plugins.themes.mbj.submissions.cite"} (<span class="citation-style"> {$primaryCite} </span>)
 						  <span class="caret"></span></button>
 						  <div id="copy" title="Copy" onclick="false"></div>
 						<ul class="dropdown-menu" role="menu">

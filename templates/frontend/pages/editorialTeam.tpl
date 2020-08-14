@@ -9,16 +9,16 @@
  *
  * @uses $currentJournal Journal The current journal
  *}
-{include file="frontend/components/header.tpl" pageTitle="plugins.themes.bootstrapChild.editorial.title"}
+{include file="frontend/components/header.tpl" pageTitle="plugins.themes.mbj.editorial.title"}
 
 <div id="main-content" class="page page_editorial_team">
 
-	{include file="frontend/components/breadcrumbs.tpl" currentTitleKey="plugins.themes.bootstrapChild.editorial.title"}
+	{include file="frontend/components/breadcrumbs.tpl" currentTitleKey="plugins.themes.mbj.editorial.title"}
 
 	{* Page Title *}
 	<div class="page-header">
         {include file="frontend/components/editLink.tpl" page="management" op="settings" path="" anchor="" sectionTitleKey=""}
-		<h1>{translate key="plugins.themes.bootstrapChild.editorial.title"}</h1>
+		<h1>{translate key="plugins.themes.mbj.editorial.title"}</h1>
 	</div>
 	{* /Page Title *}
 

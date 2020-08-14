@@ -82,7 +82,7 @@
 {assign var="lang" value=$galley->getLocale()}
 
 {* Don't be frightened. This is just a link *}
-<a class="galley-link btn  {if $isSupplementary}btn-default{else}btn-primary {if !empty($lang) && $lang !== $currentLocale}{translate key="plugins.themes.bootstrapChild.article.{$lang}"}{/if}{/if} {$type}" role="button" href="{url|escape page=$page op="view" path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}">
+<a class="galley-link btn  {if $isSupplementary}btn-default{else}btn-primary {if !empty($lang) && $lang !== $currentLocale}{translate key="plugins.themes.mbj.article.{$lang}"}{/if}{/if} {$type}" role="button" href="{url|escape page=$page op="view" path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}">
 
 	{* Add some screen reader text to indicate if a galley is restricted *}
 	{if $restricted}
@@ -96,13 +96,13 @@
 		</span>
 	{/if}
 	{if !$isSupplementary}
-		{translate key="plugins.themes.bootstrapChild.issue.fulltext"}
+		{translate key="plugins.themes.mbj.issue.fulltext"}
 		{if !empty($lang) && $lang !== $currentLocale}
-    	({translate key="plugins.themes.bootstrapChild.article.{$lang}"})
+    	({translate key="plugins.themes.mbj.article.{$lang}"})
   		{/if}
 	{else}
 		{if $galley->getLabel() === 'supplementary'}
-			{translate key="plugins.themes.bootstrapChild.article.supplementary"}
+			{translate key="plugins.themes.mbj.article.supplementary"}
 		{else}
 				{$galley->getLabel()}
 		{/if}

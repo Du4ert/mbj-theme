@@ -94,5 +94,9 @@
   <message key="plugins.themes.mbj.article.en_US">ENG</message>
   <message key="plugins.themes.mbj.article.video">Video</message>
   <message key="plugins.themes.mbj.article.supplementary">Supplementary</message>
+  <message key="plugins.themes.mbj.article.affiliations">Affiliations</message>
+  <message key="plugins.themes.mbj.article.affiliation">Affiliation</message>
+
+
 
 </locale>

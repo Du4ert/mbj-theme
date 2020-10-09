@@ -70,6 +70,10 @@
   <message key="plugins.themes.mbj.article.en_US">ENG</message>
   <message key="plugins.themes.mbj.article.video">Видео</message>
   <message key="plugins.themes.mbj.article.supplementary">Приложение</message>
+  <message key="plugins.themes.mbj.article.affiliations">Учреждения</message>
+  <message key="plugins.themes.mbj.article.affiliation">Учреждение</message>
+
+
 
 
   <message key="plugins.themes.mbj.navigation.issues">Выпуски</message>

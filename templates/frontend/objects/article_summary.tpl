@@ -28,20 +28,20 @@
 		</div>
 	{/if}
 
-	<div class="media-body">
+<div class="row">
+	<div class="col-md-10">
+
+	
 		<h3 class="media-heading">
-			<a href="{url page="article" op="view" path=$articlePath}">
-				{$article->getLocalizedTitle()|strip_unsafe_html}
-				{if $article->getLocalizedSubtitle()}
-					<p>
-						<small>{$article->getLocalizedSubtitle()|escape}</small>
-					</p>
-				{/if}
-			</a>
-		</h3>
-
-		{if $showAuthor || $article->getPages()}
-
+				<a href="{url page="article" op="view" path=$articlePath}">
+					{$article->getLocalizedTitle()|strip_unsafe_html}
+					{if $article->getLocalizedSubtitle()}
+						<p>
+							<small>{$article->getLocalizedSubtitle()|escape}</small>
+						</p>
+					{/if}
+				</a>
+			</h3>
 			{if $showAuthor}
 				<div class="meta">
 					{if $showAuthor}
@@ -51,14 +51,20 @@
 					{/if}
 				</div>
 			{/if}
-
+	
 			{* Page numbers for this article *}
 			{if $article->getPages()}
 				<p class="pages">
 					{translate key="plugins.themes.mbj.issue.summary.pages"}: {$article->getPages()|replace: '-' : '–'|escape}
 				</p>
 			{/if}
+			
+	</div>
 
+	<div class="col-md-2">
+	
+		{if $showAuthor || $article->getPages()}
+	
 		{/if}
 		{if !$hideGalleys && $article->getGalleys()}
 			<div class="btn-group" role="group">
@@ -74,11 +80,18 @@
 					{if ($article->getAccessStatus() == $smarty.const.ARTICLE_ACCESS_OPEN)}
 						{assign var="hasArticleAccess" value=1}
 					{/if}
-					{include file="frontend/objects/galley_link.tpl" parent=$article hasAccess=$hasArticleAccess isSupplementary=$isSupplementary}
+					{if !$isSupplementary}
+						{include file="frontend/objects/galley_link.tpl" summary=true parent=$article hasAccess=$hasArticleAccess isSupplementary=$isSupplementary}
+					{/if}
 				{/foreach}
 			</div>
 		{/if}
+		
 	</div>
+</div>
+
+		
+
 
 	{call_hook name="Templates::Issue::Issue::Article"}
 </div><!-- .article-summary -->

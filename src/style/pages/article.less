@@ -1,6 +1,32 @@
 // Article
-.article-summary .media-heading {
+.article-summary.media {
+  padding: 10px 0;
+  margin: 10px 0;
+  // margin-top: 0;
+  // margin-bottom: 0;
+}
+
+.article-summary {
+  border-bottom: 1px solid @gray-lighter;
+  // min-height: 150px;
+  margin-bottom: 0px;
+  padding-bottom: 10px;
+  
+  &:last-of-type {
+    border: none;
+  }
+  // padding-right: 20px;
+  text-align: left;
+  .media-heading {
+    // font-size: 16px;
   font-weight: 400;
+  }
+
+  .galley-primary {
+    // font-size: 12px;
+    text-overflow: "---";
+  }
+
 }
 
 
@@ -18,9 +44,44 @@
   // img{
   //   max-width: 150px;
     
+  
    }
+
+   .author {
+    border-bottom: 1px solid @gray-lighter;
+  }
 }
 
+// Article-more
+.article-more {
+  .article-more-nav {
+    padding: 0;
+    li.active > a {
+      color: @btn-primary-color;
+      background-color: @brand-primary;
+      
+    }
+    a {
+      border: none !important;
+      // border: 1px solid @brand-primary;
+    }
+  }
+
+  .article-more-content {
+    padding: 20px;
+  }
+
+  .article-more-title {
+    margin-bottom: 25px;
+    font-weight: 400;
+  }
+
+  .supplementary {
+    border-bottom: 1px solid @gray-lighter;
+  }
+}// /Article-more 
+
+// Article-meta
 .article-meta-list {
   list-style: none;
   margin-bottom: 40px;
@@ -39,20 +100,29 @@
     display: inline-block;
     width: 15px;
     height: 15px;
-    background: url('@{path_to_img}/list-marine3.png');
+    background: url('@{path_to_img}/mbj-list5.png');
     background-size: contain;
   }
 }
 
 .affiliations-list {
   padding-left: 15px;
-}
+}// Article-meta-list
 
+
+// Authors
 .article-main .authors {
   text-align: left;
 
   .author-biography p{
     margin: 0;
+  }
+}
+
+.author {
+  margin-bottom: 20px;
+  &:nth-child(even) {
+    // background-color: @gray-lighter;
   }
 }
 
@@ -76,12 +146,14 @@
   .article-orcid-custom:before {
     background-image: url('@{path_to_img}/orcid.png');
   }
-}
+}// /Authors
 
 .list-group-item.doi a {
   font-weight: 400;
 }
 
+
+// How to cite
 #copy {
   float: right;
   width: 30px;
@@ -94,4 +166,4 @@
     top: 1px;
     right: 1px;
   }
-}
+}// How to cite

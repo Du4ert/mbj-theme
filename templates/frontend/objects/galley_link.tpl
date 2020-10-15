@@ -81,8 +81,9 @@
 {* Galley locale *}
 {assign var="lang" value=$galley->getLocale()}
 
-{* Don't be frightened. This is just a link *}
-<a class="galley-link btn  {if $isSupplementary}btn-default{else}btn-primary {if !empty($lang) && $lang !== $currentLocale}{translate key="plugins.themes.mbj.article.{$lang}"}{/if}{/if} {$type}" role="button" href="{url|escape page=$page op="view" path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}">
+{if !$isSupplementary}
+	{* Primary galley *}
+<a class="galley-link btn  btn-primary galley-primary {if !empty($lang) && $lang !== $currentLocale}{translate key="plugins.themes.mbj.article.{$lang}"}{/if} {$type}" role="button" href="{url|escape page=$page op="view" path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}">
 
 	{* Add some screen reader text to indicate if a galley is restricted *}
 	{if $restricted}
@@ -95,19 +96,14 @@
 			{/if}
 		</span>
 	{/if}
-	{if !$isSupplementary}
+	 {if !$summary}
 		{translate key="plugins.themes.mbj.issue.fulltext"}
 		{if !empty($lang) && $lang !== $currentLocale}
     	({translate key="plugins.themes.mbj.article.{$lang}"})
   		{/if}
-	{else}
-		{if $galley->getLabel() === 'supplementary'}
-			{translate key="plugins.themes.mbj.article.supplementary"}
 		{else}
-				{$galley->getLabel()}
-		{/if}
-	{/if}
-
+		{translate key="plugins.themes.mbj.article.{$lang}"}
+	 {/if}
 
 	{if $restricted && $purchaseFee && $purchaseCurrency}
 		<span class="purchase-cost">
@@ -115,3 +111,66 @@
 		</span>
 	{/if}
 </a>
+
+{* Supplementary galley *}
+	{else}
+
+{* 
+<a class="galley-link btn  btn-default galley-supplementary {$type}" role="button" href="{url|escape page=$page op="view" path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}">
+
+	{* Add some screen reader text to indicate if a galley is restricted
+	{if $restricted}
+		<span class="sr-only">
+			{if $purchaseArticleEnabled}
+				{translate key="reader.subscriptionOrFeeAccess"}
+			{else}
+				{translate key="reader.subscriptionAccess"}
+			{/if}
+		</span>
+	{/if}
+		{if $galley->getLabel() === 'supplementary'}
+			{translate key="plugins.themes.mbj.article.supplementary"}
+		{else}
+				{$galley->getLabel()}
+		{/if}
+
+	{if $restricted && $purchaseFee && $purchaseCurrency}
+		<span class="purchase-cost">
+			{translate key="reader.purchasePrice" price=$purchaseFee currency=$purchaseCurrency}
+		</span>
+	{/if}
+</a> *}
+
+<a class="galley-link btn  btn-default galley-supplementary {$type}" role="button" href="{url|escape page=$page op="view" path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}">
+{if $type === 'image/jpeg' || 'image/png'}
+	<img src="" >	
+{/if}
+
+	{* Add some screen reader text to indicate if a galley is restricted *}
+	{if $restricted}
+		{* <span class="glyphicon glyphicon-lock" aria-hidden="true"></span> *}
+		<span class="sr-only">
+			{if $purchaseArticleEnabled}
+				{translate key="reader.subscriptionOrFeeAccess"}
+			{else}
+				{translate key="reader.subscriptionAccess"}
+			{/if}
+		</span>
+	{/if}
+		{if $galley->getLabel() === 'supplementary'}
+			{translate key="plugins.themes.mbj.article.supplementary"}
+		{else}
+				{$galley->getLabel()}
+		{/if}
+
+	{if $restricted && $purchaseFee && $purchaseCurrency}
+		<span class="purchase-cost">
+			{translate key="reader.purchasePrice" price=$purchaseFee currency=$purchaseCurrency}
+		</span>
+	{/if}
+</a>
+		
+		
+{/if}
+
+

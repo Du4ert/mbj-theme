@@ -36,6 +36,13 @@ class MbjThemePlugin extends ThemePlugin {
 
 		// Add navigation menu areas for this theme
 		$this->addMenuArea(array('primary', 'user'));
+
+		HookRegistry::register('Themes::mbj::custom', array($this, 'customCallback'));
+	}
+
+	public function customCallback($hookName, $args) {
+		
+		return false;
 	}
 
 	/**

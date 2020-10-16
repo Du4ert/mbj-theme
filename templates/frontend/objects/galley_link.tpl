@@ -81,9 +81,10 @@
 {* Galley locale *}
 {assign var="lang" value=$galley->getLocale()}
 
+<div class="row">
 {if !$isSupplementary}
 	{* Primary galley *}
-<a class="galley-link btn  btn-primary galley-primary {if !empty($lang) && $lang !== $currentLocale}{translate key="plugins.themes.mbj.article.{$lang}"}{/if} {$type}" role="button" href="{url|escape page=$page op="view" path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}">
+<a class="galley-link btn  btn-primary galley-primary {if !empty($lang) && $lang !== $currentLocale}{translate key="plugins.themes.mbj.article.{$lang|escape}"}{/if} {$type}" role="button" href="{url|escape page=$page op="view" path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}">
 
 	{* Add some screen reader text to indicate if a galley is restricted *}
 	{if $restricted}
@@ -96,13 +97,14 @@
 			{/if}
 		</span>
 	{/if}
+
 	 {if !$summary}
 		{translate key="plugins.themes.mbj.issue.fulltext"}
 		{if !empty($lang) && $lang !== $currentLocale}
-    	({translate key="plugins.themes.mbj.article.{$lang}"})
+    	({translate key="plugins.themes.mbj.article.{$lang|escape}"})
   		{/if}
 		{else}
-		{translate key="plugins.themes.mbj.article.{$lang}"}
+		{translate key="plugins.themes.mbj.article.{$lang|escape}"}
 	 {/if}
 
 	{if $restricted && $purchaseFee && $purchaseCurrency}
@@ -112,65 +114,61 @@
 	{/if}
 </a>
 
+
 {* Supplementary galley *}
 	{else}
-
-{* 
-<a class="galley-link btn  btn-default galley-supplementary {$type}" role="button" href="{url|escape page=$page op="view" path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}">
-
-	{* Add some screen reader text to indicate if a galley is restricted
-	{if $restricted}
-		<span class="sr-only">
-			{if $purchaseArticleEnabled}
-				{translate key="reader.subscriptionOrFeeAccess"}
-			{else}
-				{translate key="reader.subscriptionAccess"}
-			{/if}
-		</span>
-	{/if}
-		{if $galley->getLabel() === 'supplementary'}
+		{* {if $galley->getLabel() === 'supplementary'}
 			{translate key="plugins.themes.mbj.article.supplementary"}
-		{else}
-				{$galley->getLabel()}
-		{/if}
+		{else} *}
 
-	{if $restricted && $purchaseFee && $purchaseCurrency}
-		<span class="purchase-cost">
-			{translate key="reader.purchasePrice" price=$purchaseFee currency=$purchaseCurrency}
-		</span>
-	{/if}
-</a> *}
+		{assign var="fileType" value=($galley->getFileType()|explode:"/")}
+		{assign var="filePath" value=$galley->getFile()->getFilePath()}
+		{assign var="fileSize" value=$galley->getFile()->getFileSize()}
+				<div class="col-md-4">
+					{if $fileType[0] === 'image'}
+						<div class="thumbnail">
+							<img class="galley-thumbnail" src="/{$filePath|escape}" data-toggle="modal" data-target="#{$galley->getId()}galleyModal">
+						</div>
+						{else}
+						<div class="list-group">
+							<div class="list-group-item">
+								<a class="galley-link btn  btn-default galley-supplementary {$type}"  href="{url|escape page=$page op="view" path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}">
+									{translate key="plugins.themes.mbj.article.galley.download"}
+									.{$fileType[1]} ({$fileSize}kB)
+								</a>
+							</div>
+						</div>
+					{/if}
+				</div>
+				<div class="col-md-8">
 
-<a class="galley-link btn  btn-default galley-supplementary {$type}" role="button" href="{url|escape page=$page op="view" path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}">
-{if $type === 'image/jpeg' || 'image/png'}
-	<img src="" >	
+					<div class="galley-title">
+						{$galley->getLocalizedName()|escape}
+					</div>
+					<div class="galley-description">
+					{if !!$galley->getFile()->_data["description"]}
+						{$galley->getFile()->getLocalizedDescription()|escape}
+					{/if}
+
+					</div>
+				</div>
+
+				<!-- Modal -->
+				<div class="modal fade" id="{$galley->getId()}galleyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+					</div>
+					<div class="modal-body">
+						<img class="galley-fullsize" src="/{$filePath|escape}" type="button" role="button" data-toggle="modal" data-target="#{$galley->getId()}-galleyModal">
+					</div>
+				</div>
+				</div>
+				</div>
+				{* {$galley->getLabel()} *}
+				{* {$galley->getFile()|@debug_print_var} *}
+
 {/if}
-
-	{* Add some screen reader text to indicate if a galley is restricted *}
-	{if $restricted}
-		{* <span class="glyphicon glyphicon-lock" aria-hidden="true"></span> *}
-		<span class="sr-only">
-			{if $purchaseArticleEnabled}
-				{translate key="reader.subscriptionOrFeeAccess"}
-			{else}
-				{translate key="reader.subscriptionAccess"}
-			{/if}
-		</span>
-	{/if}
-		{if $galley->getLabel() === 'supplementary'}
-			{translate key="plugins.themes.mbj.article.supplementary"}
-		{else}
-				{$galley->getLabel()}
-		{/if}
-
-	{if $restricted && $purchaseFee && $purchaseCurrency}
-		<span class="purchase-cost">
-			{translate key="reader.purchasePrice" price=$purchaseFee currency=$purchaseCurrency}
-		</span>
-	{/if}
-</a>
-		
-		
-{/if}
-
-
+</div>

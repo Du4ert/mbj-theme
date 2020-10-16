@@ -281,7 +281,7 @@
 					<h2 class="sr-only article-more-title">{translate key="plugins.themes.bootstrap3.article.details"}</h2>
 	
 					{* Article abstract *}
-					<div class="tab-pane active" role="tabpanel" id="summary">
+					<div class="tab-pane" role="tabpanel" id="summary">
 						{if $article->getLocalizedAbstract()}
 						<div class="article-summary">
 							<h2 class="article-more-title">{translate key="article.abstract"}</h2>

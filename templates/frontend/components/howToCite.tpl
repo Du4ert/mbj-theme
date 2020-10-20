@@ -1,5 +1,5 @@
 {**
-* templates/frontend/components/rss.tpl
+* templates/frontend/components/howToCite.tpl
 *
 * @uses $citationStyles plugin how to cite 
 * @uses $citationDownloads plugin how to cite option

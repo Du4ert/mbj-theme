@@ -76,6 +76,8 @@
 
 
   <message key="plugins.themes.mbj.article.galley.download">Скачать</message>
+  <message key="plugins.themes.mbj.article.galley.name">Имя файла</message>
+  <message key="plugins.themes.mbj.article.galley.description">Описание</message>
 
   <message key="plugins.themes.mbj.navigation.issues">Выпуски</message>
   <message key="plugins.themes.mbj.navigation.aboutTheJournal">О журнале</message>

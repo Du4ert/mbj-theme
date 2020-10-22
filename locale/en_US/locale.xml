@@ -101,5 +101,7 @@
   <message key="plugins.themes.mbj.article.galley.download">Download</message>
   <message key="plugins.themes.mbj.article.galley.name">File name</message>
   <message key="plugins.themes.mbj.article.galley.description">Description</message>
+  <message key="plugins.themes.mbj.article.galley.file.type">File extension</message>
+  <message key="plugins.themes.mbj.article.galley.file.size">File size</message>
 
 </locale>

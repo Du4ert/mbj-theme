@@ -177,7 +177,7 @@
 			<div class="galley-primary-list">
 				{* Article Galleys *}
 				{if $primaryGalleys}
-				<div class="download galley-primary-item">
+				<div class="galley-primary-item">
 					{assign var="fullTextDownloads" value=0}
 					{if $primaryGalleys}
 					{foreach from=$primaryGalleys item=galley}

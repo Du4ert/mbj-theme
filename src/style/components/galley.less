@@ -6,7 +6,8 @@
   // display: inline-block !important;
 }
 .galley-link {
-   padding: 5px ;
+  //  padding: 5px ;
+  margin: 0;
   text-align: left ;
   display: inline-block ;
   background: none ;
@@ -32,18 +33,13 @@
     background: url('@{path_to_img}/pdf-icon32.png') center top no-repeat;
 }
 }
-.download.list-group-item .galley-link {
-  &.ENG {
-    position: relative;
-    right: 15px;
-  }
-  // &.RUS:before {
-  //   position: relative;
-  //   right: 5px;
-  // }
-}
 
 .galley-primary {
+  .galley-primary-item {
+    .galley-link {
+      margin: 0;
+    }
+  }
   
 }
 
@@ -59,9 +55,9 @@
 }
 
 .supplementary {
-  // padding: 15px 0;
   .supplementary-meta {
     padding-top: 10px;
+    text-align: left;
   }
   
 }// .supplementary

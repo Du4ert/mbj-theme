@@ -78,6 +78,8 @@
   <message key="plugins.themes.mbj.article.galley.download">Скачать</message>
   <message key="plugins.themes.mbj.article.galley.name">Имя файла</message>
   <message key="plugins.themes.mbj.article.galley.description">Описание</message>
+  <message key="plugins.themes.mbj.article.galley.file.type">Расширение файла</message>
+  <message key="plugins.themes.mbj.article.galley.file.size">Размер файла</message>
 
   <message key="plugins.themes.mbj.navigation.issues">Выпуски</message>
   <message key="plugins.themes.mbj.navigation.aboutTheJournal">О журнале</message>
@@ -97,6 +99,7 @@
   <message key="plugins.themes.mbj.navigation.archiving">Архивирование</message>
   <message key="plugins.themes.mbj.navigation.fee">Плата за публикацию</message>
   <message key="plugins.themes.mbj.navigation.retraction">Порядок ретракции</message>
+
 
 	<message key="default.groups.name.author">автор</message>
 </locale>

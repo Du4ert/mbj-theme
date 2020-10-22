@@ -152,7 +152,7 @@
                         <div class="list-group-item">
                             <a class="galley-link btn  btn-default galley-supplementary {$type}" href="{url|escape page=$page op="view" path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}">
                                 {translate key="plugins.themes.mbj.article.galley.download"}
-                                .{$fileType[1]} ({$fileSize}kB)
+                                {* .{$fileType[1]} ({$fileSize}kB) *}
                             </a>
                         </div>
                     </div>
@@ -168,7 +168,15 @@
                         <strong>{translate key="plugins.themes.mbj.article.galley.description"}:</strong>
                         {$galley->getFile()->getLocalizedDescription()|escape}
                     {/if}
-        
+                </div>
+                <div class="galley-type">
+                <strong>{translate key="plugins.themes.mbj.article.galley.file.type"}:</strong>
+                {translate key=""}
+                {$fileType[1]|escape}
+                </div>
+                <div class="galley-size">
+                <strong>{translate key="plugins.themes.mbj.article.galley.file.size"}:</strong>
+                {($fileSize|escape / 1000 )|round:2}Kb
                 </div>
             </div>
             {* {$galley->getLabel()} *}

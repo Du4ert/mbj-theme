@@ -1,26 +1,26 @@
 @search-icon-size: 31px;
 @btn-border-radius-base: 2px;
 
-.search-focus {
-    //width: 100%;
-    left: 0;
-    right: 0;
-}
+@search-min-width: 200px;
+@search-max-width: 400px;
+
 
 .search {
     position: absolute;
     right: 0;
+    min-width: @search-min-width;
+    max-width: @search-max-width;
     height: @search-icon-size;
     margin: 0 @navbar-padding-horizontal;
     border-radius: 5px;
-    transition: all .5s;
+    transition: width .5s ease;
 
     .search-input {
         width: 100%;
         padding-left: @padding-base-horizontal;
         padding-right: @search-icon-size;
         border-radius: @btn-border-radius-base;
-        transition: display .5s;
+        transition: all .5s ease;
     }
 
     .search-icon {
@@ -37,19 +37,43 @@
         justify-content: center;
         align-items: center;
         transition: all .5s;
+        z-index: 100;
         cursor: pointer;
     }
 }
 
 
 
-.search-min {
-    // width: 0;  
-    .search-input {
-        display: none;
-    }
 
-    .search-icon {
-        color: @navbar-default-color;
+@media screen and (max-width: 888px) {
+  .search {
+      max-width: 95%;
+      position: relative;
+      left: -@search-icon-size / 2;
+      min-width: @search-icon-size;
+  }
+  .search.search-min {
+    width: @search-icon-size;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+    .search {
+        // width: 100%; 
     }
+  .search-min {
+     .search-input {
+          display: none;
+
+          &:hover {
+              display: block;
+              width: inherit;
+          }
+      }
+    .search-icon {
+          color: #fff;
+          background: @brand-primary;
+          border-radius: 50%; 
+      }
+  }
 }

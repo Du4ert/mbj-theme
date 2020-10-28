@@ -124,7 +124,7 @@
             {assign var="fileType" value=($galley->getFileType()|explode:"/")}
             {assign var="filePath" value=$galley->getFile()->getFilePath()}
             {assign var="fileSize" value=$galley->getFile()->getFileSize()}
-            <div class="col-md-3 supplementary-main">
+            <div class="col-md-3 col-sm-6 supplementary-main">
                 {* Image type *}
                 {if $fileType[0] === 'image'}
                     <div class="thumbnail">
@@ -158,7 +158,7 @@
                     </div>
                 {/if}
             </div>
-            <div class="col-md-9 supplementary-meta">
+            <div class="col-md-9 col-sm-6 supplementary-meta">
                 <div class="galley-title">
                     <strong>{translate key="plugins.themes.mbj.article.galley.name"}:</strong>
                     {$galley->getLocalizedName()|escape}

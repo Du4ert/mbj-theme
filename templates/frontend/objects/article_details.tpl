@@ -216,10 +216,10 @@
 							role="tab" data-toggle="tab">{translate key="submission.citations"}</a></li>{/if}
 					{if $supplementaryGalleys}<li role="presentation"><a href="#supplementary" aria-controls="supplementary"
 							role="tab" data-toggle="tab">{translate key="plugins.themes.mbj.article.supplementaries"}</a></li>{/if}
-							{if $citation}
+							{* {if $citation}
 								<li role="presentation"><a href="#howToCite" aria-controls="howToCite"
 							role="tab" data-toggle="tab">How to cite</a></li>
-							{/if}
+							{/if} *}
 				</ul>
 	
 				<div class="tab-content article-more-content panel-body">

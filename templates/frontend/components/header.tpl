@@ -66,7 +66,6 @@
 
 		{* Header *}
 		<header class="navbar navbar-default" id="headerNavigationContainer" role="banner">
-
 			{* User profile, login, etc, navigation menu*}
 			<div class="container-fluid">
 				<div class="row">
@@ -86,6 +85,7 @@
 								{/foreach}
 						</ul>
 					</div>
+
 					</nav>
 				</div><!-- .row -->
 			</div><!-- .container-fluid -->

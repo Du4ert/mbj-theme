@@ -53,11 +53,26 @@
   width: auto;
   height: auto;
 }
+video.galley-thumbnail {
+  width: 100%;
+}
 
 .supplementary {
+  margin-bottom: @line-height-computed;
+  .supplementary-main {
+    .thumbnail {
+      margin-bottom: @line-height-computed / 2;
+    }
+  }
   .supplementary-meta {
-    padding-top: 10px;
+    // padding-top: 10px;
     text-align: left;
+
+    .galley-type {
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
   
 }// .supplementary

@@ -25,22 +25,39 @@
 	{* Issue introduction area above articles *}
 	<div class="heading row">
 		{assign var="issueDetailsCol" value="12"}
-		<div class="col-md-4">
+		<div class="col-md-4 col-xs-12 issue-cover">
 			{* Issue cover image and description*}
 			{assign var=issueCover value=$issue->getLocalizedCoverImageUrl()}
 			{if $issueCover && $page!=="index"}
 			{assign var="issueDetailsCol" value="8"}
 
-			<a class="cover" href="{url|escape op=" view" page="issue" path=$issue->getBestIssueId()}">
-				<img class="img-responsive" src="{$issueCover|escape}" {if $issue->getLocalizedCoverImageAltText() !=
-				''} alt="{$issue->getLocalizedCoverImageAltText()|escape}"{/if}>
-			</a>
+				<img class="img-responsive modal-thumbnail issue-cover-img" src="{$issueCover|escape}" {if $issue->getLocalizedCoverImageAltText() !=''} alt="{$issue->getLocalizedCoverImageAltText()|escape}"{/if} 
+					data-toggle="modal" data-target="#issueCover">
+
+
+	{* Image cover modal *}
+	<div class="modal fade modal-img" id="issueCover" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">{$issue->getLocalizedCoverImageAltText()|escape}</h4>
+                </div>
+                <div class="modal-body">
+					<img class="modal-img" src="{$issueCover|escape}" {if $issue->getLocalizedCoverImageAltText() !=''} alt="{$issue->getLocalizedCoverImageAltText()|escape}"{/if}>
+                </div>
+                <div class="modal-footer">
+                    <button class="modal-resize close"><span class="glyphicon glyphicon-fullscreen aria-hidden=" true"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 			{/if}
 
 		</div> {* /.col *}
 
-		<div class="issue-details col-md-{$issueDetailsCol}">
+		<div class="issue-details col-md-{$issueDetailsCol} col-xs-12">
 
 
 					{* Published date *}

@@ -14,7 +14,7 @@
                     <h4 class="modal-title" id="myModalLabel">{$galley->getLocalizedName()|escape}</h4>
                 </div>
                 <div class="modal-body">
-                    <img class="galley-modal-img" src="/{$filePath|escape}">
+                    <img class="modal-img" src="/{$filePath|escape}">
                 </div>
                 <div class="modal-footer">
                     <button class="modal-resize close"><span class="glyphicon glyphicon-fullscreen aria-hidden=" true"></span></button>
@@ -37,7 +37,7 @@
                     <h4 class="modal-title" id="myModalLabel">{$galley->getLocalizedName()|escape}</h4>
                 </div>
                 <div class="modal-body">
-                     <video class="galley-video" controls poster="/plugins/themes/{$contextSettings.themePluginPath}/img/video-error.jpg">
+                     <video class="modal-video" controls poster="/plugins/themes/{$contextSettings.themePluginPath}/img/video-error.jpg">
                         <source src="/{$filePath|escape}#t=0.1" type="{$galley->getFileType()}" />
                     </video>
                 </div>

@@ -1,145 +1,186 @@
 // Article
 .article-summary.media {
-  padding: 10px 0;
-  margin: 10px 0;
+	padding: 10px 0;
+	margin: 10px 0;
 }
 
 .article-summary {
-  border-bottom: 1px solid @gray-lighter;
-  margin-bottom: 0px;
-  padding-bottom: 10px;
-  
-  &:last-of-type {
-    border: none;
-  }
-  text-align: left;
-  .media-heading {
-  font-weight: 400;
-  }
+	border-bottom: 1px solid @gray-lighter;
+	margin-bottom: 0px;
+	padding-bottom: 10px;
+
+	&:last-of-type {
+		border: none;
+	}
+
+	// text-align: left;
+
+	.media-heading {
+		font-weight: 400;
+	}
 
 }
 
 
-
 .article-details {
-  #citationOutput {
-    margin: 0;
-  }
-  .page-header {
-    font-size: 24px;
-  }
+	#citationOutput {
+		margin: 0;
+	}
 
-  .cover-image {
-   }
+	.page-header {
+		font-size: 24px;
+	}
 
-   .author {
-    border-bottom: 1px solid @gray-lighter;
-  }
+	.cover-image {}
+
+	.author {
+		border-bottom: 1px solid @gray-lighter;
+	}
 }
 
 // Article-more
 .article-more {
-  .article-more-nav {
-    padding: 0;
-    li.active > a {
-      color: @btn-primary-color;
-      background-color: @brand-primary;
-      
-    }
-  }
-  .article-more-content {
-    padding: 20px;
-  }
+	.article-more-nav {
+		padding: 0;
 
-  .article-more-title {
-    margin-bottom: 25px;
-    font-weight: 400;
-  }
-}// /Article-more 
+		li.active>a {
+			color: @btn-primary-color;
+			background-color: @brand-primary;
+
+		}
+	}
+
+	.article-more-content {
+		padding: 20px;
+	}
+
+	.article-more-title {
+		margin-bottom: @line-height-computed;
+		font-weight: 400;
+	}
+}
+
+// /Article-more 
 
 // Article-meta
 .article-meta-list {
   list-style: none;
-  margin-bottom: 40px;
-}
 
 .article-meta-item {
-  position: relative;
-  text-align: left;
-  margin-bottom: 5px;
+	position: relative;
+	text-align: left;
+	margin-bottom: 5px;
 
-  &:before {
-    content: "";
-    position: absolute;
-    left: -25px;
-    top: 3px;
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    background: url('@{path_to_img}/mbj-list5.png');
-    background-size: contain;
-  }
+	&:before {
+		content: "";
+		position: absolute;
+		left: -25px;
+		top: 3px;
+		display: inline-block;
+		width: 15px;
+		height: 15px;
+		background: url('@{path_to_img}/mbj-list5.png');
+		background-size: contain;
+	}
+}
 }
 
 .affiliations-list {
-  padding-left: 15px;
-}// Article-meta-list
+	padding-left: 15px;
+}
 
+// Article-meta-list
+.article-meta-list {
+  padding-left: 30px;
+}
 
 // Authors
-.article-main .authors {
-  text-align: left;
+.article-main {
+	margin-bottom: @line-height-computed;
 
-  .author-biography p{
-    margin: 0;
-  }
+	.authors {
+		text-align: left;
+
+		.author-biography p {
+			margin: 0;
+		}
+	}
 }
 
 .author {
-  margin-bottom: 20px;
-  &:nth-child(even) {
-    // background-color: @gray-lighter;
-  }
+	margin-bottom: 20px;
+
+	&:nth-child(even) {
+		// background-color: @gray-lighter;
+	}
 }
 
 .article-links-custom {
-  margin-bottom: 10px;
-  .article-rinc-custom, .article-orcid-custom {
-      margin: 0 0px 1px 0;
-       &:before {
-         content: '';
-         margin: 0 0 0 0;
-         display: inline-block;
-         vertical-align: middle;
-         background-size: cover;
-         width: 15px;
-         height: 15px;
-       }
-  }
-  .article-rinc-custom:before {
-    background-image: url('@{path_to_img}/elibrary.svg');
-  }
-  .article-orcid-custom:before {
-    background-image: url('@{path_to_img}/orcid.png');
-  }
-}// /Authors
+	margin-bottom: 10px;
+
+	.article-rinc-custom,
+	.article-orcid-custom {
+		margin: 0 0px 1px 0;
+
+		&:before {
+			content: '';
+			margin: 0 0 0 0;
+			display: inline-block;
+			vertical-align: middle;
+			background-size: cover;
+			width: 15px;
+			height: 15px;
+		}
+	}
+
+	.article-rinc-custom:before {
+		background-image: url('@{path_to_img}/elibrary.svg');
+	}
+
+	.article-orcid-custom:before {
+		background-image: url('@{path_to_img}/orcid.png');
+	}
+}
+
+// /Authors
 
 .list-group-item.doi a {
-  font-weight: 400;
+	font-weight: 400;
 }
 
 
 // How to cite
 #copy {
-  float: right;
-  width: 30px;
-  height: 30px;
-  margin: 4px;
-  background: url('@{path_to_img}/clipboard30px.png');
-  cursor: pointer;
-  &:active {
-    position: relative;
-    top: 1px;
-    right: 1px;
+	float: right;
+	width: 30px;
+	height: 30px;
+	margin: 4px;
+	background: url('@{path_to_img}/clipboard30px.png');
+	cursor: pointer;
+
+	&:active {
+		position: relative;
+		top: 1px;
+		right: 1px;
+	}
+}
+
+// How to cite
+
+@media (max-width: @screen-xs-min) {
+  
+}
+
+@media (max-width: @screen-sm-min) {
+  .article-sidebar {
+    padding-left: 20px;
   }
-}// How to cite
+}
+
+@media (max-width: @screen-md-min) {
+
+}
+
+@media (max-width: @screen-lg-min) {
+
+}

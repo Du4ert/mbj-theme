@@ -29,7 +29,7 @@
 		path=$article->getBestArticleId($currentJournal) anchor="" sectionTitleKey="about.authorGuidelines"}
 	</header>
 
-	<div class="row">
+	<div class="row article-main">
 
 		<section class="article-sidebar col-md-2 col-sm-2 hidden-sm hidden-xs hidden-md">
 			{* Article/Issue cover image *}
@@ -54,7 +54,7 @@
 
 
 
-		<section class="article-main col-md-7 col-lg-7 col-md-8">
+		<section class="col-md-7 col-lg-7 col-md-8">
 			{* Screen-reader heading for easier navigation jumps *}
 			<h2 class="sr-only">{translate key="plugins.themes.bootstrap3.article.main"}</h2>
 

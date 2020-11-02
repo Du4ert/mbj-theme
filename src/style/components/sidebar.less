@@ -1,6 +1,7 @@
 // Сайдбар
 #sidebar {
-	width: @sidebar-width;
+	// 
+	overflow: hidden;
 
 	.sidebar-trigger {
 		display: none;
@@ -83,6 +84,11 @@
 
 .indexation {
 	background: @body-bg;
+
+	img {
+		// width: 100%;
+		// height: auto;
+	}
 }
 
 .sidebar-elem-custom {
@@ -125,37 +131,38 @@
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
 	.indexation {
 		padding-bottom: @panel-body-padding;
 	}
 
 
 	#sidebar {
-    margin-top: @form-group-margin-bottom;
-    overflow: hidden;
+		width: @sidebar-width;
+		margin-top: @form-group-margin-bottom;
 
 		&.sidebar-min {
-      position: absolute;
+			position: absolute;
 			top: -@navbar-margin-bottom;
 			bottom: 0;
 			right: 0;
 			margin-top: 0px;
 			padding-top: 15px;
 			height: 100%;
-      z-index: 100;
+			z-index: 100;
+			width: 0;
+			transition: width 0s linear 0.5s;
 
 
-      .sidebar-content {
-        position: relative;
-        right: -@sidebar-width;
-        transition: all .5s linear;
-        // visibility: hidden;
-      }
+			.sidebar-content {
+				position: relative;
+				right: -@sidebar-width;
+				transition: all .5s linear;
+				
+			}
 
-			
-      
-      .sidebar-trigger {
+
+			.sidebar-trigger {
 				display: block;
 				position: fixed;
 				padding: 0px;
@@ -168,17 +175,16 @@
 				display: flex;
 				justify-content: flex-start;
 				align-items: center;
-        z-index: -1;
+				z-index: -1;
 
-				background-color: rgba(0, 0, 0, .4);
+				background-color: rgba(0, 0, 0, .1);
 				overflow: hidden;
 				-webkit-backdrop-filter: blur(3px);
 				backdrop-filter: blur(3px);
-				// box-shadow: 0 0 5px rgba(0, 0, 0, 0.64);
 
-				&:hover {
-					background-color: rgba(0, 0, 0, .5);
-				}
+				// &:hover {
+				// 	background-color: rgba(0, 0, 0, .5);
+				// }
 
 				.sidebar-trigger-icon {
 					padding: 5px;
@@ -186,29 +192,31 @@
 
 				&:after {
 					content: '';
-          display: block;
-          width: 0;
-          transition: all .5s linear;
+					display: block;
+					width: 0;
+					transition: all .5s linear;
 				}
 			}
 
 			&.sidebar-min_open {
-        width: @sidebar-width;
+				width: @sidebar-width;
+				transition: width 0s;
 
-        .sidebar-content {
-          right: 0;
-        }
-        
-        .sidebar-trigger {
-          &:after {
-            width: @sidebar-width;
-          }
-        }
+				.sidebar-content {
+					right: 0;
+				}
+
+				.sidebar-trigger {
+					background-color: rgba(0, 0, 0, .5);
+					&:after {
+						width: @sidebar-width;
+					}
+				}
 			}
 
 
-			
+
 		}
 
-  }
+	}
 }

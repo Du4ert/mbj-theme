@@ -3,6 +3,7 @@
     return $.gulp.src([
         //'node_modules/jquery/dist/jquery.min.js',
         //'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
+        'node_modules/jquery-touchswipe/jquery.touchSwipe.min.js',
         'src/vendor/bootstrap/js/bootstrap.min.js'
         ])
         .pipe($.gp.concat('libs.min.js'))

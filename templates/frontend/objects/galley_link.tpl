@@ -171,8 +171,8 @@
                 </div>
                 <div class="galley-type">
                 <strong>{translate key="plugins.themes.mbj.article.galley.file.type"}:</strong>
-                {translate key=""}
-                {$fileType[1]|escape}
+                {$galley->getFileType()|escape}
+                {* {$fileType[1]|escape} *}
                 </div>
                 <div class="galley-size">
                 <strong>{translate key="plugins.themes.mbj.article.galley.file.size"}:</strong>

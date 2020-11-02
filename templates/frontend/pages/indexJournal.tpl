@@ -25,7 +25,7 @@
 
 	{call_hook name="Templates::Index::journal"}
 <div class="row journal-description journal-description-main">
-	<div class="col-md-5 col-sm-4">
+	<div class="col-md-5 col-sm-4 col-xs-12">
 		{call_hook name="Templates::Index::journal"}
 
 		{if $homepageImage}

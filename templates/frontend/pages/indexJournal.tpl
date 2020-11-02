@@ -41,7 +41,7 @@
 		{/if}
 
 	</div>
-	<div class="col-md-7 col-sm-8">
+	<div class="col-md-7 col-sm-8 col-xs-12">
 		{if $journalDescription}
 			<div class="">
 				{$journalDescription}

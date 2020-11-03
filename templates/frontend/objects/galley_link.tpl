@@ -128,7 +128,7 @@
                 {* Image type *}
                 {if $fileType[0] === 'image'}
                     <div class="thumbnail">
-                        <img class="galley-thumbnail modal-thumbnail" src="/{$filePath|escape}" data-toggle="modal" data-target="#{$galley->getId()}galleyModal">
+                        <img class="galley-thumbnail" src="/{$filePath|escape}" data-toggle="modal" data-target="#{$galley->getId()}galleyModal">
                     </div>
                     <!-- Modal -->
                     {include file="frontend/components/galleyModal.tpl" galley=$galley type=$fileType[0]}

@@ -70,7 +70,7 @@
 					key="plugins.themes.mbj.issue.archive.issue"}{/capture}
 					<strong>{translate key="semicolon" label=$translatedIssueSeries}</strong>
 					<a class="title" href="{url|escape page=" issue" op="view"
-						path=$issue->getBestIssueId($currentJournal)}">
+						path=$issue->getBestIssueId($currentJournal)|escape}">
 						{$issue->getIssueSeries()|escape}
 					</a>
 				</li>
@@ -144,8 +144,6 @@
 
 
 
-
-
 				{* Published date *}
 				{if $article->getDatePublished()}
 				<li class="article-meta-item date-published">
@@ -169,8 +167,6 @@
 				{/if} *}
 
 			</ul><!-- /list-group -->
-
-			{call_hook name="Templates::Article::Main"}
 		</section><!-- .article-main -->
 
 		<section class="article-sidebar article-meta col-lg-3 col-md-5">
@@ -216,10 +212,8 @@
 							role="tab" data-toggle="tab">{translate key="submission.citations"}</a></li>{/if}
 					{if $supplementaryGalleys}<li role="presentation"><a href="#supplementary" aria-controls="supplementary"
 							role="tab" data-toggle="tab">{translate key="plugins.themes.mbj.article.supplementaries"}</a></li>{/if}
-							{* {if $citation}
-								<li role="presentation"><a href="#howToCite" aria-controls="howToCite"
-							role="tab" data-toggle="tab">How to cite</a></li>
-							{/if} *}
+						{if $pubId}<li role="presentation"><a href="#statistics" aria-controls="statistics"
+						role="tab" data-toggle="tab">{translate key="plugins.themes.mbj.article.statistics"}</a></li>{/if}
 				</ul>
 	
 				<div class="tab-content article-more-content panel-body">
@@ -241,7 +235,6 @@
 					<div class="tab-pane" role="tabpanel" id="authors">
 						{if $article->getAuthors()}
 						<div class="authors">
-						{* <div class="page-header"> *}
 						<h2 class="article-more-title">{translate key="article.authors"}</h2>
 						{* </div> *}
 							{foreach from=$article->getAuthors() item=author}
@@ -253,88 +246,65 @@
 	
 	
 					{* References *}
+					{if $article->getCitations()}
 					<div class="tab-pane" role="tabpanel" id="references">
-						{if $article->getCitations()}
 						<div class="article-references">
 							<h2 class="article-more-title">{translate key="submission.citations"}</h2>
 							<div class="article-references-content">
 								{$article->getCitations()|nl2br}
 							</div>
 						</div>
-						{/if}
 					</div>
+					{/if}
 
-					{* How to cite *}
-					{if $citation}
-						<div class="tab-pane" role="tabpanel" id="howToCite">
-							{include file="frontend/components/howToCite.tpl"}
-						</div>
-					{/if}
-	
-					{* PubIds (requires plugins) *}
-					{foreach from=$pubIdPlugins item=pubIdPlugin}
-					{if $pubIdPlugin->getPubIdType() == 'doi'}
-					{continue}
-					{/if}
-					{if $issue->getPublished()}
-					{assign var=pubId value=$article->getStoredPubId($pubIdPlugin->getPubIdType())}
-					{else}
-					{assign var=pubId value=$pubIdPlugin->getPubId($article)}{* Preview pubId *}
-					{/if}
-					{if $pubId}
-					<div class="panel panel-default pub_ids">
-						<div class="panel-heading">
-							{$pubIdPlugin->getPubIdDisplayType()|escape}
-						</div>
-						<div class="panel-body">
-							{if $pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}
-							<a id="pub-id::{$pubIdPlugin->getPubIdType()|escape}"
-								href="{$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}">
-								{$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}
-							</a>
-							{else}
-							{$pubId|escape}
-							{/if}
-						</div>
-					</div>
-					{/if}
-					{/foreach}
-	
-					<div class="tab-pane" role="tabpanel" id="supplementary">
-						{* Supplementary *}
-						{if $supplementaryGalleys}
-						<div class="download">
-							<h2 class="article-more-title">{translate key="plugins.themes.mbj.article.supplementaries"}</h2>
-							{foreach from=$supplementaryGalleys item=galley}
-							<div class="supplementary">
-							{include file="frontend/objects/galley_link.tpl" parent=$article isSupplementary="1"}
+					{* Supplementary *}
+					{if $supplementaryGalleys}	
+						<div class="tab-pane" role="tabpanel" id="supplementary">
+							<div class="download">
+								<h2 class="article-more-title">{translate key="plugins.themes.mbj.article.supplementaries"}</h2>
+								{foreach from=$supplementaryGalleys item=galley}
+								<div class="supplementary">
+								{include file="frontend/objects/galley_link.tpl" parent=$article isSupplementary="1"}
+								</div>
+								{/foreach}
 							</div>
-							{/foreach}
 						</div>
-						{/if}
-					</div>
+					{/if}
+
+					{* Statistics *}
+					{if $pubId}
+						<div class="tab-pane" role="tabpanel" id="statistics">
+							<div class="statistics">
+								<h2 class="article-more-title">{translate key="plugins.themes.mbj.article.statistics"}</h2>
+								{include file="frontend/components/badges.tpl" doi=$pubId altmetricsHide="true"}
+								<div class="statistics-more">
+									{call_hook name="Templates::Article::Statistics"}
+								</div>
+							</div>
+						</div>
+					{/if}
 	
 					{* Licensing info Спрятал лицензию V false ниже*}
 					{if $copyright || $licenseUrl && false}
-					<div class="panel panel-default copyright">
-						<div class="panel-body">
-							{if $licenseUrl}
-							{if $ccLicenseBadge}
-							{$ccLicenseBadge}
-							{else}
-							<a href="{$licenseUrl|escape}" class="copyright">
-								{if $copyrightHolder}
-								{translate key="submission.copyrightStatement" copyrightHolder=$copyrightHolder
-								copyrightYear=$copyrightYear}
+						<div class="panel panel-default copyright">
+							<div class="panel-body">
+								{if $licenseUrl}
+								{if $ccLicenseBadge}
+								{$ccLicenseBadge}
 								{else}
-								{translate key="submission.license"}
+								<a href="{$licenseUrl|escape}" class="copyright">
+									{if $copyrightHolder}
+									{translate key="submission.copyrightStatement" copyrightHolder=$copyrightHolder
+									copyrightYear=$copyrightYear}
+									{else}
+									{translate key="submission.license"}
+									{/if}
+								</a>
 								{/if}
-							</a>
-							{/if}
-							{/if}
-							{$copyright}
+								{/if}
+								{$copyright}
+							</div>
 						</div>
-					</div>
 					{/if}
 	
 					{call_hook name="Templates::Article::Details"}
@@ -345,5 +315,7 @@
 
 	</div><!-- .row -->
 	{* {call_hook name="Themes::mbj::custom"} *}
-
+	{call_hook name="Templates::Article::Main"}
+	{call_hook name="Templates::Article::Recommended"}
+	
 </article>

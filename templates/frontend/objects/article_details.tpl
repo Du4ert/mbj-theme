@@ -80,10 +80,19 @@
 					<strong>{translate key="plugins.themes.mbj.issue.summary.pages"}:</strong>
 					{$article->getStartingPage()|escape}–{$article->getEndingPage()|escape}
 				</li>
+
+				{* Views *}
 				<li class="article-meta-item article-views">
+					{if $primaryGalleys}
+						{assign var="fullTextDownloads" value=0}
+						{foreach from=$primaryGalleys item=galley}
+							{$fullTextDownloads = $fullTextDownloads + $galley->getViews()}
+							{* {assign var='fullTextDownloads' value=$galley->getViews()} *}
+						{/foreach}
+					{/if}
 					<strong>{translate key="plugins.themes.mbj.article.views"}:</strong> {$article->getViews()|escape}
 					<strong>{translate key="plugins.themes.mbj.article.downloads"}:</strong> {if $fullTextDownloads}
-					$fullTextDownloads
+					{$fullTextDownloads}
 					{else}
 					0
 					{/if}
@@ -139,11 +148,6 @@
 				{/foreach}
 
 
-
-
-
-
-
 				{* Published date *}
 				{if $article->getDatePublished()}
 				<li class="article-meta-item date-published">
@@ -170,24 +174,28 @@
 		</section><!-- .article-main -->
 
 		<section class="article-sidebar article-meta col-lg-3 col-md-5">
+		{* Article Galleys *}
+		{if $primaryGalleys}
 			<div class="galley-primary-list">
-				{* Article Galleys *}
-				{if $primaryGalleys}
 				<div class="galley-primary-item">
-					{assign var="fullTextDownloads" value=0}
-					{if $primaryGalleys}
 					{foreach from=$primaryGalleys item=galley}
 					{include file="frontend/objects/galley_link.tpl" parent=$article
 					purchaseFee=$currentJournal->getSetting('purchaseArticleFee')
 					purchaseCurrency=$currentJournal->getSetting('currency')}
-					{assign var='fullTextDownloads' value=$galley->getViews()}
 					{/foreach}
-					{/if}
 				</div>
-				{/if}
 			</div>
+		{/if}
 
-		</section><!-- /article-meta -->
+		{* Crossmark *}
+		{if $pubId}
+			<div class="crossmark">
+			<script src="https://crossmark-cdn.crossref.org/widget/v2.0/widget.js"></script>
+			<a data-target="crossmark"><img src="https://crossmark-cdn.crossref.org/widget/v2.0/logos/CROSSMARK_BW_horizontal.svg" width="150" /></a>
+			</div>
+			</section><!-- /article-meta -->
+		{/if}<!-- /crossmark -->
+		
 
 	</div><!-- /row -->
 	<div class="row">
@@ -219,37 +227,38 @@
 				<div class="tab-content article-more-content panel-body">
 					{* Screen-reader heading for easier navigation jumps *}
 					<h2 class="sr-only article-more-title">{translate key="plugins.themes.bootstrap3.article.details"}</h2>
-	
+
 					{* Article abstract *}
+					{if $article->getLocalizedAbstract()}
 					<div class="tab-pane active" role="tabpanel" id="summary">
-						{if $article->getLocalizedAbstract()}
+					<h2 class="article-more-title">{translate key="article.abstract"}</h2>						
 						<div class="article-summary">
-							<h2 class="article-more-title">{translate key="article.abstract"}</h2>
 							<div class="article-abstract">
 								{$article->getLocalizedAbstract()|strip_unsafe_html|nl2br}
 							</div>
 						</div>
-						{/if}
 					</div>
-	
+					{/if}
+
+					{* Authors *}
+					{if $article->getAuthors()}
 					<div class="tab-pane" role="tabpanel" id="authors">
-						{if $article->getAuthors()}
+						
+							<h2 class="article-more-title">{translate key="article.authors"}</h2>
 						<div class="authors">
-						<h2 class="article-more-title">{translate key="article.authors"}</h2>
-						{* </div> *}
 							{foreach from=$article->getAuthors() item=author}
 								{include file="frontend/objects/authorDetails.tpl" author=$author}
 							{/foreach}
 						</div>
-						{/if}
 					</div>
+					{/if}
 	
 	
 					{* References *}
 					{if $article->getCitations()}
 					<div class="tab-pane" role="tabpanel" id="references">
+					<h2 class="article-more-title">{translate key="submission.citations"}</h2>
 						<div class="article-references">
-							<h2 class="article-more-title">{translate key="submission.citations"}</h2>
 							<div class="article-references-content">
 								{$article->getCitations()|nl2br}
 							</div>
@@ -260,8 +269,8 @@
 					{* Supplementary *}
 					{if $supplementaryGalleys}	
 						<div class="tab-pane" role="tabpanel" id="supplementary">
+						<h2 class="article-more-title">{translate key="plugins.themes.mbj.article.supplementaries"}</h2>
 							<div class="download">
-								<h2 class="article-more-title">{translate key="plugins.themes.mbj.article.supplementaries"}</h2>
 								{foreach from=$supplementaryGalleys item=galley}
 								<div class="supplementary">
 								{include file="frontend/objects/galley_link.tpl" parent=$article isSupplementary="1"}
@@ -274,10 +283,11 @@
 					{* Statistics *}
 					{if $pubId}
 						<div class="tab-pane" role="tabpanel" id="statistics">
+						<h2 class="article-more-title">{translate key="plugins.themes.mbj.article.statistics"}</h2>
 							<div class="statistics">
-								<h2 class="article-more-title">{translate key="plugins.themes.mbj.article.statistics"}</h2>
 								{include file="frontend/components/badges.tpl" doi=$pubId altmetricsHide="true"}
 								<div class="statistics-more">
+									{* Graph *}
 									{call_hook name="Templates::Article::Statistics"}
 								</div>
 							</div>

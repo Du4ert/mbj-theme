@@ -48,11 +48,15 @@
         } else { f(); }
     })(document, window, "yandex_metrika_callbacks");
 </script>
+
+{* Версия для слабовидящих *}
+<script src="https://lidrekon.ru/slep/js/jquery.js"></script>
+<script src="https://lidrekon.ru/slep/js/uhpv-full.min.js"></script>
+
 <noscript><div><img src="https://mc.yandex.ru/watch/47688874" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 <body class="pkp_page_{$requestedPage|escape|default:"index"} pkp_op_{$requestedOp|escape|default:"index"}{if $showingLogo} has_site_logo{/if}">
 	<div class="pkp_structure_page">
-
 		<nav id="accessibility-nav" class="sr-only" role="navigation" aria-labelled-by="accessible-menu-label">
 			<div id="accessible-menu-label">
 				{translate|escape key="plugins.themes.bootstrap3.accessible_menu.label"}
@@ -70,6 +74,7 @@
 			<div class="container-fluid">
 				<div class="row">
 					<nav aria-label="{translate|escape key="common.navigation.user"}">
+					
 						{load_menu name="user" id="navigationUser" ulClass="nav nav-pills tab-list pull-right"}
 						<div class="block" id="sidebarLanguageToggle">
 						<span class="blockTitle" style="display:none;">{translate key="common.language"}</span>
@@ -85,7 +90,9 @@
 								{/foreach}
 						</ul>
 					</div>
-
+					<div class="special">
+						<a id="specialButton" href="#"><img src="/plugins/themes/{$contextSettings.themePluginPath}/img/special_white.png" alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ" title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ" /></a>
+					</div>
 					</nav>
 				</div><!-- .row -->
 			</div><!-- .container-fluid -->

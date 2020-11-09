@@ -13,8 +13,6 @@
 		border: none;
 	}
 
-	// text-align: left;
-
 	.media-heading {
 		font-weight: 400;
 	}
@@ -31,7 +29,6 @@
 		font-size: 24px;
 	}
 
-	.cover-image {}
 
 	.author {
 		border-bottom: 1px solid @gray-lighter;
@@ -51,7 +48,8 @@
 	}
 
 	.article-more-content {
-		padding: 20px;
+		padding: @padding-large-vertical @padding-large-horizontal;
+		padding-right: 2* @padding-large-horizontal;
 	}
 
 	.article-more-title {
@@ -109,10 +107,6 @@
 
 .author {
 	margin-bottom: 20px;
-
-	&:nth-child(even) {
-		// background-color: @gray-lighter;
-	}
 }
 
 .article-links-custom {
@@ -163,18 +157,60 @@
 		top: 1px;
 		right: 1px;
 	}
+}// // How to cite
+
+
+// Article sidebar
+.article-sidebar {
+	margin-bottom: @line-height-computed / 2;
+
+	.galley-primary-list {
+		margin-bottom: @line-height-computed /2;
+	}
+}
+// // article sidebar
+
+// Statistics
+.statistics {
+	overflow: auto;
+
+	.statistics-base {
+		margin-bottom: @line-height-computed / 2;
+	}
+	.statistics-badge {
+		margin-bottom: @line-height-computed / 2 ;
+	}
+
+	.statistics-more {
+		max-width: 400px;
+	}
+
+	.__dimensions_Badge {
+		margin-left: 5px;
+	}
+
+	.PlumX-Details {
+		margin-left: -25px;
+		.plx-citation {
+			width: auto;
+		}
+	}
+	
 }
 
-// How to cite
-
 @media (max-width: @screen-xs-min) {
-  
+	.article-more {
+		.article-more-content {
+			padding-right: @padding-large-horizontal;
+		}
+	}
 }
 
 @media (max-width: @screen-sm-min) {
   .article-sidebar {
     padding-left: 20px;
   }
+
 }
 
 @media (max-width: @screen-md-min) {

@@ -123,7 +123,7 @@
         
             {assign var="fileType" value=($galley->getFileType()|explode:"/")}
             {assign var="filePath" value=$galley->getFile()->getFilePath()}
-            {assign var="fileSize" value=$galley->getFile()->getFileSize()}
+            {assign var="fileSize" value=$galley->getFile()->getNiceFileSize()}
             <div class="col-md-3 col-sm-6 supplementary-main">
                 {* Image type *}
                 {if $fileType[0] === 'image'}
@@ -152,7 +152,6 @@
                         <div class="list-group-item">
                             <a class="galley-link btn  btn-default galley-supplementary {$type}" href="{url|escape page=$page op="view" path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}">
                                 {translate key="plugins.themes.mbj.article.galley.download"}
-                                {* .{$fileType[1]} ({$fileSize}kB) *}
                             </a>
                         </div>
                     </div>
@@ -176,7 +175,7 @@
                 </div>
                 <div class="galley-size">
                 <strong>{translate key="plugins.themes.mbj.article.galley.file.size"}:</strong>
-                {($fileSize|escape / 1000 )|round:2}Kb
+                {$fileSize|escape}
                 </div>
             </div>
             {* {$galley->getLabel()} *}

@@ -128,7 +128,7 @@
                 {* Image type *}
                 {if $fileType[0] === 'image'}
                     <div class="thumbnail">
-                        <img class="galley-thumbnail" src="/{$filePath|escape}" data-toggle="modal" data-target="#{$galley->getId()}galleyModal">
+                        <img class="galley-thumbnail" src="{url|escape page=$page op="view" inline="true" path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}" data-toggle="modal" data-target="#{$galley->getId()}galleyModal">
                     </div>
                     <!-- Modal -->
                     {include file="frontend/components/galleyModal.tpl" galley=$galley type=$fileType[0]}
@@ -139,13 +139,12 @@
 					<div class="thumbnail">
 						<a href="#" onclick="return false" role="button" class="galley-modal-link" data-toggle="modal" data-target="#{$galley->getId()}galleyModal">
 						<video class="galley-thumbnail" width="300" height="150" poster="/plugins/themes/{$contextSettings.themePluginPath}/img/video-error.jpg">
-							<source src="/{$filePath|escape}#t=0.1" type="{$galley->getFileType()}" />
+							<source src="{url|escape page=$page op="view" inline="true" path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}#t=0.1" type="{$galley->getFileType()}" />
 						</video>
 						</a>
 					</div>
                     {include file="frontend/components/galleyModal.tpl" galley=$galley type=$fileType[0]}
                     {* /Video type *}
-            
             
                 {else}
                     <div class="list-group">

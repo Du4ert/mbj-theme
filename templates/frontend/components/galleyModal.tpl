@@ -14,12 +14,11 @@
                     <h4 class="modal-title" id="myModalLabel">{$galley->getLocalizedName()|escape}</h4>
                 </div>
                 <div class="modal-body">
-                    <img class="modal-img" src="/{$filePath|escape}">
+                    <img class="modal-img" src="{url|escape page=$page op="view" inline="true" path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}">
                 </div>
                 <div class="modal-footer">
                     <button class="modal-resize close"><span class="glyphicon glyphicon-fullscreen aria-hidden=" true"></span></button>
-                    <a class="modal-download" href="{url|escape page=$page op=" view"
-                            path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}">
+                    <a class="modal-download" href="{url|escape page=$page op="view"  path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}">
                         <span class="modal-download-text">{translate
                             key="plugins.themes.mbj.article.galley.download"}</span>
                         <span class="modal-download-button glyphicon glyphicon-download-alt"></span>
@@ -38,12 +37,11 @@
                 </div>
                 <div class="modal-body">
                      <video class="modal-video" controls poster="/plugins/themes/{$contextSettings.themePluginPath}/img/video-error.jpg">
-                        <source src="/{$filePath|escape}#t=0.1" type="{$galley->getFileType()}" />
+                        <source src="{url|escape page=$page op="view" inline="true" path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}#t=0.1" type="{$galley->getFileType()}" />
                     </video>
                 </div>
                 <div class="modal-footer">
-                    <a class="modal-download" href="{url|escape page=$page op=" view"
-                        path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}">
+                    <a class="modal-download" href="{url|escape page=$page op="view"  path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}">
                         <span class="modal-download-text">{translate
                             key="plugins.themes.mbj.article.galley.download"}</span>
                         <span class="modal-download-button glyphicon glyphicon-download-alt"></span>

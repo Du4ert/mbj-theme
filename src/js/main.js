@@ -189,15 +189,3 @@ function changeLanguage() {
 
     window.location.href = redirect_url;
 } // /language change
-
-
-// Ajax
-$.ajax({
-    type: 'get',
-	url: '/article/view/253/275',
-	dataType: 'json',
-	success: function(data){
-		console.log(data.text);    /* выведет "Текст" */
-		console.log(data.error);   /* выведет "Ошибка" */
-	}
-});

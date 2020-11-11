@@ -18,36 +18,6 @@
 * journal with a specific context
 *}
 
-
-{* DEBUG *}
-{* <button type="button" class="btn btn-info" data-toggle="modal" data-target="#{$galley->getLabel()}">
-    {$galley->getLabel()}
-</button>
-
-<div id="{$galley->getLabel()}" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">$galley</h4>
-            </div>
-            <div class="modal-body">
-                <p>{$galley|@debug_print_var}</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-
-    </div>
-</div> *}
-{* DEBUG *}
-
-
-
-
 {* Override the $currentJournal context if desired *}
 {if $journalOverride}
     {assign var="currentJournal" value=$journalOverride}
@@ -128,7 +98,7 @@
                 {* Image type *}
                 {if $fileType[0] === 'image'}
                     <div class="thumbnail">
-                        <img class="galley-thumbnail" src="{url|escape page=$page op="view" inline="true" path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}" data-toggle="modal" data-target="#{$galley->getId()}galleyModal">
+                        <img class="galley-thumbnail" src="{url|escape page=$page op="view"  path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}" data-toggle="modal" data-target="#{$galley->getId()}galleyModal">
                     </div>
                     <!-- Modal -->
                     {include file="frontend/components/galleyModal.tpl" galley=$galley type=$fileType[0]}
@@ -177,8 +147,6 @@
                 {$fileSize|escape}
                 </div>
             </div>
-            {* {$galley->getLabel()} *}
-            {* {$galley->getFile()|@debug_print_var} *}
         
         {/if}
     </div>

@@ -23,13 +23,13 @@
 	{/if}
 
 	{* Issue introduction area above articles *}
+	{* Issue cover image and description*}
+	{assign var=issueCover value=$issue->getLocalizedCoverImageUrl()}
+	{assign var="issueDetailsCol" value="8"}
+	{if $issueCover && $page!=="index"}
 	<div class="heading row">
-		{assign var="issueDetailsCol" value="12"}
 		<div class="col-md-4 col-xs-12 issue-cover">
-			{* Issue cover image and description*}
-			{assign var=issueCover value=$issue->getLocalizedCoverImageUrl()}
-			{if $issueCover && $page!=="index"}
-			{assign var="issueDetailsCol" value="8"}
+			
 
 				<img class="img-responsive modal-thumbnail issue-cover-img" src="{$issueCover|escape}" {if $issue->getLocalizedCoverImageAltText() !=''} alt="{$issue->getLocalizedCoverImageAltText()|escape}"{/if} 
 					data-toggle="modal" data-target="#issueCover">
@@ -52,8 +52,6 @@
             </div>
         </div>
     </div>
-
-			{/if}
 
 		</div> {* /.col *}
 
@@ -101,6 +99,7 @@
 			{/foreach}
 		</div>
 	</div>
+	{/if}
 
 {* Full-issue galleys *}
 {if $issueGalleys}

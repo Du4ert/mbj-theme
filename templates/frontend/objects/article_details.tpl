@@ -81,23 +81,6 @@
 					{$article->getStartingPage()|escape}–{$article->getEndingPage()|escape}
 				</li>
 
-				{* Views *}
-				<li class="article-meta-item article-views">
-					{if $primaryGalleys}
-						{assign var="fullTextDownloads" value=0}
-						{foreach from=$primaryGalleys item=galley}
-							{$fullTextDownloads = $fullTextDownloads + $galley->getViews()}
-							{* {assign var='fullTextDownloads' value=$galley->getViews()} *}
-						{/foreach}
-					{/if}
-					<strong>{translate key="plugins.themes.mbj.article.views"}:</strong> {$article->getViews()|escape}
-					<strong>{translate key="plugins.themes.mbj.article.downloads"}:</strong> {if $fullTextDownloads}
-					{$fullTextDownloads}
-					{else}
-					0
-					{/if}
-				</li>
-
 				{* Section *}
 				{if $section}<li class="article-meta-item section">
 					<strong>{capture assign=keywordsHead}{translate key="section.section"}{/capture}{translate
@@ -157,6 +140,23 @@
 					{$article->getDatePublished()|date_format}
 				</li>
 				{/if}
+
+				{* Views *}
+				<li class="article-meta-item article-views">
+					{if $primaryGalleys}
+						{assign var="fullTextDownloads" value=0}
+						{foreach from=$primaryGalleys item=galley}
+							{$fullTextDownloads = $fullTextDownloads + $galley->getViews()}
+							{* {assign var='fullTextDownloads' value=$galley->getViews()} *}
+						{/foreach}
+					{/if}
+					<strong>{translate key="plugins.themes.mbj.article.views"}:</strong> {$article->getViews()|escape}
+					<strong>{translate key="plugins.themes.mbj.article.downloads"}:</strong> {if $fullTextDownloads}
+					{$fullTextDownloads}
+					{else}
+					0
+					{/if}
+				</li>
 
 				{* Article Subject *}
 				{* {if $article->getLocalizedSubject()}bfbfnfdndfnfdgndfgfnd
@@ -288,7 +288,7 @@
 								{include file="frontend/components/badges.tpl" doi=$pubId altmetricsHide="true"}
 								<div class="statistics-more">
 									{* Graph *}
-									{call_hook name="Templates::Article::Statistics"}
+									{call_hook name="Templates::Article::Main"}
 								</div>
 							</div>
 						</div>
@@ -317,7 +317,7 @@
 						</div>
 					{/if}
 	
-					{call_hook name="Templates::Article::Details"}
+					{* {call_hook name="Templates::Article::Details"} *}
 				</div>
 	
 			</section><!-- .article-details -->
@@ -325,7 +325,7 @@
 
 	</div><!-- .row -->
 	{* {call_hook name="Themes::mbj::custom"} *}
-	{call_hook name="Templates::Article::Main"}
-	{call_hook name="Templates::Article::Recommended"}
+	{* {call_hook name="Templates::Article::Main"}
+	{call_hook name="Templates::Article::Recommended"} *}
 	
 </article>

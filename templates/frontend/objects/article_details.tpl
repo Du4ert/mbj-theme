@@ -191,7 +191,7 @@
 		{if $pubId}
 			<div class="crossmark">
 			<script src="https://crossmark-cdn.crossref.org/widget/v2.0/widget.js"></script>
-			<a data-target="crossmark"><img src="https://crossmark-cdn.crossref.org/widget/v2.0/logos/CROSSMARK_BW_horizontal.svg" width="150" /></a>
+			<a data-target="crossmark"><img src="https://crossmark-cdn.crossref.org/widget/v2.0/logos/CROSSMARK_Color_horizontal.svg" width="150" /></a>
 			</div>
 			</section><!-- /article-meta -->
 		{/if}<!-- /crossmark -->

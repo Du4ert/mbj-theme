@@ -51,7 +51,7 @@
 {* Galley locale *}
 {assign var="lang" value=$galley->getLocale()}
 
-<div class="row">
+{* <div class="row"> *}
     {if !$isSupplementary}
         {* Primary galley *}
         <a class="galley-link btn  btn-primary galley-primary {if !empty($lang) && $lang !== $currentLocale}{translate key="plugins.themes.mbj.article.{$lang|escape}"}{/if} {$type}" role="button" href="{url|escape page=$page op="view" path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}">
@@ -149,4 +149,4 @@
             </div>
         
         {/if}
-    </div>
+    {* </div> *}

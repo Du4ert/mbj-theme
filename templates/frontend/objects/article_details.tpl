@@ -15,6 +15,9 @@
 * @uses $citationFactory @todo
 * @uses $pubIdPlugins @todo
 *}
+
+
+
 <article class="article-details">
 	<header>
 		<h1 class="page-header">
@@ -49,10 +52,6 @@
 			</div>
 			{/if}
 		</section>
-
-
-
-
 
 		<section class="col-md-7 col-lg-7 col-md-8">
 			{* Screen-reader heading for easier navigation jumps *}
@@ -110,25 +109,26 @@
 
 				{* DOI (requires plugin) *}
 				{foreach from=$pubIdPlugins item=pubIdPlugin}
-				{if $pubIdPlugin->getPubIdType() != 'doi'}
-				{continue}
-				{/if}
-				{if $issue->getPublished()}
-				{assign var=pubId value=$article->getStoredPubId($pubIdPlugin->getPubIdType())}
-				{else}
-				{assign var=pubId value=$pubIdPlugin->getPubId($article)}{* Preview pubId *}
-				{/if}
-				{if $pubId}
-				{assign var="doiUrl" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}
-				<li class="article-meta-item doi">
-					{capture assign=translatedDoi}{translate key="plugins.pubIds.doi.readerDisplayName"}{/capture}
-					<strong>{translate key="semicolon" label=$translatedDoi}</strong>
-					<a href="{$doiUrl}">
-						{$doiUrl|substr:16}
-					</a>
-				</li>
-				{/if}
+					{if $pubIdPlugin->getPubIdType() != 'doi'}
+					{continue}
+					{/if}
+					{if $issue->getPublished()}
+					{assign var=pubId value=$article->getStoredPubId($pubIdPlugin->getPubIdType())}
+					{else}
+					{assign var=pubId value=$pubIdPlugin->getPubId($article)}{* Preview pubId *}
+					{/if}
+					{if $pubId}
+						{assign var="doiUrl" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}
+						<li class="article-meta-item doi">
+							{capture assign=translatedDoi}{translate key="plugins.pubIds.doi.readerDisplayName"}{/capture}
+							<strong>{translate key="semicolon" label=$translatedDoi}</strong>
+							<a href="{$doiUrl}">
+								{$doiUrl|substr:16}
+							</a>
+						</li>
+						{/if}
 				{/foreach}
+				
 
 
 				{* Published date *}
@@ -173,10 +173,10 @@
 			</ul><!-- /list-group -->
 		</section><!-- .article-main -->
 
-		<section class="article-sidebar article-meta col-lg-3 col-md-5">
+		<section class="article-sidebar row col-lg-3 col-md-5">
 		{* Article Galleys *}
 		{if $primaryGalleys}
-			<div class="galley-primary-list">
+			<div class="article-sidebar-item galley-primary-list">
 				<div class="galley-primary-item">
 					{foreach from=$primaryGalleys item=galley}
 					{include file="frontend/objects/galley_link.tpl" parent=$article
@@ -187,15 +187,31 @@
 			</div>
 		{/if}
 
+
+		{* Google scholar *}
+		{assign var="scholarQuery" value=''}
+		{if $pubId}
+			{$scholarQuery = $pubId}
+			{else}
+				{$scholarQuery = $article->getTitle($article->getLocale())}
+		{/if}
+		<div class="article-sidebar-item googleScholar">
+			<a class="google-scholar-link btn" href='https://scholar.google.com/scholar?q="{$scholarQuery|urlencode}"' target="_blank" rel="noreferrer">
+				<img class="google-scholar-img" src="/plugins/themes/{$contextSettings.themePluginPath}/img/scholar.png" alt="Google Scholar"/>
+				Google Scholar
+			</a>
+		</div>
+
 		{* Crossmark *}
 		{if $pubId}
-			<div class="crossmark">
+			<div class="article-sidebar-item crossmark">
 			<script src="https://crossmark-cdn.crossref.org/widget/v2.0/widget.js"></script>
-			<a data-target="crossmark"><img src="https://crossmark-cdn.crossref.org/widget/v2.0/logos/CROSSMARK_Color_horizontal.svg" width="150" /></a>
+			<a data-target="crossmark" class="btn"><img src="https://crossmark-cdn.crossref.org/widget/v2.0/logos/CROSSMARK_Color_horizontal.svg" width="150" /></a>
 			</div>
-			</section><!-- /article-meta -->
 		{/if}<!-- /crossmark -->
+
 		
+		</section><!-- /article-meta -->
 
 	</div><!-- /row -->
 	<div class="row">
@@ -288,6 +304,7 @@
 								{include file="frontend/components/badges.tpl" doi=$pubId altmetricsHide="true"}
 								<div class="statistics-more">
 									{* Graph *}
+									{call_hook name="Templates::Article::Details"}
 									{call_hook name="Templates::Article::Main"}
 								</div>
 							</div>

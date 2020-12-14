@@ -33,6 +33,15 @@
 	.author {
 		border-bottom: 1px solid @gray-lighter;
 	}
+
+	.google-scholar-link {
+		display: inline-block;
+		text-align: center;
+		.google-scholar-img {
+			height: 25px;
+			width: auto;
+		}
+	}
 }
 
 // Article-more
@@ -164,8 +173,20 @@
 .article-sidebar {
 	margin-bottom: @line-height-computed / 2;
 
+	.article-sidebar-item {
+		//margin-bottom: @line-height-computed /2;
+	}
+
 	.galley-primary-list {
-		margin-bottom: @line-height-computed /2;
+		padding-bottom: @line-height-computed /2;
+		margin-bottom:  @line-height-computed /2;
+		border-bottom: 1px solid @table-border-color;
+	}
+
+	.googleScholar {
+		a:hover {
+			text-decoration: none;
+		}
 	}
 }
 // // article sidebar

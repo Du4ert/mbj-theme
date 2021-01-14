@@ -57,11 +57,11 @@
 							{if $dateFrom === "--"}
 								{assign var="dateFrom" value=null}
 							{/if}
-							{if $dateTo === "--"}
+							{* {if $dateTo === "--"}
 								{assign var="dateTo" value=null}
-							{/if}
+							{/if} *}
 							<div class="form-group">
-								{html_select_date prefix="dateFrom" time=$dateFrom start_year=$yearStart end_year=$yearEnd year_empty="" month_empty="" day_empty="" field_order="YMD" }
+								{html_select_date prefix="dateFrom" time=$dateFrom start_year=$yearStart end_year=$yearEnd year_empty=$yearStart month_empty="January" day_empty="01" field_order="YMD" }
 							</div>
 						</div>
 					</div>

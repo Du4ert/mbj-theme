@@ -44,6 +44,13 @@ $('.modal').on('hidden.bs.modal', function () {
 })
 
 
+// Воспроизведение видео при открытии модального окна
+$('.modal').on('shown.bs.modal', function () {
+    if (this.querySelector('.modal-video')) {
+        this.querySelector('.modal-video').play();
+    }
+})
+
 // Пауза видео при закрытии модального окна
 $('.modal').on('hide.bs.modal', function () {
     if (this.querySelector('.modal-video')) {

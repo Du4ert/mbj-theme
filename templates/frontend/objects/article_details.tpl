@@ -252,6 +252,20 @@
 							<div class="article-abstract">
 								{$article->getLocalizedAbstract()|strip_unsafe_html|nl2br}
 							</div>
+							{* Keywords *}
+							{if !empty($keywords[$currentLocale])}
+								<div class="article-keywords">
+									<strong>{capture assign=keywordsHead}{translate key="article.subject"}{/capture}{translate
+										key="semicolon" label=$keywordsHead}</strong>
+									<span class="value">
+										{foreach from=$keywords item=keyword}
+										{foreach name=keywords from=$keyword item=keywordItem}
+										{$keywordItem|escape}{if !$smarty.foreach.keywords.last}, {/if}
+										{/foreach}
+										{/foreach}
+									</span>
+								</div>
+								{/if}
 						</div>
 					</div>
 					{/if}

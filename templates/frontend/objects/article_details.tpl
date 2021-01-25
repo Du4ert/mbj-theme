@@ -218,7 +218,7 @@
 
 			<div class="article-sidebar-item ya-share">
 				<script src="https://yastatic.net/share2/share.js"></script>
-				<div class="ya-share2" data-curtain data-size="s" data-lang="en" data-shape="normal" data-image="{$issue->getLocalizedCoverImageUrl()|escape}"
+				<div class="ya-share2" data-curtain data-size="s" data-lang="en" data-shape="normal" data-image="httpsgulp:{$issue->getLocalizedCoverImageUrl()|escape}"
 					data-services="vkontakte,twitter,facebook,odnoklassniki,telegram,viber,whatsapp"></div>
 			</div>
 		</section><!-- /article-meta -->

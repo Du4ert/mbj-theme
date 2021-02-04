@@ -7,11 +7,11 @@
 
 <div class="statistics-badge">
     <script type="text/javascript" src="//cdn.plu.mx/widget-details.js"></script>
-    <a href="https://plu.mx/plum/a/?doi={$doi}" class="plumx-details"></a>
-</div>   
+    <a href="https://plu.mx/plum/a/?doi={$doi}" data-hide-when-empty="true" class="plumx-details"></a>
+</div>
 
 <div class="statistics-badge">
-    <span class="__dimensions_badge_embed__" data-doi="{$doi}" data-legend="always" data-style="small_circle"></span>
+    <span class="__dimensions_badge_embed__" data-hide-zero-citations="true" data-doi="{$doi}" data-legend="always" data-style="small_circle"></span>
     <script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
 </div>
 

@@ -20,6 +20,7 @@
 
 <div  id="main-content" class="page page_search">
 
+{include file="frontend/components/breadcrumbs.tpl" currentTitleKey="common.search"}
 	<div class="page-header">
 		<h1>{translate key="common.search"}</h1>
 	</div>
@@ -93,7 +94,7 @@
 				{translate key="search.searchResults"}
 			</h2>
 			{iterate from=results item=result}
-				{include file="frontend/objects/article_summary.tpl" article=$result.publishedArticle showDatePublished=true hideGalleys=false primaryGenreIds=["1"]}
+				{include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission showDatePublished=true hideGalleys=false primaryGenreIds=["1"]}
 				{* primapyGenreIds задано вручную. Выяснить откуда берется и подставить. *}
 			{/iterate}
 		</div>

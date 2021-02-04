@@ -200,7 +200,7 @@
 					href='https://scholar.google.com/scholar?q="{$scholarQuery|urlencode}"' target="_blank"
 					rel="noreferrer">
 					<img class="google-scholar-img"
-						src="/plugins/themes/{$contextSettings.themePluginPath}/img/scholar.png" alt="Google Scholar" />
+						src="/plugins/themes/{$currentContext->getData('themePluginPath')}/img/scholar.png" alt="Google Scholar" />
 					Google Scholar
 				</a>
 			</div>

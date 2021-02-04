@@ -77,7 +77,7 @@
 						{/if}
 					{/if}
 					{assign var="hasArticleAccess" value=$hasAccess}
-					{if ($article->getAccessStatus() == $smarty.const.ARTICLE_ACCESS_OPEN)}
+					{if ($article->getData('accessStatus') == $smarty.const.ARTICLE_ACCESS_OPEN)}
 						{assign var="hasArticleAccess" value=1}
 					{/if}
 					{if !$isSupplementary}

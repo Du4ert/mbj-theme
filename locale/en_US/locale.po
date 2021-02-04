@@ -1,0 +1,240 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-02-04T06:56:50-07:00\n"
+"PO-Revision-Date: 2019-02-04T06:56:50-07:00\n"
+"Language: \n"
+
+
+
+
+msgid "plugins.themes.mbj.editorial.teamTitle"
+msgstr "editorial team members"
+
+msgid "plugins.themes.mbj.editorial.date"
+msgstr "march 2018"
+
+msgid "plugins.themes.mbj.issue.summary.pages"
+msgstr "Pages"
+
+msgid "plugins.themes.mbj.issue.fullIssue"
+msgstr "Full issue"
+
+msgid "plugins.themes.mbj.issue.published"
+msgstr "Published"
+
+msgid "plugins.themes.mbj.submissions.published"
+msgstr "Published online"
+
+msgid "plugins.themes.mbj.issue.fulltext"
+msgstr "Download fulltext"
+
+msgid "plugins.themes.mbj.issue.supplementary"
+msgstr "Supplementary"
+
+msgid "plugins.themes.mbj.editorial.principle"
+msgstr "The principle of the Editorial Board (RU)"
+
+msgid "plugins.themes.mbj.editorial.statute"
+msgstr "Editorial statute (RU)"
+
+msgid "plugins.themes.mbj.editorial.bio.biography"
+msgstr "Position, academic degree, rank"
+
+msgid "plugins.themes.mbj.editorial.bio.profiles"
+msgstr "Profiles"
+
+msgid "plugins.themes.mbj.editorial.bio.country"
+msgstr "Country"
+
+msgid "plugins.themes.mbj.editorial.title"
+msgstr "Editorial Board"
+
+msgid "plugins.themes.mbj.editorial.bio.title"
+msgstr "Editorial Board member"
+
+msgid "plugins.themes.mbj.editorial.bio.address"
+msgstr "Address"
+
+msgid "plugins.themes.mbj.editorial.bio.profileon"
+msgstr "Profile on"
+
+msgid "plugins.themes.mbj.editorial.bio.elibrary"
+msgstr "Papers on eLibrary.ru"
+
+msgid "plugins.themes.mbj.editorial.role.editorinchief"
+msgstr "Editor-in-Chief"
+
+msgid "plugins.themes.mbj.editorial.role.deputyeditorinchief"
+msgstr "Deputy Editor-in-Chief"
+
+msgid "plugins.themes.mbj.editorial.role.executivesecretary"
+msgstr "Executive Secretary"
+
+msgid "plugins.themes.mbj.editorial.role.editorsinchief"
+msgstr "Editors-in-Chief"
+
+msgid "plugins.themes.mbj.editorial.role.deputyesditorinchief"
+msgstr "Deputy Editors-in-Chief"
+
+msgid "plugins.themes.mbj.editorial.role.executivesecretaries"
+msgstr "Executive Secretaries"
+
+msgid "plugins.themes.mbj.issue.archive.year"
+msgstr "Year"
+
+msgid "plugins.themes.mbj.issue.archive.number"
+msgstr "No"
+
+msgid "plugins.themes.mbj.issue.archive.issue"
+msgstr "Issue"
+
+msgid "plugins.themes.mbj.issue.archive.vol"
+msgstr "Vol"
+
+msgid "plugins.themes.mbj.issue.details.issue"
+msgstr "issue"
+
+msgid "plugins.themes.mbj.issue.details.vol"
+msgstr "vol"
+
+msgid "plugins.themes.mbj.issue.details.number"
+msgstr "№"
+
+msgid "plugins.themes.mbj.issue.details.pp"
+msgstr "pp"
+
+msgid "plugins.themes.mbj.issue.details.no"
+msgstr "no."
+
+msgid "plugins.themes.mbj.issue.details.amp"
+msgstr "&amp;"
+
+msgid "plugins.themes.mbj.submission.published"
+msgstr "Published"
+
+msgid "plugins.themes.mbj.submissions.unregistered.send"
+msgstr "You can send all the files to"
+
+msgid "plugins.themes.mbj.submissions.registered.send"
+msgstr "You can send all the files to"
+
+msgid "plugins.themes.mbj.submissions.title"
+msgstr "Submissions"
+
+msgid "plugins.themes.mbj.submissionPreparationChecklist.description"
+msgstr "As part of the submission process, Authors are required to check off their submission's compliance with all of the following items. Submissions may be returned to Authors that do not adhere to these guidelines:"
+
+msgid "plugins.themes.mbj.about.contacts.tel"
+msgstr "Tel."
+
+msgid "plugins.themes.mbj.navigation.issues"
+msgstr "Issues"
+
+msgid "plugins.themes.mbj.navigation.aboutTheJournal"
+msgstr "About the journal"
+
+msgid "plugins.themes.mbj.navigation.aim"
+msgstr "Aim and scope"
+
+msgid "plugins.themes.mbj.navigation.editorialPolicies"
+msgstr "Editorial Policies"
+
+msgid "plugins.themes.mbj.navigation.peerReview"
+msgstr "Peer-review"
+
+msgid "plugins.themes.mbj.navigation.publicationEthics"
+msgstr "Publication Ethics"
+
+msgid "plugins.themes.mbj.navigation.forauthors"
+msgstr "For Authors"
+
+msgid "plugins.themes.mbj.submissions.forauthors"
+msgstr "Guidelines for Authors"
+
+msgid "plugins.themes.mbj.submissions.cite"
+msgstr "Citation format"
+
+msgid "plugins.themes.mbj.navigation.metadata"
+msgstr "Metadata of the Authors"
+
+msgid "plugins.themes.mbj.navigation.license"
+msgstr "License Agreement"
+
+msgid "plugins.themes.mbj.navigation.agreement"
+msgstr "Authors agreement"
+
+msgid "plugins.themes.mbj.navigation.adoptions"
+msgstr "Adoptions and Plagiarism"
+
+msgid "plugins.themes.mbj.navigation.conflict"
+msgstr "Conflict of Interest"
+
+msgid "plugins.themes.mbj.navigation.toReviewers"
+msgstr "For Reviewers"
+
+msgid "plugins.themes.mbj.navigation.access"
+msgstr "Open-Access Policy"
+
+msgid "plugins.themes.mbj.navigation.archiving"
+msgstr "Archiving"
+
+msgid "plugins.themes.mbj.navigation.fee"
+msgstr "No Publication Fee"
+
+msgid "plugins.themes.mbj.navigation.retraction"
+msgstr "The Order of Retraction"
+
+msgid "default.groups.name.author"
+msgstr "author"
+
+msgid "plugins.themes.mbj.article.views"
+msgstr "Views"
+
+msgid "plugins.themes.mbj.article.downloads"
+msgstr "Downloads"
+
+msgid "plugins.themes.mbj.article.ru_RU"
+msgstr "RUS"
+
+msgid "plugins.themes.mbj.article.en_US"
+msgstr "ENG"
+
+msgid "plugins.themes.mbj.article.video"
+msgstr "Video"
+
+msgid "plugins.themes.mbj.article.supplementary"
+msgstr "Supplementary"
+
+msgid "plugins.themes.mbj.article.supplementaries"
+msgstr "Supplementary"
+
+msgid "plugins.themes.mbj.article.affiliations"
+msgstr "Affiliations"
+
+msgid "plugins.themes.mbj.article.affiliation"
+msgstr "Affiliation"
+
+msgid "plugins.themes.mbj.article.statistics"
+msgstr "Statistics"
+
+msgid "plugins.themes.mbj.article.galley.download"
+msgstr "Download"
+
+msgid "plugins.themes.mbj.article.galley.name"
+msgstr "File name"
+
+msgid "plugins.themes.mbj.article.galley.description"
+msgstr "Description"
+
+msgid "plugins.themes.mbj.article.galley.file.type"
+msgstr "File extension"
+
+msgid "plugins.themes.mbj.article.galley.file.size"
+msgstr "File size"

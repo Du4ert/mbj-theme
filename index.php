@@ -16,6 +16,6 @@
  *
  */
 
-require_once('MbjThemePlugin.inc.php');
+require_once('IbsscustomThemePlugin.inc.php');
 
-return new MbjThemePlugin();
+return new IbsscustomThemePlugin();

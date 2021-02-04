@@ -59,12 +59,12 @@
 	<div class="pkp_structure_page">
 		<nav id="accessibility-nav" class="sr-only" role="navigation" aria-labelled-by="accessible-menu-label">
 			<div id="accessible-menu-label">
-				{translate|escape key="plugins.themes.bootstrap3.accessible_menu.label"}
+				{translate|escape key="plugins.themes.ibsscustom.accessible_menu.label"}
 			</div>
 			<ul>
-			  <li><a href="#main-navigation">{translate|escape key="plugins.themes.bootstrap3.accessible_menu.main_navigation"}</a></li>
-			  <li><a href="#main-content">{translate|escape key="plugins.themes.bootstrap3.accessible_menu.main_content"}</a></li>
-			  <li><a href="#sidebar">{translate|escape key="plugins.themes.bootstrap3.accessible_menu.sidebar"}</a></li>
+			  <li><a href="#main-navigation">{translate|escape key="plugins.themes.ibsscustom.accessible_menu.main_navigation"}</a></li>
+			  <li><a href="#main-content">{translate|escape key="plugins.themes.ibsscustom.accessible_menu.main_content"}</a></li>
+			  <li><a href="#sidebar">{translate|escape key="plugins.themes.ibsscustom.accessible_menu.sidebar"}</a></li>
 			</ul>
 		</nav>
 
@@ -74,7 +74,6 @@
 			<div class="container-fluid">
 				<div class="row">
 					<nav aria-label="{translate|escape key="common.navigation.user"}">
-					
 						{load_menu name="user" id="navigationUser" ulClass="nav nav-pills tab-list pull-right"}
 						<div class="block" id="sidebarLanguageToggle">
 						<span class="blockTitle" style="display:none;">{translate key="common.language"}</span>
@@ -84,14 +83,14 @@
 								{foreach from=$languageToggleLocales item=localeName key=localeKey}
 									<li class="pull-left locale_{$localeKey|escape}{if $localeKey == $currentLocale} current{/if} langli">
 										<a href="{url router=$smarty.const.ROUTE_PAGE page="user" op="setLocale" path=$localeKey source=$smarty.server.REQUEST_URI}">
-											<img title="{$localeName}" src="/plugins/themes/{$contextSettings.themePluginPath}/locale/{$localeKey}/flag.png" />
+											<img title="{$localeName}" src="/plugins/themes/{$currentContext->getData('themePluginPath')}/locale/{$localeKey}/flag.png" />
 										</a>
 									</li>
 								{/foreach}
 						</ul>
 					</div>
 					<div class="special">
-						<a id="specialButton" href="#"><img src="/plugins/themes/{$contextSettings.themePluginPath}/img/special_white.png" alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ" title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ" /></a>
+						<a id="specialButton" href="#"><img src="/plugins/themes/{$currentContext->getData('themePluginPath')}/img/special_white.png" alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ" title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ" /></a>
 					</div>
 					</nav>
 				</div><!-- .row -->

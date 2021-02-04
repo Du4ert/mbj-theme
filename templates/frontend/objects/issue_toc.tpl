@@ -16,7 +16,6 @@
 * @uses $page string to display current site page
 *}
 <div class="issue-toc">
-
 	{* Indicate if this is only a preview *}
 	{if !$issue->getPublished()}
 	{include file="frontend/components/notification.tpl" type="warning" messageKey="editor.issues.preview"}
@@ -121,7 +120,7 @@
 
 	{* Articles *}
 	<div class="sections">
-		{foreach name=sections from=$publishedArticles item=section}
+		{foreach name=sections from=$publishedSubmissions item=section}
 		<section class="section">
 			{if $section.articles}
 			{if $section.title}

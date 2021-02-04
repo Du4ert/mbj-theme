@@ -1,0 +1,250 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-04T06:56:50-07:00\n"
+"PO-Revision-Date: 2019-02-04T06:56:50-07:00\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10
+msgstr "=2 && n%10<="
+"4 && (n%100<10 || n%100
+msgstr "=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.9.1\n"
+
+
+
+msgid "plugins.themes.mbj.editorial.date"
+msgstr "по состоянию на март 2018 г."
+
+msgid "plugins.themes.mbj.editorial.teamTitle"
+msgstr "члены редакционной коллегии"
+
+msgid "plugins.themes.mbj.editorial.role.editorinchief"
+msgstr "Главный редактор"
+
+msgid "plugins.themes.mbj.editorial.role.editorsinchief"
+msgstr "Главные редакторы"
+
+msgid "plugins.themes.mbj.editorial.role.deputyeditorinchief"
+msgstr "Заместитель главного редактора"
+
+msgid "plugins.themes.mbj.editorial.role.deputyesditorinchief"
+msgstr "Заместители главного редактора"
+
+msgid "plugins.themes.mbj.editorial.role.executivesecretary"
+msgstr "Ответственный секретарь"
+
+msgid "plugins.themes.mbj.editorial.role.executivesecretaries"
+msgstr "Ответственные секретари"
+
+msgid "plugins.themes.mbj.issue.fullIssue"
+msgstr "Полный выпуск"
+
+msgid "plugins.themes.mbj.issue.summary.pages"
+msgstr "Страницы"
+
+msgid "plugins.themes.mbj.issue.published"
+msgstr "Опубликован"
+
+msgid "plugins.themes.mbj.submissions.published"
+msgstr "Опубликован онлайн"
+
+msgid "plugins.themes.mbj.issue.fulltext"
+msgstr "Скачать полный текст"
+
+msgid "plugins.themes.mbj.issue.supplementary"
+msgstr "Приложение"
+
+msgid "plugins.themes.mbj.editorial.principle"
+msgstr "Положение о редколлегии МБЖ"
+
+msgid "plugins.themes.mbj.editorial.statute"
+msgstr "Устав редакции МБЖ"
+
+msgid "plugins.themes.mbj.editorial.bio.biography"
+msgstr "Должность, степень, звание"
+
+msgid "plugins.themes.mbj.editorial.bio.profiles"
+msgstr "Профили"
+
+msgid "plugins.themes.mbj.editorial.bio.country"
+msgstr "Страна"
+
+msgid "plugins.themes.mbj.editorial.title"
+msgstr "Редколлегия"
+
+msgid "plugins.themes.mbj.editorial.bio.title"
+msgstr "Член редколлегии"
+
+msgid "plugins.themes.mbj.editorial.bio.address"
+msgstr "Адрес"
+
+msgid "plugins.themes.mbj.editorial.bio.profileon"
+msgstr "Профиль на"
+
+msgid "plugins.themes.mbj.editorial.bio.elibrary"
+msgstr "Публикации на eLibrary.ru"
+
+msgid "plugins.themes.mbj.issue.archive.year"
+msgstr "Год"
+
+msgid "plugins.themes.mbj.issue.archive.issue"
+msgstr "Выпуск"
+
+msgid "plugins.themes.mbj.issue.archive.vol"
+msgstr "Том"
+
+msgid "plugins.themes.mbj.issue.archive.number"
+msgstr "№"
+
+msgid "plugins.themes.mbj.issue.details.issue"
+msgstr "выпуск"
+
+msgid "plugins.themes.mbj.issue.details.vol"
+msgstr "т"
+
+msgid "plugins.themes.mbj.issue.details.number"
+msgstr "№"
+
+msgid "plugins.themes.mbj.issue.details.pp"
+msgstr "с"
+
+msgid "plugins.themes.mbj.issue.details.no"
+msgstr "№"
+
+msgid "plugins.themes.mbj.issue.details.amp"
+msgstr "и"
+
+msgid "plugins.themes.mbj.submission.published"
+msgstr "Опубликована"
+
+msgid "plugins.themes.mbj.submissions.unregistered.send"
+msgstr "Отправьте материал по адресу"
+
+msgid "plugins.themes.mbj.submissions.registered.send"
+msgstr "Или отправьте материал по адресу"
+
+msgid "plugins.themes.mbj.submissions.title"
+msgstr "Отправка материала"
+
+msgid "plugins.themes.mbj.registration"
+msgstr "В данный момент регистрация недоступна"
+
+msgid "plugins.themes.mbj.submissions.cite"
+msgstr "Формат цитирования"
+
+msgid "search.advancedFilters"
+msgstr "Дополнительные фильтры"
+
+msgid "plugins.themes.mbj.submissionPreparationChecklist.description"
+msgstr "В качестве одного из этапов процесса отправки авторы должны проверить соответствие их материала следующим пунктам. Авторам могут быть возвращены материалы, не удовлетворяющие следующим требованиям:"
+
+msgid "plugins.themes.mbj.about.contacts.tel"
+msgstr "Телефон"
+
+msgid "plugins.themes.mbj.article.views"
+msgstr "Просмотров"
+
+msgid "plugins.themes.mbj.article.downloads"
+msgstr "Скачиваний"
+
+msgid "plugins.themes.mbj.article.ru_RU"
+msgstr "RUS"
+
+msgid "plugins.themes.mbj.article.en_US"
+msgstr "ENG"
+
+msgid "plugins.themes.mbj.article.video"
+msgstr "Видео"
+
+msgid "plugins.themes.mbj.article.supplementary"
+msgstr "Приложение"
+
+msgid "plugins.themes.mbj.article.supplementaries"
+msgstr "Приложения"
+
+msgid "plugins.themes.mbj.article.affiliations"
+msgstr "Учреждения"
+
+msgid "plugins.themes.mbj.article.affiliation"
+msgstr "Учреждение"
+
+msgid "plugins.themes.mbj.article.statistics"
+msgstr "Статистика"
+
+msgid "plugins.themes.mbj.article.galley.download"
+msgstr "Скачать"
+
+msgid "plugins.themes.mbj.article.galley.name"
+msgstr "Имя файла"
+
+msgid "plugins.themes.mbj.article.galley.description"
+msgstr "Описание"
+
+msgid "plugins.themes.mbj.article.galley.file.type"
+msgstr "Расширение файла"
+
+msgid "plugins.themes.mbj.article.galley.file.size"
+msgstr "Размер файла"
+
+msgid "plugins.themes.mbj.navigation.issues"
+msgstr "Выпуски"
+
+msgid "plugins.themes.mbj.navigation.aboutTheJournal"
+msgstr "О журнале"
+
+msgid "plugins.themes.mbj.navigation.aim"
+msgstr "Цели и задачи"
+
+msgid "plugins.themes.mbj.navigation.editorialPolicies"
+msgstr "Редакционная политика"
+
+msgid "plugins.themes.mbj.navigation.peerReview"
+msgstr "Процедура опубликования"
+
+msgid "plugins.themes.mbj.navigation.publicationEthics"
+msgstr "Публикационная этика"
+
+msgid "plugins.themes.mbj.submissions.forauthors"
+msgstr "Правила для авторов"
+
+msgid "plugins.themes.mbj.navigation.forauthors"
+msgstr "Авторам"
+
+msgid "plugins.themes.mbj.navigation.metadata"
+msgstr "Метаданные авторов"
+
+msgid "plugins.themes.mbj.navigation.agreement"
+msgstr "Авторский договор"
+
+msgid "plugins.themes.mbj.navigation.license"
+msgstr "Лицензионное соглашение"
+
+msgid "plugins.themes.mbj.navigation.adoptions"
+msgstr "Заимствования и плагиат"
+
+msgid "plugins.themes.mbj.navigation.conflict"
+msgstr "Конфликт интересов"
+
+msgid "plugins.themes.mbj.navigation.toReviewers"
+msgstr "Рецензентам"
+
+msgid "plugins.themes.mbj.navigation.access"
+msgstr "Политика открытого доступа"
+
+msgid "plugins.themes.mbj.navigation.archiving"
+msgstr "Архивирование"
+
+msgid "plugins.themes.mbj.navigation.fee"
+msgstr "Плата за публикацию"
+
+msgid "plugins.themes.mbj.navigation.retraction"
+msgstr "Порядок ретракции"
+
+msgid "default.groups.name.author"
+msgstr "автор"

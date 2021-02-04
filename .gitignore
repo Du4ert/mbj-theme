@@ -3,3 +3,4 @@ node_modules
 /img
 /js
 styles
+package-lock.json

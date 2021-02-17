@@ -92,8 +92,10 @@
         {else} *}
         
             {assign var="fileType" value=($galley->getFileType()|explode:"/")}
-            {assign var="filePath" value=$galley->getFile()->getFilePath()}
-            {assign var="fileSize" value=$galley->getFile()->getNiceFileSize()}
+            {assign var="filePath" value=$galley->getFile()->getData('path')}
+            {assign var="fileSize" value=$galley->getFile()->getData('fileSize')}
+
+
             <div class="col-md-3 col-sm-6 supplementary-main">
                 {* Image type *}
                 {if $fileType[0] === 'image'}
@@ -108,7 +110,7 @@
                 {elseif $fileType[0] === 'video'}
 					<div class="thumbnail">
 						<a href="#" onclick="return false" role="button" class="galley-modal-link" data-toggle="modal" data-target="#{$galley->getId()}galleyModal">
-						<video class="galley-thumbnail" width="300" height="150" poster="/plugins/themes/{$contextSettings.themePluginPath}/img/video-error.jpg">
+						<video class="galley-thumbnail" width="300" height="150" poster="/plugins/themes/{$currentContext->getData('themePluginPath')}/img/video-error.jpg">
 							<source src="{url|escape page=$page op="view" inline="true" path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}#t=0.1" type="{$galley->getFileType()}" />
 						</video>
 						</a>
@@ -142,10 +144,12 @@
                 {$galley->getFileType()|escape}
                 {* {$fileType[1]|escape} *}
                 </div>
+                {if $fileSize}
                 <div class="galley-size">
                 <strong>{translate key="plugins.themes.mbj.article.galley.file.size"}:</strong>
                 {$fileSize|escape}
                 </div>
+                {/if}
             </div>
             </div>
         {/if}

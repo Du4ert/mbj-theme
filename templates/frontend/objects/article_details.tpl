@@ -19,358 +19,396 @@
 
 
 <article class="article-details">
-	<header>
-		<h1 class="page-header">
-			{$article->getLocalizedTitle()|escape}
-			{if $article->getLocalizedSubtitle()}
-			<small>
-				{$article->getLocalizedSubtitle()|escape}
-			</small>
+
+{* Notification that this is an old version *}
+{if $currentPublication->getId() !== $publication->getId()}
+    <div class="alert alert-warning" role="alert">
+        {capture assign="latestVersionUrl"}{url page="article" op="view" path=$article->getBestId()}{/capture}
+        {translate key="submission.outdatedVersion"
+            datePublished=$publication->getData('datePublished')|date_format:$dateFormatShort
+            urlRecentVersion=$latestVersionUrl|escape
+        }
+    </div>
+{/if}
+
+    <header>
+        <h2 class="page-header">
+            {$publication->getLocalizedTitle()|escape}
+            {if $publication->getLocalizedData('subtitle')}
+				<small>
+					{$publication->getLocalizedData('subtitle')|escape}
+				</small>
 			{/if}
-		</h1>
-		{include file="frontend/components/editLink.tpl" page="workflow" op="index"
+        </h2>
+        {include file="frontend/components/editLink.tpl" page="workflow" op="index"
 		path=$article->getBestArticleId($currentJournal) anchor="" sectionTitleKey="about.authorGuidelines"}
-	</header>
+    </header>
 
-	<div class="row article-main">
+    <div class="row article-main">
 
-		<section class="article-sidebar col-md-2 col-sm-2 hidden-sm hidden-xs hidden-md">
-			{* Article/Issue cover image *}
-			{if $article->getLocalizedCoverImage() || $issue->getLocalizedCoverImage()}
-			<div class="cover-image">
-				{if $article->getLocalizedCoverImage()}
-				<img class="img-responsive" src="{$article->getLocalizedCoverImageUrl()|escape}" {if
-					$article->getLocalizedCoverImageAltText()}
-				alt="{$article->getLocalizedCoverImageAltText()|escape}"{/if}>
-				{else}
-				<a href="{url page=" issue" op="view" path=$issue->getBestIssueId()}">
-					<img class="img-responsive" src="{$issue->getLocalizedCoverImageUrl()|escape}" {if
-						$issue->getLocalizedCoverImageAltText()}
-					alt="{$issue->getLocalizedCoverImageAltText()|escape}"{/if}>
-				</a>
-				{/if}
-			</div>
-			{/if}
-		</section>
+        <section class="article-sidebar col-md-2 col-sm-2 hidden-sm hidden-xs hidden-md">
+{* Article/Issue cover image *}
+{if $publication->getLocalizedData('coverImage') || ($issue && $issue->getLocalizedCoverImage())}
+    <div class="cover-image">
+        {if $publication->getLocalizedData('coverImage')}
+            {assign var="coverImage" value=$publication->getLocalizedData('coverImage')}
+            <img
+                class="img-responsive"
+                src="{$publication->getLocalizedCoverImageUrl($article->getData('contextId'))|escape}"
+                alt="{$coverImage.altText|escape|default:''}"
+            >
+        {else}
+            <a href="{url page="issue" op="view" path=$issue->getBestIssueId()}">
+                <img
+                    class="img-responsive"
+                    src="{$issue->getLocalizedCoverImageUrl()|escape}"
+                    alt="{$issue->getLocalizedCoverImageAltText()|escape|default:''}"
+                >
+            </a>
+        {/if}
+    </div>
+{/if}
+            {* Versions *}
+					{if count($article->getPublishedPublications()) > 1}
+						<div class="list-group-item versions">
+							<strong>{capture assign=translatedVersions}{translate key="submission.versions"}{/capture}
+							{translate key="semicolon" label=$translatedVersions}</strong>
+							{foreach from=array_reverse($article->getPublishedPublications()) item=iPublication}
+								{capture assign="name"}{translate key="submission.versionIdentity" datePublished=$iPublication->getData('datePublished')|date_format:$dateFormatShort version=$iPublication->getData('version')}{/capture}
+								<div>
+									{if $iPublication->getId() === $publication->getId()}
+										{$name}
+									{elseif $iPublication->getId() === $currentPublication->getId()}
+										<a href="{url page="article" op="view" path=$article->getBestId()}">{$name}</a>
+									{else}
+										<a href="{url page="article" op="view" path=$article->getBestId()|to_array:"version":$iPublication->getId()}">{$name}</a>
+									{/if}
+								</div>
+							{/foreach}
+						</div>
+					{/if}
+        </section>
 
-		<section class="col-md-7 col-lg-7 col-md-8">
-			{* Screen-reader heading for easier navigation jumps *}
-			<h2 class="sr-only">{translate key="plugins.themes.bootstrap3.article.main"}</h2>
+        <section class="col-md-7 col-lg-7 col-md-8">
+            {* Screen-reader heading for easier navigation jumps *}
+            <h2 class="sr-only">{translate key="plugins.themes.bootstrap3.article.main"}</h2>
 
-			<ul class="article-meta-list">
-				{* Authors *}
-				{if $article->getAuthors()}
-				{include file="frontend/objects/authorSummary.tpl"}
-				{/if}
+            <ul class="article-meta-list">
+                {* Authors *}
+                {if $publication->getData('authors')}
+                    {include file="frontend/objects/authorSummary.tpl"}
+                {/if}
 
-				{* Issue *}
-				<li class="article-meta-item issue-series">
-					{capture assign=translatedIssueSeries}{translate
+                {* Issue *}
+                <li class="article-meta-item issue-series">
+                    {capture assign=translatedIssueSeries}{translate
 					key="plugins.themes.mbj.issue.archive.issue"}{/capture}
-					<strong>{translate key="semicolon" label=$translatedIssueSeries}</strong>
-					<a class="title" href="{url|escape page=" issue" op="view"
+                    <strong>{translate key="semicolon" label=$translatedIssueSeries}</strong>
+                    <a class="title" href="{url|escape page=" issue" op="view"
 						path=$issue->getBestIssueId($currentJournal)|escape}">
-						{$issue->getIssueSeries()|escape}
-					</a>
-				</li>
+                        {$issue->getIssueSeries()|escape}
+                    </a>
+                </li>
 
-				{* Pages *}
-				<li class="article-meta-item pages">
-					<strong>{translate key="plugins.themes.mbj.issue.summary.pages"}:</strong>
-					{$article->getStartingPage()|escape}–{$article->getEndingPage()|escape}
-				</li>
+                {* Section *}
+                {if $section}
+                    <li class="article-meta-item section">
+                        <strong>{capture assign=sectionHead}{translate key="section.section"}{/capture}{translate
+        					key="semicolon" label=$sectionHead}</strong>
+                        <span class="value">{$section->getLocalizedTitle()|escape}</span>
+                    </li>
+                {/if}
 
-				{* Section *}
-				{if $section}<li class="article-meta-item section">
-					<strong>{capture assign=keywordsHead}{translate key="section.section"}{/capture}{translate
-						key="semicolon" label=$keywordsHead}</strong>
-					<span class="value">
-						{$section->getLocalizedTitle()|escape}
-					</span>
-				</li>
-				{/if}
+                {* Pages *}
+                <li class="article-meta-item pages">
+                    <strong>{translate key="plugins.themes.mbj.issue.summary.pages"}:</strong>
+                    {$article->getStartingPage()|escape}–{$article->getEndingPage()|escape}
+                </li>
 
-				{* Keywords *}
-				{if !empty($keywords[$currentLocale])}
-				<li class="article-meta-item keywords">
-					<strong>{capture assign=keywordsHead}{translate key="article.subject"}{/capture}{translate
-						key="semicolon" label=$keywordsHead}</strong>
-					<span class="value">
-						{foreach from=$keywords item=keyword}
-						{foreach name=keywords from=$keyword item=keywordItem}
-						{$keywordItem|escape}{if !$smarty.foreach.keywords.last}, {/if}
-						{/foreach}
-						{/foreach}
-					</span>
-				</li>
-				{/if}
-
-
-
-				{* DOI (requires plugin) *}
-				{foreach from=$pubIdPlugins item=pubIdPlugin}
-				{if $pubIdPlugin->getPubIdType() != 'doi'}
-				{continue}
-				{/if}
-				{if $issue->getPublished()}
-				{assign var=pubId value=$article->getStoredPubId($pubIdPlugin->getPubIdType())}
-				{else}
-				{assign var=pubId value=$pubIdPlugin->getPubId($article)}{* Preview pubId *}
-				{/if}
-				{if $pubId}
-				{assign var="doiUrl" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}
-				<li class="article-meta-item doi">
-					{capture assign=translatedDoi}{translate key="plugins.pubIds.doi.readerDisplayName"}{/capture}
-					<strong>{translate key="semicolon" label=$translatedDoi}</strong>
-					<a href="{$doiUrl}">
-						{$doiUrl|substr:16}
-					</a>
-				</li>
-				{/if}
-				{/foreach}
+                {* Keywords *}
+                {if !empty($keywords[$currentLocale])}
+                    <li class="article-meta-item keywords">
+                        <strong>{capture assign=keywordsHead}{translate key="article.subject"}{/capture}{translate
+        						key="semicolon" label=$keywordsHead}</strong>
+                        <span class="value">
+                            {foreach from=$keywords[$currentLocale] item=keyword}
+                                {foreach name=keywords from=$keyword item=keywordItem}
+                                    {$keywordItem|escape}{if !$smarty.foreach.keywords.last}, {/if}
+                                {/foreach}
+                            {/foreach}
+                        </span>
+                    </li>
+                {/if}
 
 
 
-				{* Published date *}
-				{if $article->getDatePublished()}
-				<li class="article-meta-item date-published">
-					{capture assign=translatedDatePublished}{translate
-					key="plugins.themes.mbj.submission.published"}{/capture}
-					<strong>{translate key="semicolon" label=$translatedDatePublished}</strong>
-					{$article->getDatePublished()|date_format}
-				</li>
-				{/if}
+                {* DOI (requires plugin) *}
+                {foreach from=$pubIdPlugins item=pubIdPlugin}
+                    {if $pubIdPlugin->getPubIdType() != 'doi'}
+                        {continue}
+                    {/if}
+                    {if $issue->getPublished()}
+                        {assign var=pubId value=$article->getStoredPubId($pubIdPlugin->getPubIdType())}
+                    {else}
+                        {assign var=pubId value=$pubIdPlugin->getPubId($article)}{* Preview pubId *}
+                    {/if}
+                    {if $pubId}
+                        {assign var="doiUrl" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}
+                        <li class="article-meta-item doi">
+                            {capture assign=translatedDoi}{translate key="plugins.pubIds.doi.readerDisplayName"}{/capture}
+                            <strong>{translate key="semicolon" label=$translatedDoi}</strong>
+                            <a href="{$doiUrl}">
+                                {$doiUrl|substr:16}
+                            </a>
+                        </li>
+                    {/if}
+                {/foreach}
 
-				{* Views *}
-				<li class="article-meta-item article-views">
-					{if $primaryGalleys}
-					{assign var="fullTextDownloads" value=0}
-					{foreach from=$primaryGalleys item=galley}
-					{$fullTextDownloads = $fullTextDownloads + $galley->getViews()}
-					{* {assign var='fullTextDownloads' value=$galley->getViews()} *}
-					{/foreach}
+
+
+                {* Published date *}
+                {if $publication->getData('datePublished')}
+                    <li class="article-meta-item date-published">
+                        {capture assign=translatedDatePublished}{translate
+        					key="plugins.themes.mbj.submission.published"}{/capture}
+                        <strong>{translate key="semicolon" label=$translatedDatePublished}</strong>
+                        {$publication->getData('datePublished')|date_format}
+                        {* If this is an updated version *}
+                    </li>
+                    {if $firstPublication->getID() !== $publication->getId()}
+						<li class="article-meta-item date-updated">
+							{capture assign=translatedUpdated}{translate key="common.updated"}{/capture}
+							<strong>{translate key="semicolon" label=$translatedUpdated}</strong>
+							{$publication->getData('datePublished')|date_format:$dateFormatShort}
+						</li>
 					{/if}
-					<strong>{translate key="plugins.themes.mbj.article.views"}:</strong> {$article->getViews()|escape}
-					<strong>{translate key="plugins.themes.mbj.article.downloads"}:</strong> {if $fullTextDownloads}
-					{$fullTextDownloads}
-					{else}
-					0
-					{/if}
-				</li>
+                {/if}
 
-				{* Article Subject *}
-				{* {if $article->getLocalizedSubject()}bfbfnfdndfnfdgndfgfnd
-				<div class="panel panel-default subject">
-					<div class="panel-heading">
-						{translate key="article.subject"}
-					</div>
-					<div class="panel-body">
-						{$article->getLocalizedSubject()|escape}
-					</div>
-				</div>
-				{/if} *}
+                {* Views *}
+                <li class="article-meta-item article-views">
+                    {if $primaryGalleys}
+                        {assign var="fullTextDownloads" value=0}
+                        {foreach from=$primaryGalleys item=galley}
+                            {$fullTextDownloads = $fullTextDownloads + $galley->getViews()}
+                            {* {assign var='fullTextDownloads' value=$galley->getViews()} *}
+                        {/foreach}
+                    {/if}
+                    <strong>{translate key="plugins.themes.mbj.article.views"}:</strong> {$article->getViews()|escape}
+                    <strong>{translate key="plugins.themes.mbj.article.downloads"}:</strong> {if $fullTextDownloads}
+                        {$fullTextDownloads}
+                    {else}
+                        0
+                    {/if}
+                </li>
 
-			</ul><!-- /list-group -->
-		</section><!-- .article-main -->
+            </ul><!-- /list-group -->
+        </section><!-- .article-main -->
 
-		<section class="article-sidebar row col-lg-3 col-md-5">
-			{* Article Galleys *}
-			{if $primaryGalleys}
-			<div class="article-sidebar-item galley-primary-list">
-				<div class="galley-primary-item">
-					{foreach from=$primaryGalleys item=galley}
-					{include file="frontend/objects/galley_link.tpl" parent=$article
-					purchaseFee=$currentJournal->getSetting('purchaseArticleFee')
-					purchaseCurrency=$currentJournal->getSetting('currency')}
-					{/foreach}
-				</div>
-			</div>
-			{/if}
-
-
-			{* Google scholar *}
-			{assign var="scholarQuery" value=''}
-			{if $pubId}
-			{$scholarQuery = $pubId}
-			{else}
-			{$scholarQuery = $article->getTitle($article->getLocale())}
-			{/if}
-			<div class="article-sidebar-item googleScholar">
-				<a class="google-scholar-link btn"
-					href='https://scholar.google.com/scholar?q="{$scholarQuery|urlencode}"' target="_blank"
-					rel="noreferrer">
-					<img class="google-scholar-img"
-						src="/plugins/themes/{$currentContext->getData('themePluginPath')}/img/scholar.png" alt="Google Scholar" />
-					Google Scholar
-				</a>
-			</div>
-
-			{* Crossmark *}
-			{if $pubId}
-			<div class="article-sidebar-item crossmark">
-				<script src="https://crossmark-cdn.crossref.org/widget/v2.0/widget.js"></script>
-				<a data-target="crossmark" class="btn"><img
-						src="https://crossmark-cdn.crossref.org/widget/v2.0/logos/CROSSMARK_Color_horizontal.svg"
-						width="150" /></a>
-			</div>
-			{/if}
-			<!-- /crossmark -->
-
-			<div class="article-sidebar-item ya-share">
-				<script src="https://yastatic.net/share2/share.js"></script>
-				<div class="ya-share2" data-curtain data-size="s" data-lang="en" data-shape="normal" data-image="httpsgulp:{$issue->getLocalizedCoverImageUrl()|escape}"
-					data-services="vkontakte,twitter,facebook,odnoklassniki,telegram,viber,whatsapp"></div>
-			</div>
-		</section><!-- /article-meta -->
-
-	</div><!-- /row -->
-	<div class="row">
-		<section class="col-md-10 col-sm-10 col-xs-12 col-lg-9">
-			{* How to cite *}
-			{if $citation}
-			{include file="frontend/components/howToCite.tpl"}
-			{/if}
-		</section>
-	</div>
-
-	<div class="row">
-		<div class="col-xs-12">
-
-			<section class="article-more panel panel-default">
-				<ul class="nav panel-heading nav-tabs article-more-nav">
-					<li role="presentation" class="active"><a href="#summary" aria-controls="summary" role="tab"
-							data-toggle="tab">{translate key="article.abstract"}</a></li>
-					{if $article->getAuthors()}<li role="presentation"><a href="#authors" aria-controls="authors"
-							role="tab" data-toggle="tab">{translate key="article.authors"}</a></li>{/if}
-					{if $article->getCitations()}<li role="presentation"><a href="#references"
-							aria-controls="references" role="tab" data-toggle="tab">{translate
-							key="submission.citations"}</a></li>{/if}
-					{if $supplementaryGalleys}<li role="presentation"><a href="#supplementary"
-							aria-controls="supplementary" role="tab" data-toggle="tab">{translate
-							key="plugins.themes.mbj.article.supplementaries"}</a></li>{/if}
-					{if $pubId}<li role="presentation"><a href="#statistics" aria-controls="statistics" role="tab"
-							data-toggle="tab">{translate key="plugins.themes.mbj.article.statistics"}</a></li>{/if}
-				</ul>
-
-				<div class="tab-content article-more-content panel-body">
-					{* Screen-reader heading for easier navigation jumps *}
-					<h2 class="sr-only article-more-title">{translate key="plugins.themes.bootstrap3.article.details"}
-					</h2>
-
-					{* Article abstract *}
-					{if $article->getLocalizedAbstract()}
-					<div class="tab-pane active" role="tabpanel" id="summary">
-						<h2 class="article-more-title">{translate key="article.abstract"}</h2>
-						<div class="article-summary">
-							<div class="article-abstract">
-								{$article->getLocalizedAbstract()|strip_unsafe_html|nl2br}
-							</div>
-							{* Keywords *}
-							{if !empty($keywords[$currentLocale])}
-							<div class="article-keywords">
-								<strong>{capture assign=keywordsHead}{translate
-									key="article.subject"}{/capture}{translate
-									key="semicolon" label=$keywordsHead}</strong>
-								<span class="value">
-									{foreach from=$keywords item=keyword}
-									{foreach name=keywords from=$keyword item=keywordItem}
-									{$keywordItem|escape}{if !$smarty.foreach.keywords.last}, {/if}
-									{/foreach}
-									{/foreach}
-								</span>
-							</div>
-							{/if}
-						</div>
-					</div>
-					{/if}
-
-					{* Authors *}
-					{if $article->getAuthors()}
-					<div class="tab-pane" role="tabpanel" id="authors">
-
-						<h2 class="article-more-title">{translate key="article.authors"}</h2>
-						<div class="authors">
-							{foreach from=$article->getAuthors() item=author}
-							{include file="frontend/objects/authorDetails.tpl" author=$author}
-							{/foreach}
-						</div>
-					</div>
-					{/if}
+        <section class="article-sidebar row col-lg-3 col-md-5">
+            {* Article Galleys *}
+            {if $primaryGalleys}
+                <div class="article-sidebar-item galley-primary-list">
+                    <div class="galley-primary-item">
+                        {foreach from=$primaryGalleys item=galley}
+                            {include file="frontend/objects/galley_link.tpl" parent=$article
+                    					purchaseFee=$currentJournal->getSetting('purchaseArticleFee')
+                    					purchaseCurrency=$currentJournal->getSetting('currency')}
+                        {/foreach}
+                    </div>
+                </div>
+            {/if}
 
 
-					{* References *}
-					{if $article->getCitations()}
-					<div class="tab-pane" role="tabpanel" id="references">
-						<h2 class="article-more-title">{translate key="submission.citations"}</h2>
-						<div class="article-references">
-							<div class="article-references-content">
-								{$article->getCitations()|nl2br}
-							</div>
-						</div>
-					</div>
-					{/if}
+            {* Google scholar *}
+            {assign var="scholarQuery" value=''}
+            {if $pubId}
+                {$scholarQuery = $pubId}
+            {else}
+                {$scholarQuery = $article->getTitle($article->getLocale())}
+            {/if}
+            <div class="article-sidebar-item googleScholar">
+                <a class="google-scholar-link btn"
+                    href='https://scholar.google.com/scholar?q="{$scholarQuery|urlencode}"' target="_blank"
+                    rel="noreferrer">
+                    <img class="google-scholar-img"
+                        src="/plugins/themes/{$currentContext->getData('themePluginPath')}/img/scholar.png"
+                        alt="Google Scholar" />
+                    Google Scholar
+                </a>
+            </div>
 
-					{* Supplementary *}
-					{if $supplementaryGalleys}
-					<div class="tab-pane" role="tabpanel" id="supplementary">
-						<h2 class="article-more-title">{translate key="plugins.themes.mbj.article.supplementaries"}</h2>
-						<div class="download">
-							{foreach from=$supplementaryGalleys item=galley}
-							<div class="supplementary">
-								{include file="frontend/objects/galley_link.tpl" parent=$article isSupplementary="1"}
-							</div>
-							{/foreach}
-						</div>
-					</div>
-					{/if}
+            {* Crossmark *}
+            {if $pubId}
+                <div class="article-sidebar-item crossmark">
+                    <script src="https://crossmark-cdn.crossref.org/widget/v2.0/widget.js"></script>
+                    <a data-target="crossmark" class="btn"><img
+                            src="https://crossmark-cdn.crossref.org/widget/v2.0/logos/CROSSMARK_Color_horizontal.svg"
+                            width="150" /></a>
+                </div>
+            {/if}
+            <!-- /crossmark -->
 
-					{* Statistics *}
-					{if $pubId}
-					<div class="tab-pane" role="tabpanel" id="statistics">
-						<h2 class="article-more-title">{translate key="plugins.themes.mbj.article.statistics"}</h2>
-						<div class="statistics">
-							{include file="frontend/components/badges.tpl" doi=$pubId altmetricsHide="true"}
-							<div class="statistics-more">
-								{* Graph *}
-								{call_hook name="Templates::Article::Details"}
-								{call_hook name="Templates::Article::Main"}
-							</div>
-						</div>
-					</div>
-					{/if}
+            <div class="article-sidebar-item ya-share">
+                <script src="https://yastatic.net/share2/share.js"></script>
+                <div class="ya-share2" data-curtain data-size="s" data-lang="en" data-shape="normal"
+                    data-image="httpsgulp:{$issue->getLocalizedCoverImageUrl()|escape}"
+                    data-services="vkontakte,twitter,facebook,odnoklassniki,telegram,viber,whatsapp"></div>
+            </div>
+        </section><!-- /article-meta -->
 
-					{* Licensing info Спрятал лицензию V false ниже*}
-					{if $copyright || $licenseUrl && false}
-					<div class="panel panel-default copyright">
-						<div class="panel-body">
-							{if $licenseUrl}
-							{if $ccLicenseBadge}
-							{$ccLicenseBadge}
-							{else}
-							<a href="{$licenseUrl|escape}" class="copyright">
-								{if $copyrightHolder}
-								{translate key="submission.copyrightStatement" copyrightHolder=$copyrightHolder
-								copyrightYear=$copyrightYear}
-								{else}
-								{translate key="submission.license"}
-								{/if}
-							</a>
-							{/if}
-							{/if}
-							{$copyright}
-						</div>
-					</div>
-					{/if}
+    </div><!-- /row -->
+    <div class="row">
+        <section class="col-md-10 col-sm-10 col-xs-12 col-lg-9">
+            {* How to cite *}
+            {if $citation}
+                {include file="frontend/components/howToCite.tpl"}
+            {/if}
+        </section>
+    </div>
 
-					{* {call_hook name="Templates::Article::Details"} *}
-				</div>
+    <div class="row">
+        <div class="col-xs-12">
+            <section class="article-more panel panel-default">
+                <ul class="nav panel-heading nav-tabs article-more-nav">
+                    <li role="presentation" class="active"><a href="#summary" aria-controls="summary" role="tab"
+                            data-toggle="tab">{translate key="article.abstract"}</a></li>
+                    {if $publication->getData('authors')}<li role="presentation"><a href="#authors" aria-controls="authors"
+                            role="tab" data-toggle="tab">{translate key="article.authors"}</a></li>{/if}
+                            {if $parsedCitations || $publication->getData('citationsRaw')}<li role="presentation"><a href="#references"
+                                aria-controls="references" role="tab" data-toggle="tab">{translate
+    							key="submission.citations"}</a></li>{/if}
+                    {if $supplementaryGalleys}<li role="presentation"><a href="#supplementary"
+                                aria-controls="supplementary" role="tab" data-toggle="tab">{translate
+    							key="plugins.themes.mbj.article.supplementaries"}</a></li>{/if}
+                    {if $pubId}<li role="presentation"><a href="#statistics" aria-controls="statistics" role="tab"
+                            data-toggle="tab">{translate key="plugins.themes.mbj.article.statistics"}</a></li>{/if}
+                </ul>
 
-			</section><!-- .article-details -->
-		</div>
+                <div class="tab-content article-more-content panel-body">
+                    {* Screen-reader heading for easier navigation jumps *}
+                    <h2 class="sr-only article-more-title">{translate key="plugins.themes.bootstrap3.article.details"}
+                    </h2>
 
-	</div><!-- .row -->
-	{* {call_hook name="Themes::mbj::custom"} *}
-	{* {call_hook name="Templates::Article::Main"}
+                    {* Article abstract *}
+                    {if $publication->getLocalizedData('abstract')}
+                        <div class="tab-pane active" role="tabpanel" id="summary">
+                            <h2 class="article-more-title">{translate key="article.abstract"}</h2>
+                            <div class="article-summary">
+                                <div class="article-abstract">
+                                    {$publication->getLocalizedData('abstract')|strip_unsafe_html|nl2br}
+                                </div>
+                                {* Keywords *}
+                                {if !empty($keywords[$currentLocale])}
+                                    <div class="article-keywords">
+                                        <strong>{capture assign=keywordsHead}{translate
+                    									key="article.subject"}{/capture}{translate
+                    									key="semicolon" label=$keywordsHead}</strong>
+                                        <span class="value">
+                                            {foreach from=$keywords[$currentLocale] item=keyword}
+                                                {foreach name=keywords from=$keyword item=keywordItem}
+                                                    {$keywordItem|escape}{if !$smarty.foreach.keywords.last}, {/if}
+                                                {/foreach}
+                                            {/foreach}
+                                        </span>
+                                    </div>
+                                {/if}
+                            </div>
+                        </div>
+                    {/if}
+
+                    {* Authors *}
+                    {if $publication->getData('authors')}
+                        <div class="tab-pane" role="tabpanel" id="authors">
+
+                            <h2 class="article-more-title">{translate key="article.authors"}</h2>
+                            <div class="authors">
+                                {foreach from=$publication->getData('authors') item=author}
+                                    {include file="frontend/objects/authorDetails.tpl" author=$author}
+                                {/foreach}
+                            </div>
+                        </div>
+                    {/if}
+
+
+                    {* References *}
+                    {if $parsedCitations || $publication->getData('citationsRaw')}
+                        <div class="tab-pane" role="tabpanel" id="references">
+                            <h2 class="article-more-title">{translate key="submission.citations"}</h2>
+                            <div class="article-references">
+                                <div class="article-references-content">
+                                {if $parsedCitations}
+                                    {foreach from=$parsedCitations item="parsedCitation"}
+                                        <p>{$parsedCitation->getCitationWithLinks()|strip_unsafe_html} {call_hook name="Templates::Article::Details::Reference" citation=$parsedCitation}</p>
+                                    {/foreach}
+                                {else}
+                                    {$publication->getData('citationsRaw')|nl2br}
+                                {/if}
+                                </div>
+                            </div>
+                        </div>
+                    {/if}
+
+                    {* Supplementary *}
+                    {if $supplementaryGalleys}
+                        <div class="tab-pane" role="tabpanel" id="supplementary">
+                            <h2 class="article-more-title">{translate key="plugins.themes.mbj.article.supplementaries"}</h2>
+                            <div class="download">
+                                {foreach from=$supplementaryGalleys item=galley}
+                                    <div class="supplementary">
+                                        {include file="frontend/objects/galley_link.tpl" parent=$article isSupplementary="1"}
+                                    </div>
+                                {/foreach}
+                            </div>
+                        </div>
+                    {/if}
+
+                    {* Statistics *}
+                    {if $pubId}
+                        <div class="tab-pane" role="tabpanel" id="statistics">
+                            <h2 class="article-more-title">{translate key="plugins.themes.mbj.article.statistics"}</h2>
+                            <div class="statistics">
+                                {include file="frontend/components/badges.tpl" doi=$pubId altmetricsHide="true"}
+                                <div class="statistics-more">
+                                    {* Graph *}
+                                    {call_hook name="Templates::Article::Details"}
+                                    {call_hook name="Templates::Article::Main"}
+                                </div>
+                            </div>
+                        </div>
+                    {/if}
+
+                    {* Licensing info Спрятал лицензию V false ниже*}
+                    {if $copyright || $licenseUrl && false}
+                        <div class="panel panel-default copyright">
+                            <div class="panel-body">
+                                {if $licenseUrl}
+                                    {if $ccLicenseBadge}
+                                        {$ccLicenseBadge}
+                                    {else}
+                                        <a href="{$licenseUrl|escape}" class="copyright">
+                                            {if $copyrightHolder}
+                                                {translate key="submission.copyrightStatement" copyrightHolder=$copyrightHolder
+                                    								copyrightYear=$copyrightYear}
+                                            {else}
+                                                {translate key="submission.license"}
+                                            {/if}
+                                        </a>
+                                    {/if}
+                                {/if}
+                                {$copyright}
+                            </div>
+                        </div>
+                    {/if}
+
+                    {* {call_hook name="Templates::Article::Details"} *}
+                </div>
+
+            </section><!-- .article-details -->
+        </div>
+
+    </div><!-- .row -->
+    {* {call_hook name="Themes::mbj::custom"} *}
+    {* {call_hook name="Templates::Article::Main"}
 	{call_hook name="Templates::Article::Recommended"} *}
 
 </article>

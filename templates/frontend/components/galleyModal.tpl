@@ -36,7 +36,7 @@
                     <h4 class="modal-title" id="myModalLabel">{$galley->getLocalizedName()|escape}</h4>
                 </div>
                 <div class="modal-body">
-                     <video class="modal-video" controls poster="/plugins/themes/{$contextSettings.themePluginPath}/img/video-error.jpg">
+                     <video class="modal-video" controls poster="/plugins/themes/{$currentContext->getData('themePluginPath')}/img/video-error.jpg">
                         <source src="{url|escape page=$page op="view" inline="true" path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}#t=0.1" type="{$galley->getFileType()}" />
                     </video>
                 </div>

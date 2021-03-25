@@ -35,7 +35,7 @@ class IbsscustomThemePlugin extends ThemePlugin {
 		$this->addScript('main', 'js/main.js');
 
 		// Add navigation menu areas for this theme
-		$this->addMenuArea(array('primary', 'user'));
+		$this->addMenuArea(array('primary', 'user', 'sidebar'));
 
 		HookRegistry::register('Themes::ibsscustom::custom', array($this, 'customCallback'));
 	}

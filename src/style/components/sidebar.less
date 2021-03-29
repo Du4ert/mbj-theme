@@ -1,11 +1,11 @@
 .button() {
 	border: none;
-	background: #34ced9;
-	background-image: -webkit-linear-gradient(top, #34ced9, #1b3869);
-	background-image: -moz-linear-gradient(top, #34ced9, #1b3869);
-	background-image: -ms-linear-gradient(top, #34ced9, #1b3869);
-	background-image: -o-linear-gradient(top, #34ced9, #1b3869);
-	background-image: linear-gradient(to bottom, #34ced9, #1b3869);
+	background: @sidebar-link-color;
+	background-image: -webkit-linear-gradient(top, @sidebar-link-color, @sidebar-link-color-dark);
+	background-image: -moz-linear-gradient(top, @sidebar-link-color, @sidebar-link-color-dark);
+	background-image: -ms-linear-gradient(top, @sidebar-link-color, @sidebar-link-color-dark);
+	background-image: -o-linear-gradient(top, @sidebar-link-color, @sidebar-link-color-dark);
+	background-image: linear-gradient(to bottom, @sidebar-link-color, @sidebar-link-color-dark);
 	-webkit-border-radius: 28;
 	-moz-border-radius: 28;
 	border-radius: 8px;
@@ -18,12 +18,12 @@
 	margin-bottom: 0px;
 
 	&:hover {
-		background: #3ccffc;
-		background-image: -webkit-linear-gradient(top, #3ccffc, #1aad90);
-		background-image: -moz-linear-gradient(top, #3ccffc, #1aad90);
-		background-image: -ms-linear-gradient(top, #3ccffc, #1aad90);
-		background-image: -o-linear-gradient(top, #3ccffc, #1aad90);
-		background-image: linear-gradient(to bottom, #3ccffc, #1aad90);
+		background: @sidebar-link-color-hover;
+		background-image: -webkit-linear-gradient(top, @sidebar-link-color-hover, @sidebar-link-color-hover-dark);
+		background-image: -moz-linear-gradient(top, @sidebar-link-color-hover, @sidebar-link-color-hover-dark);
+		background-image: -ms-linear-gradient(top, @sidebar-link-color-hover, @sidebar-link-color-hover-dark);
+		background-image: -o-linear-gradient(top, @sidebar-link-color-hover, @sidebar-link-color-hover-dark);
+		background-image: linear-gradient(to bottom, @sidebar-link-color-hover, @sidebar-link-color-hover-dark);
 		text-decoration: none;
 		color: #ffffff;
 	}

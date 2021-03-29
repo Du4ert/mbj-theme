@@ -22,13 +22,18 @@
 <html lang="{$currentLocale|replace:"_":"-"}" xml:lang="{$currentLocale|replace:"_":"-"}">
 {if !$pageTitleTranslated}{capture assign="pageTitleTranslated"}{translate key=$pageTitle}{/capture}{/if}
 {include file="frontend/components/headerHead.tpl"}
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
+
+
+{if $activeTheme->getOption('yandexMetricOn') && $activeTheme->getOption('yandexMetricId')}
+	{assign var="yandexMetricId" value=$activeTheme->getOption('yandexMetricId')}
+
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript" >
     (function (d, w, c) {
         (w[c] = w[c] || []).push(function() {
             try {
-                w.yaCounter47688874 = new Ya.Metrika({
-                    id:47688874,
+                w.yaCounter{$yandexMetricId} = new Ya.Metrika({
+                    id:{$yandexMetricId},
                     clickmap:true,
                     trackLinks:true,
                     accurateTrackBounce:true
@@ -48,13 +53,16 @@
         } else { f(); }
     })(document, window, "yandex_metrika_callbacks");
 </script>
+<noscript><div><img src="https://mc.yandex.ru/watch/{$yandexMetricId}" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+{/if}
 
-{* Версия для слабовидящих *}
+{if $activeTheme->getOption('specialVisionOn')}
+	{* Версия для слабовидящих *}
 <script src="https://lidrekon.ru/slep/js/jquery.js"></script>
 <script src="https://lidrekon.ru/slep/js/uhpv-full.min.js"></script>
+{/if}
 
-<noscript><div><img src="https://mc.yandex.ru/watch/47688874" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
 <body class="pkp_page_{$requestedPage|escape|default:"index"} pkp_op_{$requestedOp|escape|default:"index"}{if $showingLogo} has_site_logo{/if}">
 	<div class="pkp_structure_page">
 		<nav id="accessibility-nav" class="sr-only" role="navigation" aria-labelled-by="accessible-menu-label">
@@ -89,9 +97,11 @@
 								{/foreach}
 						</ul>
 					</div>
+					{if $activeTheme->getOption('specialVisionOn')}
 					<div class="special">
 						<a id="specialButton" href="#"><img src="/plugins/themes/{$currentContext->getData('themePluginPath')}/img/special_white.png" alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ" title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ" /></a>
 					</div>
+					{/if}
 					</nav>
 				</div><!-- .row -->
 			</div><!-- .container-fluid -->

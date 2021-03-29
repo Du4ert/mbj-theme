@@ -7,8 +7,36 @@ class IbsscustomThemePlugin extends ThemePlugin {
 	 * @return null
 	 */
 	public function init() {
-		//$this->setParent('bootstrapthreethemeplugin');
-        $this->removeOption('bootstrapTheme');
+		// Options
+		$this->addOption('yandexMetricOn', 'FieldOptions', [
+			'label' => 'Метрики',
+			'description' => 'Метрики подключающиеся в шапку и подвал темы',
+			'options' => [
+				[
+					'value' => true,
+					'label' => 'Яндекс метрика',
+				],
+			],
+			'default' => false,
+		]);
+
+		$this->addOption('yandexMetricId', 'FieldText', [
+			'label' => 'Yandex metric id',
+			'default' => '',
+			'showWhen' => 'yandexMetricOn'
+		]);
+
+		$this->addOption('specialVisionOn', 'FieldOptions', [
+			'label' => 'Версия для слабовидящих:',
+			'options' => [
+				[
+					'value' => true,
+					'label' => 'включить',
+				],
+			],
+			'default' => false,
+		]);
+		
 		
 		// Load jQuery from a CDN or, if CDNs are disabled, from a local copy.
 		$min = Config::getVar('general', 'enable_minified') ? '.min' : '';

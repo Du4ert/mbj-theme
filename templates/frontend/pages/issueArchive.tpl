@@ -26,6 +26,12 @@
 <div id="main-content" class="page page_issue_archive">
   {include file="frontend/components/breadcrumbs.tpl" currentTitle=$pageTitle}
 
+  {* <div class="page-header">
+    <h1>
+     {translate key="archive.archives"}
+    </h1>
+  </div> *}
+
   {* No issues have been published *}
   {if empty($issues)}
     <div class="alert alert-info" role="alert">

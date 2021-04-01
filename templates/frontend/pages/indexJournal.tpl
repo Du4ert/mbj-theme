@@ -25,39 +25,41 @@
 
 	{call_hook name="Templates::Index::journal"}
 <div class="row journal-description journal-description-main">
-	<div class="col-md-5 col-sm-4 col-xs-12">
+	<div class="col-md-3 col-sm-3 col-xs-12">
 		{call_hook name="Templates::Index::journal"}
 
+		
+
+	</div>
+	<div class="col-xs-12">
 		{if $homepageImage}
-			<div class="homepage-image">
+			<div class="homepage-image pull-right col-xs-hidden">
 				<img class="img-responsive" src="{$publicFilesDir}/{$homepageImage.uploadName|escape:"url"}" alt="{$homepageImageAltText|escape}">
 			</div>
 		{/if}
 
-		{if $additionalHomeContent}
-			<section class="additional_content">
-				{$additionalHomeContent}
-			</section>
-		{/if}
-
-	</div>
-	<div class="col-md-7 col-sm-8 col-xs-12">
 		{if $journalDescription}
 			<div class="">
 				{$journalDescription}
 			</div>
 		{/if}
+		{if $additionalHomeContent}
+			<section class="additional_content">
+				{$additionalHomeContent}
+			</section>
+		{/if}
+		
 	</div>
 </div>
 
 	{* Announcements *}
 	{if $numAnnouncementsHomepage && $announcements|count}
 		<section class="cmp_announcements media">
-			<header class="page-header">
+			<div class="page-header">
 				<h2>
 					{translate key="announcement.announcements"}
 				</h2>
-			</header>
+			</div>
 			<div class="media-list">
 				{foreach name=announcements from=$announcements item=announcement}
 					{if $smarty.foreach.announcements.iteration > $numAnnouncementsHomepage}
@@ -73,11 +75,11 @@
 	{* Latest issue *}
 	{if $issue}
 		<section class="current_issue">
-			<header class="page-header">
+			<div class="page-header">
 				<h2>
 				{translate key="journal.currentIssue"}
 				</h2>
-			</header>
+			</div>
 			<p class="current_issue_title lead">
 				<a href="{url|escape op="view" page="issue" path=$issue->getBestIssueId()}">
 					{$issue->getIssueIdentification()|strip_unsafe_html}

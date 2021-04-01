@@ -8,6 +8,7 @@
 
 
 // Компоненты:
+@import "components/header.less";
 @import "components/to-top.less";
 @import "components/sidebar.less";
 @import "components/language-toggle.less";
@@ -28,15 +29,9 @@
 @import "pages/op-view.less";
 @import "pages/user-login.less";
 
-body {}
 
 button.close {
 	outline: none;
-}
-
-header {
-	background-size: cover;
-	// z-index: 200;
 }
 
 // Общие стили
@@ -153,24 +148,21 @@ div.alert.alert-info {
 
 
 @media screen and (max-width: 400px) {
+	.breadcrumb li {
+		display: block;
+	}
+
 	.main-cover-custom img {
 		width: 70%;
 
 	}
-
 }
 
-@media screen and (max-width: 400px) {
-	.breadcrumb li {
-		display: block;
-	}
-}
-
-@media screen and (max-width: 766px) {
-	.breadcrumb li {
-		display: inline-block !important;
-	}
-}
+// @media screen and (max-width: 766px) {
+// 	.breadcrumb li {
+// 		display: inline-block !important;
+// 	}
+// }
 
 @media screen and (max-width: 770px) {
 	body {
@@ -203,7 +195,7 @@ div.alert.alert-info {
 	}
 }
 
-@media screen and (max-width: 888px) {
+@media screen and (max-width: @screen-sm) {
 	.navbar-header {
 		float: none;
 	}
@@ -248,17 +240,11 @@ div.alert.alert-info {
 	.collapse.in {
 		display: block !important;
 	}
-}
 
-@media screen and (max-width: 1000px) {
 	.breadcrumb li {
 		display: block !important;
 	}
 }
-
-@media screen and (max-width: 1100px) {}
-
-
 
 .container {
 	@media (min-width: @screen-sm-min) {

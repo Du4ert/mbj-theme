@@ -13,13 +13,21 @@
 }
 
 .homepage-image {
-  max-width: 410px;
+  max-width: 250px;
   text-align: center;
+  margin: 20px 60px;
 }
 
-@media screen and (max-width: 767px) {
+
+@media screen and (max-width: @screen-md) {
   .homepage-image {
-    margin-bottom: 15px;
+    max-width: 200px;
+  }
+}
+
+@media screen and (max-width: @screen-sm) {
+  .homepage-image {
+    display: none;
   }
 }
 

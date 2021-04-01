@@ -124,6 +124,28 @@ if (!("ontouchstart" in document.documentElement)) {
 // //search
 
 
+// Header fixed
+$(function() {
+    let header = $('.header-custom');
+    let topNavigation = $('.top-navigation');
+    let headerHero = $('.header-hero');
+    let headerBottom = headerHero.position().top + headerHero.height();
+    console.log(headerBottom);
+
+    $(document).scroll(function(e) {
+        let scrollTop = $(window).scrollTop();
+
+        
+        if (scrollTop >= headerBottom) {
+            header.addClass('fixed');
+        }
+        else if (header.hasClass('fixed')) {
+            header.removeClass('fixed');
+        }
+    });
+    
+});
+
 // Sidebar
 $(function() {
 let $sidebar = $('#sidebar');

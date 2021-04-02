@@ -102,7 +102,7 @@
                 {* Issue *}
                 <li class="article-meta-item issue-series">
                     {capture assign=translatedIssueSeries}{translate
-					key="plugins.themes.mbj.issue.archive.issue"}{/capture}
+					key="plugins.themes.ibsscustom.issue.archive.issue"}{/capture}
                     <strong>{translate key="semicolon" label=$translatedIssueSeries}</strong>
                     <a class="title" href="{url|escape page=" issue" op="view"
 						path=$issue->getBestIssueId($currentJournal)|escape}">
@@ -121,7 +121,7 @@
 
                 {* Pages *}
                 <li class="article-meta-item pages">
-                    <strong>{translate key="plugins.themes.mbj.issue.summary.pages"}:</strong>
+                    <strong>{translate key="plugins.themes.ibsscustom.issue.summary.pages"}:</strong>
                     {$article->getStartingPage()|escape}–{$article->getEndingPage()|escape}
                 </li>
 
@@ -170,7 +170,7 @@
                 {if $publication->getData('datePublished')}
                     <li class="article-meta-item date-published">
                         {capture assign=translatedDatePublished}{translate
-        					key="plugins.themes.mbj.submission.published"}{/capture}
+        					key="plugins.themes.ibsscustom.submission.published"}{/capture}
                         <strong>{translate key="semicolon" label=$translatedDatePublished}</strong>
                         {$publication->getData('datePublished')|date_format}
                         {* If this is an updated version *}
@@ -193,8 +193,8 @@
                             {* {assign var='fullTextDownloads' value=$galley->getViews()} *}
                         {/foreach}
                     {/if}
-                    <strong>{translate key="plugins.themes.mbj.article.views"}:</strong> {$article->getViews()|escape}
-                    <strong>{translate key="plugins.themes.mbj.article.downloads"}:</strong> {if $fullTextDownloads}
+                    <strong>{translate key="plugins.themes.ibsscustom.article.views"}:</strong> {$article->getViews()|escape}
+                    <strong>{translate key="plugins.themes.ibsscustom.article.downloads"}:</strong> {if $fullTextDownloads}
                         {$fullTextDownloads}
                     {else}
                         0
@@ -279,9 +279,9 @@
     							key="submission.citations"}</a></li>{/if}
                     {if $supplementaryGalleys}<li role="presentation"><a href="#supplementary"
                                 aria-controls="supplementary" role="tab" data-toggle="tab">{translate
-    							key="plugins.themes.mbj.article.supplementaries"}</a></li>{/if}
+    							key="plugins.themes.ibsscustom.article.supplementaries"}</a></li>{/if}
                     {if $pubId}<li role="presentation"><a href="#statistics" aria-controls="statistics" role="tab"
-                            data-toggle="tab">{translate key="plugins.themes.mbj.article.statistics"}</a></li>{/if}
+                            data-toggle="tab">{translate key="plugins.themes.ibsscustom.article.statistics"}</a></li>{/if}
                 </ul>
 
                 <div class="tab-content article-more-content panel-body">
@@ -351,7 +351,7 @@
                     {* Supplementary *}
                     {if $supplementaryGalleys}
                         <div class="tab-pane" role="tabpanel" id="supplementary">
-                            <h2 class="article-more-title">{translate key="plugins.themes.mbj.article.supplementaries"}</h2>
+                            <h2 class="article-more-title">{translate key="plugins.themes.ibsscustom.article.supplementaries"}</h2>
                             <div class="download">
                                 {foreach from=$supplementaryGalleys item=galley}
                                     <div class="supplementary">
@@ -365,7 +365,7 @@
                     {* Statistics *}
                     {if $pubId}
                         <div class="tab-pane" role="tabpanel" id="statistics">
-                            <h2 class="article-more-title">{translate key="plugins.themes.mbj.article.statistics"}</h2>
+                            <h2 class="article-more-title">{translate key="plugins.themes.ibsscustom.article.statistics"}</h2>
                             <div class="statistics">
                                 {include file="frontend/components/badges.tpl" doi=$pubId altmetricsHide="true"}
                                 <div class="statistics-more">

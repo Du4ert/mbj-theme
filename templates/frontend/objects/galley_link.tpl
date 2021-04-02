@@ -53,7 +53,7 @@
 
     {if !$isSupplementary}
         {* Primary galley *}
-        <a class="galley-link btn  btn-primary galley-primary {if !empty($lang) && $lang !== $currentLocale}{translate key="plugins.themes.mbj.article.{$lang|escape}"}{/if} {$type}" role="button" href="{url|escape page=$page op="view" path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}">
+        <a class="galley-link btn  btn-primary galley-primary {if !empty($lang) && $lang !== $currentLocale}{translate key="plugins.themes.ibsscustom.article.{$lang|escape}"}{/if} {$type}" role="button" href="{url|escape page=$page op="view" path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}">
     
             {* Add some screen reader text to indicate if a galley is restricted *}
             {if $restricted}
@@ -68,12 +68,12 @@
             {/if}
     
             {if !$summary}
-                {translate key="plugins.themes.mbj.issue.fulltext"}
+                {translate key="plugins.themes.ibsscustom.issue.fulltext"}
                 {if !empty($lang) && $lang !== $currentLocale}
-                    ({translate key="plugins.themes.mbj.article.{$lang|escape}"})
+                    ({translate key="plugins.themes.ibsscustom.article.{$lang|escape}"})
                 {/if}
             {else}
-                {translate key="plugins.themes.mbj.article.{$lang|escape}"}
+                {translate key="plugins.themes.ibsscustom.article.{$lang|escape}"}
             {/if}
     
             {if $restricted && $purchaseFee && $purchaseCurrency}
@@ -88,7 +88,7 @@
     {else}
         <div class="row">
         {* {if $galley->getLabel() === 'supplementary'}
-            {translate key="plugins.themes.mbj.article.supplementary"}
+            {translate key="plugins.themes.ibsscustom.article.supplementary"}
         {else} *}
         
             {assign var="fileType" value=($galley->getFileType()|explode:"/")}
@@ -122,7 +122,7 @@
                     <div class="list-group">
                         <div class="list-group-item">
                             <a class="galley-link btn  btn-default galley-supplementary {$type}" href="{url|escape page=$page op="view" path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}">
-                                {translate key="plugins.themes.mbj.article.galley.download"}
+                                {translate key="plugins.themes.ibsscustom.article.galley.download"}
                             </a>
                         </div>
                     </div>
@@ -130,23 +130,23 @@
             </div>
             <div class="col-md-9 col-sm-6 supplementary-meta">
                 <div class="galley-title">
-                    <strong>{translate key="plugins.themes.mbj.article.galley.name"}:</strong>
+                    <strong>{translate key="plugins.themes.ibsscustom.article.galley.name"}:</strong>
                     {$galley->getLocalizedName()|escape}
                 </div>
                 <div class="galley-description">
                     {if !!$galley->getFile()->_data["description"]}
-                        <strong>{translate key="plugins.themes.mbj.article.galley.description"}:</strong>
+                        <strong>{translate key="plugins.themes.ibsscustom.article.galley.description"}:</strong>
                         {$galley->getFile()->getLocalizedDescription()|escape}
                     {/if}
                 </div>
                 <div class="galley-type">
-                <strong>{translate key="plugins.themes.mbj.article.galley.file.type"}:</strong>
+                <strong>{translate key="plugins.themes.ibsscustom.article.galley.file.type"}:</strong>
                 {$galley->getFileType()|escape}
                 {* {$fileType[1]|escape} *}
                 </div>
                 {if $fileSize}
                 <div class="galley-size">
-                <strong>{translate key="plugins.themes.mbj.article.galley.file.size"}:</strong>
+                <strong>{translate key="plugins.themes.ibsscustom.article.galley.file.size"}:</strong>
                 {$fileSize|escape}
                 </div>
                 {/if}

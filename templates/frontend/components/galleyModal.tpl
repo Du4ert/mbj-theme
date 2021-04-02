@@ -20,7 +20,7 @@
                     <button class="modal-resize close"><span class="glyphicon glyphicon-fullscreen aria-hidden=" true"></span></button>
                     <a class="modal-download" href="{url|escape page=$page op="view"  path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}">
                         <span class="modal-download-text">{translate
-                            key="plugins.themes.mbj.article.galley.download"}</span>
+                            key="plugins.themes.ibsscustom.article.galley.download"}</span>
                         <span class="modal-download-button glyphicon glyphicon-download-alt"></span>
                     </a>
                 </div>
@@ -43,7 +43,7 @@
                 <div class="modal-footer">
                     <a class="modal-download" href="{url|escape page=$page op="view"  path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}">
                         <span class="modal-download-text">{translate
-                            key="plugins.themes.mbj.article.galley.download"}</span>
+                            key="plugins.themes.ibsscustom.article.galley.download"}</span>
                         <span class="modal-download-button glyphicon glyphicon-download-alt"></span>
                     </a>
                 </div>

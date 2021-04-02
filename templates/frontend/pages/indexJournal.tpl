@@ -39,10 +39,18 @@
 		{/if}
 
 		{if $journalDescription}
-			<div class="">
+			<h1 class="journal-description-title">
+				{if $displayPageHeaderTitle}
+					{$displayPageHeaderTitle}
+					<hr />
+				{/if}
+			</h1>
+			<div class="journal-description-content">
 				{$journalDescription}
 			</div>
 		{/if}
+
+
 		{if $additionalHomeContent}
 			<section class="additional_content">
 				{$additionalHomeContent}

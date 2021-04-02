@@ -14,227 +14,232 @@ msgstr ""
 
 
 
-msgid "plugins.themes.mbj.editorial.teamTitle"
+msgid "plugins.themes.ibsscustom.editorial.teamTitle"
 msgstr "editorial team members"
 
-msgid "plugins.themes.mbj.editorial.date"
+msgid "plugins.themes.ibsscustom.editorial.date"
 msgstr "march 2018"
 
-msgid "plugins.themes.mbj.issue.summary.pages"
+msgid "plugins.themes.ibsscustom.issue.summary.pages"
 msgstr "Pages"
 
-msgid "plugins.themes.mbj.issue.fullIssue"
+msgid "plugins.themes.ibsscustom.issue.fullIssue"
 msgstr "Full issue"
 
-msgid "plugins.themes.mbj.issue.published"
+msgid "plugins.themes.ibsscustom.issue.published"
 msgstr "Published"
 
-msgid "plugins.themes.mbj.submissions.published"
+msgid "plugins.themes.ibsscustom.submissions.published"
 msgstr "Published online"
 
-msgid "plugins.themes.mbj.issue.fulltext"
+msgid "plugins.themes.ibsscustom.issue.fulltext"
 msgstr "Download fulltext"
 
-msgid "plugins.themes.mbj.issue.supplementary"
+msgid "plugins.themes.ibsscustom.issue.supplementary"
 msgstr "Supplementary"
 
-msgid "plugins.themes.mbj.editorial.principle"
+msgid "plugins.themes.ibsscustom.editorial.principle"
 msgstr "The principle of the Editorial Board (RU)"
 
-msgid "plugins.themes.mbj.editorial.statute"
+msgid "plugins.themes.ibsscustom.editorial.statute"
 msgstr "Editorial statute (RU)"
 
-msgid "plugins.themes.mbj.editorial.bio.biography"
+msgid "plugins.themes.ibsscustom.editorial.bio.biography"
 msgstr "Position, academic degree, rank"
 
-msgid "plugins.themes.mbj.editorial.bio.profiles"
+msgid "plugins.themes.ibsscustom.editorial.bio.profiles"
 msgstr "Profiles"
 
-msgid "plugins.themes.mbj.editorial.bio.country"
+msgid "plugins.themes.ibsscustom.editorial.bio.country"
 msgstr "Country"
 
-msgid "plugins.themes.mbj.editorial.title"
+msgid "plugins.themes.ibsscustom.editorial.title"
 msgstr "Editorial Board"
 
-msgid "plugins.themes.mbj.editorial.bio.title"
+msgid "plugins.themes.ibsscustom.editorial.bio.title"
 msgstr "Editorial Board member"
 
-msgid "plugins.themes.mbj.editorial.bio.address"
+msgid "plugins.themes.ibsscustom.editorial.bio.address"
 msgstr "Address"
 
-msgid "plugins.themes.mbj.editorial.bio.profileon"
+msgid "plugins.themes.ibsscustom.editorial.bio.profileon"
 msgstr "Profile on"
 
-msgid "plugins.themes.mbj.editorial.bio.elibrary"
+msgid "plugins.themes.ibsscustom.editorial.bio.elibrary"
 msgstr "Papers on eLibrary.ru"
 
-msgid "plugins.themes.mbj.editorial.role.editorinchief"
+msgid "plugins.themes.ibsscustom.editorial.role.editorinchief"
 msgstr "Editor-in-Chief"
 
-msgid "plugins.themes.mbj.editorial.role.deputyeditorinchief"
+msgid "plugins.themes.ibsscustom.editorial.role.deputyeditorinchief"
 msgstr "Deputy Editor-in-Chief"
 
-msgid "plugins.themes.mbj.editorial.role.executivesecretary"
+msgid "plugins.themes.ibsscustom.editorial.role.executivesecretary"
 msgstr "Executive Secretary"
 
-msgid "plugins.themes.mbj.editorial.role.editorsinchief"
+msgid "plugins.themes.ibsscustom.editorial.role.editorsinchief"
 msgstr "Editors-in-Chief"
 
-msgid "plugins.themes.mbj.editorial.role.deputyesditorinchief"
+msgid "plugins.themes.ibsscustom.editorial.role.deputyesditorinchief"
 msgstr "Deputy Editors-in-Chief"
 
-msgid "plugins.themes.mbj.editorial.role.executivesecretaries"
+msgid "plugins.themes.ibsscustom.editorial.role.executivesecretaries"
 msgstr "Executive Secretaries"
 
-msgid "plugins.themes.mbj.issue.archive.year"
+msgid "plugins.themes.ibsscustom.issue.archive.year"
 msgstr "Year"
 
-msgid "plugins.themes.mbj.issue.archive.number"
+msgid "plugins.themes.ibsscustom.issue.archive.number"
 msgstr "No"
 
-msgid "plugins.themes.mbj.issue.archive.issue"
+msgid "plugins.themes.ibsscustom.issue.archive.issue"
 msgstr "Issue"
 
-msgid "plugins.themes.mbj.issue.archive.vol"
+msgid "plugins.themes.ibsscustom.issue.archive.vol"
 msgstr "Vol"
 
-msgid "plugins.themes.mbj.issue.details.issue"
+msgid "plugins.themes.ibsscustom.issue.details.issue"
 msgstr "issue"
 
-msgid "plugins.themes.mbj.issue.details.vol"
+msgid "plugins.themes.ibsscustom.issue.details.vol"
 msgstr "vol"
 
-msgid "plugins.themes.mbj.issue.details.number"
+msgid "plugins.themes.ibsscustom.issue.details.number"
 msgstr "№"
 
-msgid "plugins.themes.mbj.issue.details.pp"
+msgid "plugins.themes.ibsscustom.issue.details.pp"
 msgstr "pp"
 
-msgid "plugins.themes.mbj.issue.details.no"
+msgid "plugins.themes.ibsscustom.issue.details.no"
 msgstr "no."
 
-msgid "plugins.themes.mbj.issue.details.amp"
+msgid "plugins.themes.ibsscustom.issue.details.amp"
 msgstr "&amp;"
 
-msgid "plugins.themes.mbj.submission.published"
+msgid "plugins.themes.ibsscustom.submission.published"
 msgstr "Published"
 
-msgid "plugins.themes.mbj.submissions.unregistered.send"
+msgid "plugins.themes.ibsscustom.submissions.unregistered.send"
 msgstr "You can send all the files to"
 
-msgid "plugins.themes.mbj.submissions.registered.send"
+msgid "plugins.themes.ibsscustom.submissions.registered.send"
 msgstr "You can send all the files to"
 
-msgid "plugins.themes.mbj.submissions.title"
+msgid "plugins.themes.ibsscustom.submissions.title"
 msgstr "Submissions"
 
-msgid "plugins.themes.mbj.submissionPreparationChecklist.description"
+msgid "plugins.themes.ibsscustom.submissionPreparationChecklist.description"
 msgstr "As part of the submission process, Authors are required to check off their submission's compliance with all of the following items. Submissions may be returned to Authors that do not adhere to these guidelines:"
 
-msgid "plugins.themes.mbj.about.contacts.tel"
+msgid "plugins.themes.ibsscustom.about.contacts.tel"
 msgstr "Tel."
 
-msgid "plugins.themes.mbj.navigation.issues"
+msgid "plugins.themes.ibsscustom.about.contacts.email"
+msgstr "Email"
+
+msgstr "Affiliation"
+
+msgid "plugins.themes.ibsscustom.navigation.issues"
 msgstr "Issues"
 
-msgid "plugins.themes.mbj.navigation.aboutTheJournal"
+msgid "plugins.themes.ibsscustom.navigation.aboutTheJournal"
 msgstr "About the journal"
 
-msgid "plugins.themes.mbj.navigation.aim"
+msgid "plugins.themes.ibsscustom.navigation.aim"
 msgstr "Aim and scope"
 
-msgid "plugins.themes.mbj.navigation.editorialPolicies"
+msgid "plugins.themes.ibsscustom.navigation.editorialPolicies"
 msgstr "Editorial Policies"
 
-msgid "plugins.themes.mbj.navigation.peerReview"
+msgid "plugins.themes.ibsscustom.navigation.peerReview"
 msgstr "Peer-review"
 
-msgid "plugins.themes.mbj.navigation.publicationEthics"
+msgid "plugins.themes.ibsscustom.navigation.publicationEthics"
 msgstr "Publication Ethics"
 
-msgid "plugins.themes.mbj.navigation.forauthors"
+msgid "plugins.themes.ibsscustom.navigation.forauthors"
 msgstr "For Authors"
 
-msgid "plugins.themes.mbj.submissions.forauthors"
+msgid "plugins.themes.ibsscustom.submissions.forauthors"
 msgstr "Guidelines for Authors"
 
-msgid "plugins.themes.mbj.submissions.cite"
+msgid "plugins.themes.ibsscustom.submissions.cite"
 msgstr "Citation format"
 
-msgid "plugins.themes.mbj.navigation.metadata"
+msgid "plugins.themes.ibsscustom.navigation.metadata"
 msgstr "Metadata of the Authors"
 
-msgid "plugins.themes.mbj.navigation.license"
+msgid "plugins.themes.ibsscustom.navigation.license"
 msgstr "License Agreement"
 
-msgid "plugins.themes.mbj.navigation.agreement"
+msgid "plugins.themes.ibsscustom.navigation.agreement"
 msgstr "Authors agreement"
 
-msgid "plugins.themes.mbj.navigation.adoptions"
+msgid "plugins.themes.ibsscustom.navigation.adoptions"
 msgstr "Adoptions and Plagiarism"
 
-msgid "plugins.themes.mbj.navigation.conflict"
+msgid "plugins.themes.ibsscustom.navigation.conflict"
 msgstr "Conflict of Interest"
 
-msgid "plugins.themes.mbj.navigation.toReviewers"
+msgid "plugins.themes.ibsscustom.navigation.toReviewers"
 msgstr "For Reviewers"
 
-msgid "plugins.themes.mbj.navigation.access"
+msgid "plugins.themes.ibsscustom.navigation.access"
 msgstr "Open-Access Policy"
 
-msgid "plugins.themes.mbj.navigation.archiving"
+msgid "plugins.themes.ibsscustom.navigation.archiving"
 msgstr "Archiving"
 
-msgid "plugins.themes.mbj.navigation.fee"
+msgid "plugins.themes.ibsscustom.navigation.fee"
 msgstr "No Publication Fee"
 
-msgid "plugins.themes.mbj.navigation.retraction"
+msgid "plugins.themes.ibsscustom.navigation.retraction"
 msgstr "The Order of Retraction"
 
 msgid "default.groups.name.author"
 msgstr "author"
 
-msgid "plugins.themes.mbj.article.views"
+msgid "plugins.themes.ibsscustom.article.views"
 msgstr "Views"
 
-msgid "plugins.themes.mbj.article.downloads"
+msgid "plugins.themes.ibsscustom.article.downloads"
 msgstr "Downloads"
 
-msgid "plugins.themes.mbj.article.ru_RU"
+msgid "plugins.themes.ibsscustom.article.ru_RU"
 msgstr "RUS"
 
-msgid "plugins.themes.mbj.article.en_US"
+msgid "plugins.themes.ibsscustom.article.en_US"
 msgstr "ENG"
 
-msgid "plugins.themes.mbj.article.video"
+msgid "plugins.themes.ibsscustom.article.video"
 msgstr "Video"
 
-msgid "plugins.themes.mbj.article.supplementary"
+msgid "plugins.themes.ibsscustom.article.supplementary"
 msgstr "Supplementary"
 
-msgid "plugins.themes.mbj.article.supplementaries"
+msgid "plugins.themes.ibsscustom.article.supplementaries"
 msgstr "Supplementary"
 
-msgid "plugins.themes.mbj.article.affiliations"
+msgid "plugins.themes.ibsscustom.article.affiliations"
 msgstr "Affiliations"
 
-msgid "plugins.themes.mbj.article.affiliation"
+msgid "plugins.themes.ibsscustom.article.affiliation"
 msgstr "Affiliation"
 
-msgid "plugins.themes.mbj.article.statistics"
+msgid "plugins.themes.ibsscustom.article.statistics"
 msgstr "Statistics"
 
-msgid "plugins.themes.mbj.article.galley.download"
+msgid "plugins.themes.ibsscustom.article.galley.download"
 msgstr "Download"
 
-msgid "plugins.themes.mbj.article.galley.name"
+msgid "plugins.themes.ibsscustom.article.galley.name"
 msgstr "File name"
 
-msgid "plugins.themes.mbj.article.galley.description"
+msgid "plugins.themes.ibsscustom.article.galley.description"
 msgstr "Description"
 
-msgid "plugins.themes.mbj.article.galley.file.type"
+msgid "plugins.themes.ibsscustom.article.galley.file.type"
 msgstr "File extension"
 
-msgid "plugins.themes.mbj.article.galley.file.size"
+msgid "plugins.themes.ibsscustom.article.galley.file.size"
 msgstr "File size"

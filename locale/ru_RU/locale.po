@@ -18,232 +18,238 @@ msgstr "=20) ? 1 : 2;\n"
 
 
 
-msgid "plugins.themes.mbj.editorial.date"
+msgid "plugins.themes.ibsscustom.editorial.date"
 msgstr "по состоянию на март 2018 г."
 
-msgid "plugins.themes.mbj.editorial.teamTitle"
+msgid "plugins.themes.ibsscustom.editorial.teamTitle"
 msgstr "члены редакционной коллегии"
 
-msgid "plugins.themes.mbj.editorial.role.editorinchief"
+msgid "plugins.themes.ibsscustom.editorial.role.editorinchief"
 msgstr "Главный редактор"
 
-msgid "plugins.themes.mbj.editorial.role.editorsinchief"
+msgid "plugins.themes.ibsscustom.editorial.role.editorsinchief"
 msgstr "Главные редакторы"
 
-msgid "plugins.themes.mbj.editorial.role.deputyeditorinchief"
+msgid "plugins.themes.ibsscustom.editorial.role.deputyeditorinchief"
 msgstr "Заместитель главного редактора"
 
-msgid "plugins.themes.mbj.editorial.role.deputyesditorinchief"
+msgid "plugins.themes.ibsscustom.editorial.role.deputyesditorinchief"
 msgstr "Заместители главного редактора"
 
-msgid "plugins.themes.mbj.editorial.role.executivesecretary"
+msgid "plugins.themes.ibsscustom.editorial.role.executivesecretary"
 msgstr "Ответственный секретарь"
 
-msgid "plugins.themes.mbj.editorial.role.executivesecretaries"
+msgid "plugins.themes.ibsscustom.editorial.role.executivesecretaries"
 msgstr "Ответственные секретари"
 
-msgid "plugins.themes.mbj.issue.fullIssue"
+msgid "plugins.themes.ibsscustom.issue.fullIssue"
 msgstr "Полный выпуск"
 
-msgid "plugins.themes.mbj.issue.summary.pages"
+msgid "plugins.themes.ibsscustom.issue.summary.pages"
 msgstr "Страницы"
 
-msgid "plugins.themes.mbj.issue.published"
+msgid "plugins.themes.ibsscustom.issue.published"
 msgstr "Опубликован"
 
-msgid "plugins.themes.mbj.submissions.published"
+msgid "plugins.themes.ibsscustom.submissions.published"
 msgstr "Опубликован онлайн"
 
-msgid "plugins.themes.mbj.issue.fulltext"
+msgid "plugins.themes.ibsscustom.issue.fulltext"
 msgstr "Скачать полный текст"
 
-msgid "plugins.themes.mbj.issue.supplementary"
+msgid "plugins.themes.ibsscustom.issue.supplementary"
 msgstr "Приложение"
 
-msgid "plugins.themes.mbj.editorial.principle"
+msgid "plugins.themes.ibsscustom.editorial.principle"
 msgstr "Положение о редколлегии МБЖ"
 
-msgid "plugins.themes.mbj.editorial.statute"
+msgid "plugins.themes.ibsscustom.editorial.statute"
 msgstr "Устав редакции МБЖ"
 
-msgid "plugins.themes.mbj.editorial.bio.biography"
+msgid "plugins.themes.ibsscustom.editorial.bio.biography"
 msgstr "Должность, степень, звание"
 
-msgid "plugins.themes.mbj.editorial.bio.profiles"
+msgid "plugins.themes.ibsscustom.editorial.bio.profiles"
 msgstr "Профили"
 
-msgid "plugins.themes.mbj.editorial.bio.country"
+msgid "plugins.themes.ibsscustom.editorial.bio.country"
 msgstr "Страна"
 
-msgid "plugins.themes.mbj.editorial.title"
+msgid "plugins.themes.ibsscustom.editorial.title"
 msgstr "Редколлегия"
 
-msgid "plugins.themes.mbj.editorial.bio.title"
+msgid "plugins.themes.ibsscustom.editorial.bio.title"
 msgstr "Член редколлегии"
 
-msgid "plugins.themes.mbj.editorial.bio.address"
+msgid "plugins.themes.ibsscustom.editorial.bio.address"
 msgstr "Адрес"
 
-msgid "plugins.themes.mbj.editorial.bio.profileon"
+msgid "plugins.themes.ibsscustom.editorial.bio.profileon"
 msgstr "Профиль на"
 
-msgid "plugins.themes.mbj.editorial.bio.elibrary"
+msgid "plugins.themes.ibsscustom.editorial.bio.elibrary"
 msgstr "Публикации на eLibrary.ru"
 
-msgid "plugins.themes.mbj.issue.archive.year"
+msgid "plugins.themes.ibsscustom.issue.archive.year"
 msgstr "Год"
 
-msgid "plugins.themes.mbj.issue.archive.issue"
+msgid "plugins.themes.ibsscustom.issue.archive.issue"
 msgstr "Выпуск"
 
-msgid "plugins.themes.mbj.issue.archive.vol"
+msgid "plugins.themes.ibsscustom.issue.archive.vol"
 msgstr "Том"
 
-msgid "plugins.themes.mbj.issue.archive.number"
+msgid "plugins.themes.ibsscustom.issue.archive.number"
 msgstr "№"
 
-msgid "plugins.themes.mbj.issue.details.issue"
+msgid "plugins.themes.ibsscustom.issue.details.issue"
 msgstr "выпуск"
 
-msgid "plugins.themes.mbj.issue.details.vol"
+msgid "plugins.themes.ibsscustom.issue.details.vol"
 msgstr "т"
 
-msgid "plugins.themes.mbj.issue.details.number"
+msgid "plugins.themes.ibsscustom.issue.details.number"
 msgstr "№"
 
-msgid "plugins.themes.mbj.issue.details.pp"
+msgid "plugins.themes.ibsscustom.issue.details.pp"
 msgstr "с"
 
-msgid "plugins.themes.mbj.issue.details.no"
+msgid "plugins.themes.ibsscustom.issue.details.no"
 msgstr "№"
 
-msgid "plugins.themes.mbj.issue.details.amp"
+msgid "plugins.themes.ibsscustom.issue.details.amp"
 msgstr "и"
 
-msgid "plugins.themes.mbj.submission.published"
+msgid "plugins.themes.ibsscustom.submission.published"
 msgstr "Опубликована"
 
-msgid "plugins.themes.mbj.submissions.unregistered.send"
+msgid "plugins.themes.ibsscustom.submissions.unregistered.send"
 msgstr "Отправьте материал по адресу"
 
-msgid "plugins.themes.mbj.submissions.registered.send"
+msgid "plugins.themes.ibsscustom.submissions.registered.send"
 msgstr "Или отправьте материал по адресу"
 
-msgid "plugins.themes.mbj.submissions.title"
+msgid "plugins.themes.ibsscustom.submissions.title"
 msgstr "Отправка материала"
 
-msgid "plugins.themes.mbj.registration"
+msgid "plugins.themes.ibsscustom.registration"
 msgstr "В данный момент регистрация недоступна"
 
-msgid "plugins.themes.mbj.submissions.cite"
+msgid "plugins.themes.ibsscustom.submissions.cite"
 msgstr "Формат цитирования"
 
 msgid "search.advancedFilters"
 msgstr "Дополнительные фильтры"
 
-msgid "plugins.themes.mbj.submissionPreparationChecklist.description"
+msgid "plugins.themes.ibsscustom.submissionPreparationChecklist.description"
 msgstr "В качестве одного из этапов процесса отправки авторы должны проверить соответствие их материала следующим пунктам. Авторам могут быть возвращены материалы, не удовлетворяющие следующим требованиям:"
 
-msgid "plugins.themes.mbj.about.contacts.tel"
+msgid "plugins.themes.ibsscustom.about.contacts.tel"
 msgstr "Телефон"
 
-msgid "plugins.themes.mbj.article.views"
+msgid "plugins.themes.ibsscustom.about.contacts.email"
+msgstr "Email"
+
+msgid "plugins.themes.ibsscustom.about.contacts.affiliation"
+msgstr "Организация"
+
+msgid "plugins.themes.ibsscustom.article.views"
 msgstr "Просмотров"
 
-msgid "plugins.themes.mbj.article.downloads"
+msgid "plugins.themes.ibsscustom.article.downloads"
 msgstr "Скачиваний"
 
-msgid "plugins.themes.mbj.article.ru_RU"
+msgid "plugins.themes.ibsscustom.article.ru_RU"
 msgstr "RUS"
 
-msgid "plugins.themes.mbj.article.en_US"
+msgid "plugins.themes.ibsscustom.article.en_US"
 msgstr "ENG"
 
-msgid "plugins.themes.mbj.article.video"
+msgid "plugins.themes.ibsscustom.article.video"
 msgstr "Видео"
 
-msgid "plugins.themes.mbj.article.supplementary"
+msgid "plugins.themes.ibsscustom.article.supplementary"
 msgstr "Приложение"
 
-msgid "plugins.themes.mbj.article.supplementaries"
+msgid "plugins.themes.ibsscustom.article.supplementaries"
 msgstr "Приложения"
 
-msgid "plugins.themes.mbj.article.affiliations"
+msgid "plugins.themes.ibsscustom.article.affiliations"
 msgstr "Учреждения"
 
-msgid "plugins.themes.mbj.article.affiliation"
+msgid "plugins.themes.ibsscustom.article.affiliation"
 msgstr "Учреждение"
 
-msgid "plugins.themes.mbj.article.statistics"
+msgid "plugins.themes.ibsscustom.article.statistics"
 msgstr "Статистика"
 
-msgid "plugins.themes.mbj.article.galley.download"
+msgid "plugins.themes.ibsscustom.article.galley.download"
 msgstr "Скачать"
 
-msgid "plugins.themes.mbj.article.galley.name"
+msgid "plugins.themes.ibsscustom.article.galley.name"
 msgstr "Имя файла"
 
-msgid "plugins.themes.mbj.article.galley.description"
+msgid "plugins.themes.ibsscustom.article.galley.description"
 msgstr "Описание"
 
-msgid "plugins.themes.mbj.article.galley.file.type"
+msgid "plugins.themes.ibsscustom.article.galley.file.type"
 msgstr "Расширение файла"
 
-msgid "plugins.themes.mbj.article.galley.file.size"
+msgid "plugins.themes.ibsscustom.article.galley.file.size"
 msgstr "Размер файла"
 
-msgid "plugins.themes.mbj.navigation.issues"
+msgid "plugins.themes.ibsscustom.navigation.issues"
 msgstr "Выпуски"
 
-msgid "plugins.themes.mbj.navigation.aboutTheJournal"
+msgid "plugins.themes.ibsscustom.navigation.aboutTheJournal"
 msgstr "О журнале"
 
-msgid "plugins.themes.mbj.navigation.aim"
+msgid "plugins.themes.ibsscustom.navigation.aim"
 msgstr "Цели и задачи"
 
-msgid "plugins.themes.mbj.navigation.editorialPolicies"
+msgid "plugins.themes.ibsscustom.navigation.editorialPolicies"
 msgstr "Редакционная политика"
 
-msgid "plugins.themes.mbj.navigation.peerReview"
+msgid "plugins.themes.ibsscustom.navigation.peerReview"
 msgstr "Процедура опубликования"
 
-msgid "plugins.themes.mbj.navigation.publicationEthics"
+msgid "plugins.themes.ibsscustom.navigation.publicationEthics"
 msgstr "Публикационная этика"
 
-msgid "plugins.themes.mbj.submissions.forauthors"
+msgid "plugins.themes.ibsscustom.submissions.forauthors"
 msgstr "Правила для авторов"
 
-msgid "plugins.themes.mbj.navigation.forauthors"
+msgid "plugins.themes.ibsscustom.navigation.forauthors"
 msgstr "Авторам"
 
-msgid "plugins.themes.mbj.navigation.metadata"
+msgid "plugins.themes.ibsscustom.navigation.metadata"
 msgstr "Метаданные авторов"
 
-msgid "plugins.themes.mbj.navigation.agreement"
+msgid "plugins.themes.ibsscustom.navigation.agreement"
 msgstr "Авторский договор"
 
-msgid "plugins.themes.mbj.navigation.license"
+msgid "plugins.themes.ibsscustom.navigation.license"
 msgstr "Лицензионное соглашение"
 
-msgid "plugins.themes.mbj.navigation.adoptions"
+msgid "plugins.themes.ibsscustom.navigation.adoptions"
 msgstr "Заимствования и плагиат"
 
-msgid "plugins.themes.mbj.navigation.conflict"
+msgid "plugins.themes.ibsscustom.navigation.conflict"
 msgstr "Конфликт интересов"
 
-msgid "plugins.themes.mbj.navigation.toReviewers"
+msgid "plugins.themes.ibsscustom.navigation.toReviewers"
 msgstr "Рецензентам"
 
-msgid "plugins.themes.mbj.navigation.access"
+msgid "plugins.themes.ibsscustom.navigation.access"
 msgstr "Политика открытого доступа"
 
-msgid "plugins.themes.mbj.navigation.archiving"
+msgid "plugins.themes.ibsscustom.navigation.archiving"
 msgstr "Архивирование"
 
-msgid "plugins.themes.mbj.navigation.fee"
+msgid "plugins.themes.ibsscustom.navigation.fee"
 msgstr "Плата за публикацию"
 
-msgid "plugins.themes.mbj.navigation.retraction"
+msgid "plugins.themes.ibsscustom.navigation.retraction"
 msgstr "Порядок ретракции"
 
 msgid "default.groups.name.author"

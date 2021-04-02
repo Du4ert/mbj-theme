@@ -16,7 +16,7 @@
 									{break}
 								{/if}
 							{/foreach}
-						<button  id="citation-button" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{translate key="plugins.themes.mbj.submissions.cite"} (<span class="citation-style"> {$primaryCite} </span>)
+						<button  id="citation-button" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{translate key="plugins.themes.ibsscustom.submissions.cite"} (<span class="citation-style"> {$primaryCite} </span>)
 						  <span class="caret"></span></button>
 						  <div id="copy" title="Copy" onclick="false"></div>
 						<ul class="dropdown-menu" role="menu">

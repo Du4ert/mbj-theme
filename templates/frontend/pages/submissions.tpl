@@ -19,7 +19,7 @@
 	{* Page Title *}
 	<div class="page-header">
 		{include file="frontend/components/editLink.tpl" page="management" op="settings" path="publication" anchor="submissionStage" sectionTitleKey="about.submissionPreparationChecklist"}
-		<h1>{translate key="plugins.themes.mbj.submissions.title"}</h1>
+		<h1>{translate key="plugins.themes.ibsscustom.submissions.title"}</h1>
 	</div>
 	{* /Page Title *}
 
@@ -31,19 +31,25 @@
 			{translate key="about.onlineSubmissions.submissionActions" newSubmission=$newSubmission viewSubmissions=$viewSubmissions}
 		</div>
 		<div class="alert alert-info">
-			{translate key="plugins.themes.mbj.submissions.registered.send"} <a href="mailto:mbj@imbr-ras.ru">mbj@imbr-ras.ru</a>.
+			{translate key="plugins.themes.ibsscustom.submissions.registered.send"} <a href="mailto:mbj@imbr-ras.ru">mbj@imbr-ras.ru</a>.
 		</div>
 
  	{else}
-	{* Закомментировано пока регистрация запрещена *}
-{* 		{capture assign="login"}<a href="{url page="login"}">{translate key="about.onlineSubmissions.login"}</a>{/capture}
+	{if !$disableUserReg}
+		{assign var="contactEmail" value=$currentContext->getData('contactEmail')}
+		{capture assign="login"}<a href="{url page="login"}">{translate key="about.onlineSubmissions.login"}</a>{/capture}
 		{capture assign="register"}<a href="{url page="user" op="register"}">{translate key="about.onlineSubmissions.register"}</a>{/capture}
 		<div class="alert alert-info">
 			{translate key="about.onlineSubmissions.registrationRequired" login=$login register=$register}
-		</div> *}
-	<div class="alert alert-info submission-email">
-			{translate key="plugins.themes.mbj.submissions.unregistered.send"} <a href="mailto:mbj@imbr-ras.ru">mbj@imbr-ras.ru</a>.
-	</div>
+		</div>
+		<div class="alert alert-info">
+			{translate key="plugins.themes.ibsscustom.submissions.registered.send"} <a href="mailto:mbj@imbr-ras.ru">{$contactEmail|escape}</a>.
+		</div>
+		{else}
+			<div class="alert alert-info submission-email">
+				{translate key="plugins.themes.ibsscustom.submissions.unregistered.send"} <a href="mailto:mbj@imbr-ras.ru">{$contactEmail|escape}</a>.
+			</div>
+	{/if}
 
 	{/if}
 
@@ -56,7 +62,7 @@
 				</h2>
 			</div>
 			<p class="lead description submission-description-custom">
-				{translate key="plugins.themes.mbj.submissionPreparationChecklist.description"}
+				{translate key="plugins.themes.ibsscustom.submissionPreparationChecklist.description"}
 			</p>
 			<ul class="list-group">
 				{foreach from=$submissionChecklist item=checklistItem}

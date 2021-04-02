@@ -43,7 +43,7 @@
 
 {if $affiliations[0]}
     <li class="article-meta-item authors-short-affiliation">
-        <strong>{capture assign=affiliation}{translate key="plugins.themes.mbj.article.affiliations"}{/capture}{translate key="semicolon"
+        <strong>{capture assign=affiliation}{translate key="plugins.themes.ibsscustom.article.affiliations"}{/capture}{translate key="semicolon"
             label=$affiliation}</strong>
         <ol class="affiliations-list">
             {foreach from=$affiliations item=item}

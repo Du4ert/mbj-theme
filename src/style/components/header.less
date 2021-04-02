@@ -34,7 +34,12 @@ header.header-custom {
     }
 }
 
+.site-name {
+    max-width: 60%;
+}
+
 .hero-title {
+    // font-family: 'Rubik';
     font-size: @hero-font-size;
     font-weight: 600;
     text-decoration: none;
@@ -43,6 +48,8 @@ header.header-custom {
         text-decoration: none;
     }
 }
+
+
 
 .hero-logo {
     color: @header-link-color;
@@ -83,21 +90,22 @@ header.header-custom {
 @media screen and (max-width: @screen-md) {
     .header-hero {
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
         .hero-bg-change(@hero-bg-img-md);
     }
 
     .hero-logo {
         margin-right: 50px;
+        // align-self: center;
     }
 
     .hero-logo-img {
         width: 80px;
         }
-    justify-content: space-between;
+    // justify-content: space-between;
     .hero-title {
-        font-size: 30px;
+        font-size: ceil(@hero-font-size / 1.1);
     }
 }
 
@@ -105,13 +113,22 @@ header.header-custom {
     .header-hero {
         .hero-bg-change(@hero-bg-img-sm);
     }
+    .site-name {
+        max-width: 100%;
+    }
+
     .hero-logo-img {
         width: 70px;
         }
-    // flex-direction: row;
-    justify-content: space-between;
+
     .hero-title {
-        font-size: 20px;
+        font-size: ceil(@hero-font-size / 1.25);
+    }
+}
+
+@media screen and (max-width: @screen-xs) {
+    .hero-title {
+        font-size: ceil(@hero-font-size / 1.55);
     }
 }
 

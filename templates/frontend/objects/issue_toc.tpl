@@ -61,7 +61,7 @@
 					{if $issue->getDatePublished() && $page!=="index"}
 					<p class="published">
 						<strong>
-							{translate key="plugins.themes.mbj.submissions.published"}:
+							{translate key="plugins.themes.ibsscustom.submissions.published"}:
 						</strong>
 						{$issue->getDatePublished()|escape|date_format:$dateFormatShort}
 					</p>
@@ -105,7 +105,7 @@
 	<div class="galleys">
 		<div class="page-header">
 			<h2>
-				<small>{translate key="plugins.themes.mbj.issue.fullIssue"}</small>
+				<small>{translate key="plugins.themes.ibsscustom.issue.fullIssue"}</small>
 			</h2>
 		</div>
 		<div class="btn-group" role="group">

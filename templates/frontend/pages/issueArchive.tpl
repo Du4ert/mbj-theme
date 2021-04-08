@@ -56,6 +56,17 @@
     {assign var=vol value=$issue->_data.volume}
     {assign var=num value=$issue->_data.number}
 
+    {capture assign="numPrint"}
+      {if $num}
+        {translate key="plugins.themes.ibsscustom.issue.archive.number"} {$num}
+      {/if}
+    {/capture}
+    {capture assign="volPrint"}
+      {if $vol && $issue->getData('showVolume')}
+        {translate key="plugins.themes.ibsscustom.issue.archive.vol"} {$vol}
+      {/if}
+    {/capture}
+
     {if $first}
       <tr>
     {/if}
@@ -64,9 +75,9 @@
       </td></tr>
          {assign var=currentYear value=$year}
         <td  class="issues-year-custom">{$currentYear}</td>
-        <td  class="issues-series-custom"><a href="{url op="view" path=$issue->getBestIssueId($currentJournal)}">{translate key="plugins.themes.ibsscustom.issue.archive.vol"} {$vol} {translate key="plugins.themes.ibsscustom.issue.archive.number"} {$num}</a>
+        <td  class="issues-series-custom"><a href="{url op="view" path=$issue->getBestIssueId($currentJournal)}">{$volPrint} {$numPrint}</a>
 				{else}
-        <a href="{url op="view" path=$issue->getBestIssueId($currentJournal)}">{translate key="plugins.themes.ibsscustom.issue.archive.vol"} {$vol} {translate key="plugins.themes.ibsscustom.issue.archive.number"} {$num}</a>
+        <a href="{url op="view" path=$issue->getBestIssueId($currentJournal)}">{$volPrint} {$numPrint}</a>
     {/if}
 
 

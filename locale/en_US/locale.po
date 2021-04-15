@@ -137,6 +137,7 @@ msgstr "Tel."
 msgid "plugins.themes.ibsscustom.about.contacts.email"
 msgstr "Email"
 
+msgid "plugins.themes.ibsscustom.about.contacts.affiliation"
 msgstr "Affiliation"
 
 msgid "plugins.themes.ibsscustom.navigation.issues"

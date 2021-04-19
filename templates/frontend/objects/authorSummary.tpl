@@ -3,6 +3,7 @@
 *
 * @uses $authors
 *}
+
 <li class="article-meta-item authors-short">
     <strong>{capture assign=authors}{translate key="article.authors"}{/capture}{translate
         key="semicolon" label=$authors}</strong>
@@ -10,6 +11,7 @@
     {foreach from=$article->getAuthors() item=author key=myId}
         {assign var="multiAffiliations" value=($author->getLocalizedAffiliation()|explode:" / ")}
         {foreach from=$multiAffiliations item=item}
+            {$item = $item|trim}
             {if !$item|@in_array:$affiliations}
                 {$affiliations[] = $item}
             {/if}

@@ -9,6 +9,9 @@
         key="semicolon" label=$authors}</strong>
     {assign var="affiliations" value=[] }
     {foreach from=$article->getAuthors() item=author key=myId}
+        {if !$author->getLocalizedAffiliation()}
+            {break}
+        {/if}
         {assign var="multiAffiliations" value=($author->getLocalizedAffiliation()|explode:" / ")}
         {foreach from=$multiAffiliations item=item}
             {$item = $item|trim}
@@ -24,6 +27,7 @@
         {if $affiliations|@count > 1}
         
             {foreach from=$multiAffiliations item=item key=key name=name}
+                {$item = $item|trim}
                 {assign var="position" value=($item|@array_search:$affiliations)}
                 {if $position === false }
                     {* {$affiliations[] = $item} *}

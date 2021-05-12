@@ -1,3 +1,7 @@
+#navigationUser {
+    z-index: 101;
+}
+
 // Mixin for bg change if src not empty
 .hero-bg-change(@path) when not (@path = '') {
     background-image: url('@{path_to_img}/@{path}');
@@ -136,7 +140,7 @@ header.header-custom {
 @media screen and (min-width: @screen-sm) {
     .top-navigation {
         position: fixed;
-        z-index: 100;
+        z-index: 99;
     }
 
     .header-hero {
@@ -162,7 +166,7 @@ header.header-custom {
             top: @navbar-height;
             left: 0;
             right: 0;
-            z-index: 100;
+            z-index: 80;
             width: 100%;
             border-bottom: 1px solid @gray-light;
         }

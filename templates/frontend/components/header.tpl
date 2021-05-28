@@ -17,6 +17,7 @@
 
 <body
     class="pkp_page_{$requestedPage|escape|default:"index"} pkp_op_{$requestedOp|escape|default:"index"}{if $showingLogo} has_site_logo{/if}">
+        {call_hook name="Themes::ibsscustom::custom"}
     <div class="pkp_structure_page">
         <nav id="accessibility-nav" class="sr-only" role="navigation" aria-labelled-by="accessible-menu-label">
             <div id="accessible-menu-label">

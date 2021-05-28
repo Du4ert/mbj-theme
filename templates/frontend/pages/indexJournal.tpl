@@ -26,9 +26,6 @@
 	{call_hook name="Templates::Index::journal"}
 <div class="row journal-description journal-description-main">
 	<div class="col-md-3 col-sm-3 col-xs-12">
-		{call_hook name="Templates::Index::journal"}
-
-		
 
 	</div>
 	<div class="col-xs-12">

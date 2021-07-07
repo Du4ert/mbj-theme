@@ -32,12 +32,16 @@
 				{$issue->getIssueIdentification()|escape}
 			</a>
 		</li>
-		<li class="active">
+		{if $issue->getIssueIdentification() !== $currentTitle}
+
+			<li class="active">
 			{if $currentTitleKey}
 				{translate key=$currentTitleKey}
 			{else}
 				{$currentTitle|escape}
 			{/if}
 		</li>
+		
+		{/if}
 	</ol>
 </nav>

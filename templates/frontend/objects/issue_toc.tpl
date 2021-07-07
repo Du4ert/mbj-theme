@@ -58,7 +58,7 @@
 
 
 					{* Published date *}
-					{if $issue->getDatePublished() && $page!=="index"}
+					{if $issue->getDatePublished() && $page!=="index" && !$issue->getData('urlPath') === 'just_accepted'}
 					<p class="published">
 						<strong>
 							{translate key="plugins.themes.ibsscustom.submissions.published"}:

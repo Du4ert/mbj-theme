@@ -16,7 +16,12 @@
 * @uses $pubIdPlugins @todo
 *}
 
-
+{* Just accepted issue functionality *}
+{assign var="just_accepted" value=false}
+{if $issue->getData('urlPath') === 'just_accepted'}
+    {$just_accepted = true}
+{/if}
+{*// Just accepted issue functionality *}
 
 <article class="article-details">
 
@@ -100,6 +105,8 @@
                 {/if}
 
                 {* Issue *}
+                {if !$just_accepted}
+                
                 <li class="article-meta-item issue-series">
                     {capture assign=translatedIssueSeries}{translate
 					key="plugins.themes.ibsscustom.issue.archive.issue"}{/capture}
@@ -109,9 +116,10 @@
                         {$issue->getIssueSeries()|escape}
                     </a>
                 </li>
+                  {/if}
 
                 {* Section *}
-                {if $section}
+                {if $section && !$just_accepted}
                     <li class="article-meta-item section">
                         <strong>{capture assign=sectionHead}{translate key="section.section"}{/capture}{translate
         					key="semicolon" label=$sectionHead}</strong>
@@ -120,10 +128,12 @@
                 {/if}
 
                 {* Pages *}
+                {if !$just_accepted}
                 <li class="article-meta-item pages">
                     <strong>{translate key="plugins.themes.ibsscustom.issue.summary.pages"}:</strong>
                     {$article->getStartingPage()|escape}–{$article->getEndingPage()|escape}
                 </li>
+                {/if}
 
                 {* Keywords *}
                 {if !empty($keywords[$currentLocale])}
@@ -167,7 +177,7 @@
 
 
                 {* Published date *}
-                {if $publication->getData('datePublished')}
+                {if $publication->getData('datePublished') && !$just_accepted}
                     <li class="article-meta-item date-published">
                         {capture assign=translatedDatePublished}{translate
         					key="plugins.themes.ibsscustom.submission.published"}{/capture}
@@ -185,6 +195,8 @@
                 {/if}
 
                 {* Views *}
+                {if !$just_accepted}
+                
                 <li class="article-meta-item article-views">
                     {if $primaryGalleys}
                         {assign var="fullTextDownloads" value=0}
@@ -200,6 +212,7 @@
                         0
                     {/if}
                 </li>
+                {/if}
 
             </ul><!-- /list-group -->
         </section><!-- .article-main -->
@@ -218,7 +231,8 @@
                 </div>
             {/if}
 
-
+            {if !$just_accepted}
+            
             {* Google scholar *}
             {assign var="scholarQuery" value=''}
             {if $pubId}
@@ -254,9 +268,13 @@
                     data-image="httpsgulp:{$issue->getLocalizedCoverImageUrl()|escape}"
                     data-services="vkontakte,twitter,facebook,odnoklassniki,telegram,viber,whatsapp"></div>
             </div>
+
+            {/if}
         </section><!-- /article-meta -->
 
     </div><!-- /row -->
+
+    {if !$just_accepted}
     <div class="row">
         <section class="col-md-10 col-sm-10 col-xs-12 col-lg-9">
             {* How to cite *}
@@ -265,6 +283,7 @@
             {/if}
         </section>
     </div>
+    {/if}
 
     <div class="row">
         <div class="col-xs-12">

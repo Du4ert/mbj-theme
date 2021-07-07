@@ -55,6 +55,9 @@
     {assign var=year value=$issue->_data.year}
     {assign var=vol value=$issue->_data.volume}
     {assign var=num value=$issue->_data.number}
+    {if !$year && !$vol && !$num}
+      {continue}
+    {/if}
 
     {capture assign="numPrint"}
       {if $num}

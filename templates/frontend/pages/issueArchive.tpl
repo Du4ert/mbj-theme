@@ -32,6 +32,9 @@
     </h1>
   </div> *}
 
+  {* Just accepted functional *}
+  {assign var="just_accepted" value='object'}
+
   {* No issues have been published *}
   {if empty($issues)}
     <div class="alert alert-info" role="alert">
@@ -55,7 +58,8 @@
     {assign var=year value=$issue->_data.year}
     {assign var=vol value=$issue->_data.volume}
     {assign var=num value=$issue->_data.number}
-    {if !$year && !$vol && !$num}
+    {if !$year && !$vol && !$num && $issue->getData('urlPath') === 'just_accepted'}
+      {$just_accepted = $issue}
       {continue}
     {/if}
 
@@ -85,7 +89,16 @@
 
 
     {/foreach}
-      </td></tr>
+      </td>
+      </tr>
+      {if !!$just_accepted}
+        <tr class="">
+        <td></td>
+          <td colspan="1" class="issues-series-just_accepted">
+           <a href="{url op="view" path=$just_accepted->getBestIssueId($currentJournal)}">{$just_accepted->getLocalizedTitle()|escape}</a>
+          </td>
+        </tr>
+      {/if}
     </tbody>
     </table>
   </div>

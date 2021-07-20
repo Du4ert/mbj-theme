@@ -33,7 +33,7 @@
   </div> *}
 
   {* Just accepted functional *}
-  {assign var="just_accepted" value='object'}
+  {assign var="just_accepted" value=null}
 
   {* No issues have been published *}
   {if empty($issues)}
@@ -86,7 +86,6 @@
 				{else}
         <a href="{url op="view" path=$issue->getBestIssueId($currentJournal)}">{$volPrint} {$numPrint}</a>
     {/if}
-
 
     {/foreach}
       </td>

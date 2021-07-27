@@ -141,10 +141,10 @@
                         <strong>{capture assign=keywordsHead}{translate key="article.subject"}{/capture}{translate
         						key="semicolon" label=$keywordsHead}</strong>
                         <span class="value">
-                            {foreach from=$keywords[$currentLocale] item=keyword}
-                                {foreach name=keywords from=$keyword item=keywordItem}
-                                    {$keywordItem|escape}{if !$smarty.foreach.keywords.last}, {/if}
-                                {/foreach}
+                            {foreach name=arr from=$keywords[$currentLocale] item=keyword}
+                                {* {foreach name=keyword from=$keyword item=keywordItem} *}
+                                    {$keyword|escape}{if !$smarty.foreach.arr.last}, {/if}
+                                {* {/foreach} *}
                             {/foreach}
                         </span>
                     </li>
@@ -323,10 +323,10 @@
                     									key="article.subject"}{/capture}{translate
                     									key="semicolon" label=$keywordsHead}</strong>
                                         <span class="value">
-                                            {foreach from=$keywords[$currentLocale] item=keyword}
-                                                {foreach name=keywords from=$keyword item=keywordItem}
-                                                    {$keywordItem|escape}{if !$smarty.foreach.keywords.last}, {/if}
-                                                {/foreach}
+                                            {foreach name=arr from=$keywords[$currentLocale] item=keyword}
+                                                {* {foreach name=keyword from=$keyword item=keywordItem} *}
+                                                    {$keyword|escape}{if !$smarty.foreach.arr.last}, {/if}
+                                                {* {/foreach} *}
                                             {/foreach}
                                         </span>
                                     </div>

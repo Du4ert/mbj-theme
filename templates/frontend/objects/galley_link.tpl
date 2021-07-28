@@ -136,7 +136,7 @@
                 <div class="galley-description">
                     {if !!$galley->getFile()->_data["description"]}
                         <strong>{translate key="plugins.themes.ibsscustom.article.galley.description"}:</strong>
-                        {$galley->getFile()->getLocalizedDescription()|escape}
+                        {$galley->getFile()->getLocalizedData('description')|escape}
                     {/if}
                 </div>
                 <div class="galley-type">

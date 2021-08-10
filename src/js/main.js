@@ -130,7 +130,6 @@ $(function() {
     let topNavigation = $('.top-navigation');
     let headerHero = $('.header-hero');
     let headerBottom = headerHero.position().top + headerHero.height();
-    console.log(headerBottom);
 
     $(document).scroll(function(e) {
         let scrollTop = $(window).scrollTop();

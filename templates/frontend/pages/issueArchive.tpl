@@ -90,16 +90,12 @@
     {/foreach}
       </td>
       </tr>
-      {if !!$just_accepted}
-        <tr class="">
-        <td></td>
-          <td colspan="1" class="issues-series-just_accepted">
-           <a href="{url op="view" path=$just_accepted->getBestIssueId($currentJournal)}">{$just_accepted->getLocalizedTitle()|escape}</a>
-          </td>
-        </tr>
-      {/if}
     </tbody>
     </table>
+
+    {if !!$just_accepted}
+         <div class="just-accepted"><a class="btn btn-primary" href="{url op="view" path=$just_accepted->getBestIssueId($currentJournal)}">{$just_accepted->getLocalizedTitle()|escape}</a></div>
+    {/if}
   </div>
 
   {/if}

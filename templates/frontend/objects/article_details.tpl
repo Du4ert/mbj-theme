@@ -252,14 +252,14 @@
             </div>
 
             {* Crossmark *}
-            {if $pubId}
+            {* {if $pubId}
                 <div class="article-sidebar-item crossmark">
                     <script src="https://crossmark-cdn.crossref.org/widget/v2.0/widget.js"></script>
                     <a data-target="crossmark" class="btn"><img
                             src="https://crossmark-cdn.crossref.org/widget/v2.0/logos/CROSSMARK_Color_horizontal.svg"
                             width="150" /></a>
                 </div>
-            {/if}
+            {/if} *}
             <!-- /crossmark -->
 
             <div class="article-sidebar-item ya-share">

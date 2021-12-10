@@ -100,7 +100,7 @@
 
             <ul class="article-meta-list">
                 {* Authors *}
-                {if $publication->getData('authors')}
+                {if $publication->getData('authors') && !$section->getData('hideAuthor')}
                     {include file="frontend/objects/authorSummary.tpl"}
                 {/if}
 
@@ -278,7 +278,7 @@
     <div class="row">
         <section class="col-md-10 col-sm-10 col-xs-12 col-lg-9">
             {* How to cite *}
-            {if $citation}
+            {if $citation && !$section->getData('hideAuthor')}
                 {include file="frontend/components/howToCite.tpl"}
             {/if}
         </section>
@@ -291,7 +291,7 @@
                 <ul class="nav panel-heading nav-tabs article-more-nav">
                     <li role="presentation" class="active"><a href="#summary" aria-controls="summary" role="tab"
                             data-toggle="tab">{translate key="article.abstract"}</a></li>
-                    {if $publication->getData('authors')}<li role="presentation"><a href="#authors" aria-controls="authors"
+                    {if $publication->getData('authors') && !$section->getData('hideAuthor')}<li role="presentation"><a href="#authors" aria-controls="authors"
                             role="tab" data-toggle="tab">{translate key="article.authors"}</a></li>{/if}
                             {if $parsedCitations || $publication->getData('citationsRaw')}<li role="presentation"><a href="#references"
                                 aria-controls="references" role="tab" data-toggle="tab">{translate
@@ -336,7 +336,7 @@
                     {/if}
 
                     {* Authors *}
-                    {if $publication->getData('authors')}
+                    {if $publication->getData('authors') && !$section->getData('hideAuthor')} 
                         <div class="tab-pane" role="tabpanel" id="authors">
 
                             <h2 class="article-more-title">{translate key="article.authors"}</h2>

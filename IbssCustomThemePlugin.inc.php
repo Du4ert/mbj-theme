@@ -58,7 +58,9 @@ class IbsscustomThemePlugin extends ThemePlugin {
 		// Load Bootstrap
 		$this->addScript('libs', 'js/libs.min.js');
 
-		$this->addStyle('openSans', 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap', array('baseUrl' => ''));
+
+		//! commented because of restriction
+		// $this->addStyle('openSans', 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap', array('baseUrl' => ''));
 		$this->addStyle('main', 'styles/main.css');
 		$this->addScript('main', 'js/main.js');
 

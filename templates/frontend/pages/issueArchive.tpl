@@ -42,63 +42,84 @@
     </div>
   {else}
 
-  {* List issues *}
-  {assign var=currentYear value=''}
-  <div class="issues media-list">
-    <table class="issues-custom">
-    <thead>
-      <tr class="issues-head-custom">
-        <td class="issues-year-custom">{translate key="plugins.themes.ibsscustom.issue.archive.year"}</td>
-        <td class="issues-series-custom">{translate key="plugins.themes.ibsscustom.issue.archive.issue"}</td>
-      </tr>
-    </thead>
-    <tbody class="issues-body-custom">      {assign var=first value=true}
-    {* {foreach from=$issues|@array_reverse item="issue"}   обратная нумерация выпусков*}
-    {foreach from=$issues item="issue"}
-    {assign var=year value=$issue->_data.year}
-    {assign var=vol value=$issue->_data.volume}
-    {assign var=num value=$issue->_data.number}
-    {if !$year && !$vol && !$num && $issue->getData('urlPath') === 'just_accepted'}
-      {$just_accepted = $issue}
-      {continue}
-    {/if}
+    {* List issues *}
+    {assign var=currentYear value=''}
+    <div class="issues media-list">
+      <table class="issues-custom">
+        <thead>
+          <tr class="issues-head-custom">
+            <td class="issues-year-custom">{translate key="plugins.themes.ibsscustom.issue.archive.year"}</td>
+            <td class="issues-series-custom">{translate key="plugins.themes.ibsscustom.issue.archive.issue"}</td>
+          </tr>
+        </thead>
+        <tbody class="issues-body-custom"> {assign var=first value=true}
+          {* {foreach from=$issues|@array_reverse item="issue"}   обратная нумерация выпусков*}
+            {foreach from=$issues item="issue"}
+              {assign var=year value=$issue->_data.year}
+              {assign var=vol value=$issue->_data.volume}
+              {assign var=num value=$issue->_data.number}
+              {if !$year && !$vol && !$num && $issue->getData('urlPath') === 'just_accepted'}
+                {$just_accepted = $issue}
+                {continue}
+              {/if}
 
-    {capture assign="numPrint"}
-      {if $num}
-        {translate key="plugins.themes.ibsscustom.issue.archive.number"} {$num}
-      {/if}
-    {/capture}
-    {capture assign="volPrint"}
-      {if $vol && $issue->getData('showVolume')}
-        {translate key="plugins.themes.ibsscustom.issue.archive.vol"} {$vol}
-      {/if}
-    {/capture}
+              {capture assign="numPrint"}
+                {if $num}
+                  {translate key="plugins.themes.ibsscustom.issue.archive.number"} {$num}
+                {/if}
+              {/capture}
+              {capture assign="volPrint"}
+                {if $vol && $issue->getData('showVolume')}
+                  {translate key="plugins.themes.ibsscustom.issue.archive.vol"} {$vol}
+                {/if}
+              {/capture}
 
-    {if $first}
-      <tr>
-    {/if}
-    {if $year!=$currentYear}
-      {assign var=first value=false}
-      </td></tr>
-         {assign var=currentYear value=$year}
-        <td  class="issues-year-custom">{$currentYear}</td>
-        <td  class="issues-series-custom"><a href="{url op="view" path=$issue->getBestIssueId($currentJournal)}">{$volPrint} {$numPrint}</a>
-				{else}
-        <a href="{url op="view" path=$issue->getBestIssueId($currentJournal)}">{$volPrint} {$numPrint}</a>
-    {/if}
+              {if $first}
+                <tr>
+                {/if}
+                {if $year!=$currentYear}
+                  {assign var=first value=false}
+                  </td>
+                </tr>
+                {assign var=currentYear value=$year}
+                <td class="issues-year-custom">{$currentYear}</td>
+                <td class="issues-series-custom"><a
+                    href="{url op="view" path=$issue->getBestIssueId($currentJournal)}">{$volPrint} {$numPrint}</a>
+                {else}
+                  <a href="{url op="view" path=$issue->getBestIssueId($currentJournal)}">{$volPrint} {$numPrint}</a>
+                {/if}
 
-    {/foreach}
-      </td>
-      </tr>
-    </tbody>
-    </table>
+              {/foreach}
+            </td>
+            </tr>
+          </tbody>
+        </table>
 
-    {if !!$just_accepted}
-         <div class="just-accepted"><a class="btn btn-primary" href="{url op="view" path=$just_accepted->getBestIssueId($currentJournal)}">{$just_accepted->getLocalizedTitle()|escape}</a></div>
+        {if !!$just_accepted}
+          <div class="just-accepted"><a class="btn btn-primary"
+              href="{url op="view" path=$just_accepted->getBestIssueId($currentJournal)}">{$just_accepted->getLocalizedTitle()|escape}</a>
+          </div>
+        {/if}
+      </div>
+
     {/if}
   </div>
-
+  {* Pagination *}
+  {if $prevPage > 1}
+    {capture assign=prevUrl}{url router=$smarty.const.ROUTE_PAGE page="issue" op="archive" path=$prevPage}{/capture}
+  {elseif $prevPage === 1}
+    {capture assign=prevUrl}{url router=$smarty.const.ROUTE_PAGE page="issue" op="archive"}{/capture}
   {/if}
-</div>
+  {if $nextPage}
+    {capture assign=nextUrl}{url router=$smarty.const.ROUTE_PAGE page="issue" op="archive" path=$nextPage}{/capture}
+  {/if}
+  {include
+      file="frontend/components/pagination.tpl"
+      prevUrl=$prevUrl
+      nextUrl=$nextUrl
+      showingStart=$showingStart
+      showingEnd=$showingEnd
+      total=$total
+    }
 
-{include file="common/frontend/footer.tpl"}
+  {include file="common/frontend/footer.tpl"}

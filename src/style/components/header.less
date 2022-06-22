@@ -71,12 +71,22 @@ header.header-custom {
 .main-navigation {
     position: relative;
     background: @header-nav-bg-color;
-    font-size: @font-size-small;
+    font-size: @font-size-nav;
+    font-weight: 400;
 }
 
 .main-navigation-item {
+    position: relative;
     &:hover {
         background: @gray-dark;
+    }
+    &:not(:last-child):after {
+        content: '';
+        position: absolute;
+        right: 0px;
+        top: 25%;
+        height: 50%;
+        border-left: 1px solid @gray;
     }
     a {
         color: @header-link-color;
@@ -90,7 +100,7 @@ header.header-custom {
 }
 
 
-@media screen and (max-width: @screen-md) {
+@media screen and (max-width: @screen-lg) {
     .header-hero {
         flex-direction: row;
         justify-content: flex-start;
@@ -112,7 +122,7 @@ header.header-custom {
     }
 }
 
-@media screen and (max-width: @screen-sm) {
+@media screen and (max-width: @screen-md) {
     .header-hero {
         .hero-bg-change(@hero-bg-img-sm);
     }
@@ -126,6 +136,9 @@ header.header-custom {
 
     .hero-title {
         font-size: ceil(@hero-font-size / 1.25);
+    }
+    .main-navigation {
+        font-size: @font-size-base;
     }
 }
 

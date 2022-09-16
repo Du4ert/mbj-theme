@@ -238,7 +238,8 @@
             {if $pubId}
                 {$scholarQuery = $pubId}
             {else}
-                {$scholarQuery = $article->getTitle($article->getLocale())}
+                {*?{$scholarQuery = $article->getTitle($article->getLocale())}   {*?   Article locale for google scholar search   *}
+                {$scholarQuery = $article->getTitle($primaryLocale)}   {*?   Primary locale for google scholar search   *}
             {/if}
             <div class="article-sidebar-item googleScholar">
                 <a class="google-scholar-link btn"
@@ -299,8 +300,8 @@
                     {if $supplementaryGalleys}<li role="presentation"><a href="#supplementary"
                                 aria-controls="supplementary" role="tab" data-toggle="tab">{translate
     							key="plugins.themes.ibsscustom.article.supplementaries"}</a></li>{/if}
-                    {if $pubId}<li role="presentation"><a href="#statistics" aria-controls="statistics" role="tab"
-                            data-toggle="tab">{translate key="plugins.themes.ibsscustom.article.statistics"}</a></li>{/if}
+                    <li role="presentation"><a href="#statistics" aria-controls="statistics" role="tab"
+                            data-toggle="tab">{translate key="plugins.themes.ibsscustom.article.statistics"}</a></li>
                 </ul>
 
                 <div class="tab-content article-more-content panel-body">
@@ -382,19 +383,21 @@
                     {/if}
 
                     {* Statistics *}
-                    {if $pubId}
-                        <div class="tab-pane" role="tabpanel" id="statistics">
-                            <h2 class="article-more-title">{translate key="plugins.themes.ibsscustom.article.statistics"}</h2>
-                            <div class="statistics">
+                
+                    <div class="tab-pane" role="tabpanel" id="statistics">
+                        <h2 class="article-more-title">{translate key="plugins.themes.ibsscustom.article.statistics"}</h2>
+                        <div class="statistics">
+                            {if $pubId}
                                 {include file="frontend/components/badges.tpl" doi=$pubId altmetricsHide="true"}
-                                <div class="statistics-more">
-                                    {* Graph *}
-                                    {call_hook name="Templates::Article::Details"}
-                                    {call_hook name="Templates::Article::Main"}
-                                </div>
+                            {/if}
+                            <div class="statistics-more">
+                                {* Graph *}
+                                {call_hook name="Templates::Article::Details"}
+                                {call_hook name="Templates::Article::Main"}
                             </div>
                         </div>
-                    {/if}
+                    </div>
+                    
 
                     {* Licensing info Спрятал лицензию V false ниже*}
                     {if $copyright || $licenseUrl && false}

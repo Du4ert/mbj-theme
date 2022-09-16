@@ -13,16 +13,21 @@
  {include file="frontend/components/header.tpl" pageTitle="about.submissions"}
 
  <div id="main-content" class="page page_submissions">
- 
+
 	 {include file="frontend/components/breadcrumbs.tpl" currentTitleKey="about.submissions"}
- 
+
 	 {* Page Title *}
 	 <div class="page-header">
 		 {include file="frontend/components/editLink.tpl" page="management" op="settings" path="publication" anchor="submissionStage" sectionTitleKey="about.submissionPreparationChecklist"}
 		 <h1>{translate key="plugins.themes.ibsscustom.submissions.title"}</h1>
 	 </div>
 	 {* /Page Title *}
- 
+    {if $currentLocale == "ru_RU"} {*! hardcode alert. Need to be redisigned*}
+        <div class="alert alert-info submission-download">
+            <a href="https://marine-biology.ru/mbj/libraryFiles/downloadPublic/6" target="_blank" rel="noopener">Шаблон рукописи (.doc)</a>
+        </div>
+     {/if} {*! / hardcode ends*}
+
 	 {* Login/register prompt *}
 	 {assign var="contactEmail" value=$currentContext->getData('contactEmail')|escape}
 	 {if $isUserLoggedIn}
@@ -34,7 +39,7 @@
 		 <div class="alert alert-info">
 			 {translate key="plugins.themes.ibsscustom.submissions.registered.send"} <a href="mailto:{$contactEmail}">{$contactEmail}</a>.
 		 </div>
- 
+
 	  {else}
 	 {if !$disableUserReg}
 		 {capture assign="login"}<a href="{url page="login"}">{translate key="about.onlineSubmissions.login"}</a>{/capture}
@@ -50,9 +55,9 @@
 				 {translate key="plugins.themes.ibsscustom.submissions.unregistered.send"} <a href="mailto:{$contactEmail}">{$contactEmail}</a>.
 			 </div>
 	 {/if}
- 
+
 	 {/if}
- 
+
 	 {* Submission Checklist *}
 	 {if $submissionChecklist}
 		 <div class="submission_checklist">
@@ -72,11 +77,11 @@
 					 </li>
 				 {/foreach}
 			 </ul>
- 
+
 		 </div>
 	 {/if}
 	 {* /Submission Checklist *}
- 
+
 	 {* Author Guidelines *}
 	 {if $currentJournal->getLocalizedSetting('authorGuidelines')}
 		 <div class="author_guidelines" id="author_guidelines">
@@ -87,7 +92,7 @@
 		 </div>
 	 {/if}
 	 {* /Author Guidelines *}
- 
+
 	 {* Copyright Notice *}
 	 {if $currentJournal->getLocalizedSetting('copyrightNotice')}
 		 <div class="copyright-notice">
@@ -99,8 +104,7 @@
 		 </div>
 	 {/if}
 	 {* /Copyright Notice *}
- 
+
  </div><!-- .page -->
- 
+
  {include file="common/frontend/footer.tpl"}
- 

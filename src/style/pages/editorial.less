@@ -26,7 +26,7 @@ ol.editorial-list-custom {
 
 div#editorialTeamBio {
 
-  .profile-moreinfo-custom {
+  .profile-moreinfo {
     margin-top: -6px;
   }
 
@@ -42,20 +42,65 @@ div#editorialTeamBio {
 
 .bio-content {
   p {
-    margin-bottom: 5px;
+    // margin-bottom: 5px;
   }
-  .bio-fullName-custom {
-    font-weight: 400;
-    font-size: 20px;
+  strong, .bio-fieldName {
+    font-weight: 600;
   }
-  .bio-fieldName-custom {
-    font-weight: 600 ;
-    font-size: 15px;
-  }
-  .bio-profiles-custom {
-    clear: both;
 
-     .bio-profile-item-custom {
+  .bio-content-item {
+    margin-bottom: 10px;
+  }
+
+  .bio-references {
+    margin-bottom: 10px;
+  }
+
+  .bio-details {
+    margin-bottom: 10px;
+
+
+    .bio-profile(@profile, @img) {
+      a[title='@{profile}'] {
+        &:hover {
+          text-decoration: none;
+        }
+        // vertical-align: middle;
+        strong {
+          color: @text-color;
+          text-decoration: none;
+        }
+        &:before {
+          content: '';
+          margin-right: 5px;
+          display: inline-block;
+          vertical-align: middle;
+          background-size: cover;
+          width: 20px;
+          height: 20px;
+          background-image: url('@{path_to_img}/@{img}');
+          position: relative;
+          top: -1px;
+          }
+      }
+    }
+
+    .bio-profile('orcid', 'orcid.png');
+    .bio-profile('scopus', 'scopus.png');
+    .bio-profile('wos', 'publons.svg');
+    .bio-profile('rinc', 'elibrary.svg');
+    .bio-profile('scholar', 'researchGate.png');
+    .bio-profile('research-gate', 'googleScholar.png');
+    
+  }
+
+
+  // Old profiles
+  .bio-profiles {
+    clear: both;
+    margin-bottom: 10px;
+
+     .bio-profile-item {
       margin: 5px 0px 5px 0px;
        &:before {
          content: '';
@@ -65,32 +110,33 @@ div#editorialTeamBio {
          background-size: cover;
        }
      }
-     .bio-orcid-custom:before {
+
+     .bio-orcid:before {
        width: 20px;
        height: 20px;
        background-image: url('@{path_to_img}/orcid.png');
      }
-       .bio-scopus-custom:before {
+       .bio-scopus:before {
         width: 20px;
         height: 20px;
         background-image: url('@{path_to_img}/scopus.png');
       }
-     .bio-researchid-custom:before {
+     .bio-researchid:before {
        width: 20px;
        height: 20px;
        background-image: url('@{path_to_img}/publons.svg');
      }
-     .bio-spin-custom:before {
+     .bio-spin:before {
        width: 20px;
        height: 20px;
        background-image: url('@{path_to_img}/elibrary.svg');
      }
-    .bio-rinc-custom:before {
+    .bio-rinc:before {
        width: 20px;
        height: 20px;
        background-image: url('@{path_to_img}/elibrary.svg');
      }
-     .bio-researchGate-custom:before {
+     .bio-researchGate:before {
        position: relative;
        top: -2px;
        left: -1px;
@@ -98,7 +144,7 @@ div#editorialTeamBio {
        height: 25px;
        background-image: url('@{path_to_img}/researchGate.png');
      }
-     .bio-googleScholar-custom:before {
+     .bio-googleScholar:before {
        width: 20px;
        height: 20px;
        background-image: url('@{path_to_img}/googleScholar.png');
@@ -107,6 +153,6 @@ div#editorialTeamBio {
 
 }}
 
-ul.editorialTeam-custom li+li{
+ul.editorialTeam li+li{
   margin-top: 5px;
 }

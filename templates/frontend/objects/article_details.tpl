@@ -238,8 +238,8 @@
             {if $pubId}
                 {$scholarQuery = $pubId}
             {else}
-                {*?{$scholarQuery = $article->getTitle($article->getLocale())}   {*?   Article locale for google scholar search   *}
-                {$scholarQuery = $article->getTitle($primaryLocale)}   {*?   Primary locale for google scholar search   *}
+                {$scholarQuery = $article->getTitle($article->getLocale())}   {*?   Article locale for google scholar search   *}
+                {* {$scholarQuery = $article->getTitle($primaryLocale)}   {*?   Primary locale for google scholar search   *}
             {/if}
             <div class="article-sidebar-item googleScholar">
                 <a class="google-scholar-link btn"

@@ -41,9 +41,17 @@ div#editorialTeamBio {
 }
 
 .bio-content {
-  p {
-    // margin-bottom: 5px;
+  p:empty, p:blank {
+    //? display: none; 
   }
+
+  .profile-moreinfo {
+    margin-top: 0px;
+    p {
+      margin-bottom: 0px;
+    }
+   }
+
   strong, .bio-fieldName {
     font-weight: 600;
   }
@@ -56,10 +64,13 @@ div#editorialTeamBio {
     margin-bottom: 10px;
   }
 
-  .bio-details {
+  .bio-details, .bio-profiles {
     margin-bottom: 10px;
 
 
+    .bio-profile {
+      margin: 5px 0px 5px 0px;
+    
     .bio-profile(@profile, @img) {
       a[title='@{profile}'] {
         &:hover {
@@ -68,6 +79,7 @@ div#editorialTeamBio {
         // vertical-align: middle;
         strong {
           color: @text-color;
+          font-weight: 400;
           text-decoration: none;
         }
         &:before {
@@ -83,6 +95,7 @@ div#editorialTeamBio {
           top: -1px;
           }
       }
+      
     }
 
     .bio-profile('orcid', 'orcid.png');
@@ -91,16 +104,27 @@ div#editorialTeamBio {
     .bio-profile('rinc', 'elibrary.svg');
     .bio-profile('scholar', 'researchGate.png');
     .bio-profile('research-gate', 'googleScholar.png');
+  }
     
   }
 
 
   // Old profiles
-  .bio-profiles {
+  .profile-moreinfo-custom {
+    p {
+      margin-bottom: 0px;
+    }
+   }
+
+  .bio-fieldName-custom {
+    font-weight: 600;
+  }
+  .bio-profiles-custom {
     clear: both;
     margin-bottom: 10px;
+  
 
-     .bio-profile-item {
+     .bio-profile-item-custom {
       margin: 5px 0px 5px 0px;
        &:before {
          content: '';
@@ -111,32 +135,34 @@ div#editorialTeamBio {
        }
      }
 
-     .bio-orcid:before {
+
+
+     .bio-orcid-custom:before {
        width: 20px;
        height: 20px;
        background-image: url('@{path_to_img}/orcid.png');
      }
-       .bio-scopus:before {
+       .bio-scopus-custom:before {
         width: 20px;
         height: 20px;
         background-image: url('@{path_to_img}/scopus.png');
       }
-     .bio-researchid:before {
+     .bio-researchid-custom:before {
        width: 20px;
        height: 20px;
        background-image: url('@{path_to_img}/publons.svg');
      }
-     .bio-spin:before {
+     .bio-spin-custom:before {
        width: 20px;
        height: 20px;
        background-image: url('@{path_to_img}/elibrary.svg');
      }
-    .bio-rinc:before {
+    .bio-rinc-custom:before {
        width: 20px;
        height: 20px;
        background-image: url('@{path_to_img}/elibrary.svg');
      }
-     .bio-researchGate:before {
+     .bio-researchGate-custom:before {
        position: relative;
        top: -2px;
        left: -1px;
@@ -144,7 +170,7 @@ div#editorialTeamBio {
        height: 25px;
        background-image: url('@{path_to_img}/researchGate.png');
      }
-     .bio-googleScholar:before {
+     .bio-googleScholar-custom:before {
        width: 20px;
        height: 20px;
        background-image: url('@{path_to_img}/googleScholar.png');

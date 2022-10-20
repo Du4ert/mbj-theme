@@ -61,9 +61,10 @@
 		</div> {* /.col *}
 
 		<div class="issue-details col-md-{$issueDetailsCol} col-xs-12">
-			<p>{$issueSeries|escape}</p>
+			
 			{* Published date *}
 			{if $issue->getDatePublished() && $page!=="index" && $issue->getData('urlPath') !== 'just_accepted'}
+			<p class="series">{$issueSeries|escape}</p>
 			<p class="published">
 
 				{translate key="plugins.themes.ibsscustom.submissions.published"}:

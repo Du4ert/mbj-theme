@@ -18,7 +18,7 @@
 <div class="issue-toc">
 	{* Indicate if this is only a preview *}
 	{if !$issue->getPublished()}
-	{include file="frontend/components/notification.tpl" type="warning" messageKey="editor.issues.preview"}
+		{include file="frontend/components/notification.tpl" type="warning" messageKey="editor.issues.preview"}
 	{/if}
 
 	{* Issue introduction area above articles *}
@@ -26,46 +26,51 @@
 	{assign var=issueCover value=$issue->getLocalizedCoverImageUrl()}
 	{assign var="issueDetailsCol" value="8"}
 	{if $issueCover && $page!=="index"}
-	<div class="heading row">
-		<div class="col-md-4 col-xs-12 issue-cover">
-			
-
-				<img class="img-responsive modal-thumbnail issue-cover-img" src="{$issueCover|escape}" {if $issue->getLocalizedCoverImageAltText() !=''} alt="{$issue->getLocalizedCoverImageAltText()|escape}"{/if} 
-					data-toggle="modal" data-target="#issueCover">
+		<div class="heading row">
+			<div class="col-md-4 col-xs-12 issue-cover">
 
 
-	{* Image cover modal *}
-	<div class="modal fade modal-img" id="issueCover" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">{$issue->getIssueSeries()|escape}</h4>
-                </div>
-                <div class="modal-body">
-					<img class="modal-img" src="{$issueCover|escape}" {if $issue->getLocalizedCoverImageAltText() !=''} alt="{$issue->getLocalizedCoverImageAltText()|escape}"{/if}>
-                </div>
-                <div class="modal-footer">
-                    <button class="modal-resize close"><span class="glyphicon glyphicon-fullscreen aria-hidden=" true"></span></button>
-                </div>
-            </div>
-        </div>
-    </div>
+				<img class="img-responsive modal-thumbnail issue-cover-img" src="{$issueCover|escape}"
+					{if $issue->getLocalizedCoverImageAltText() !=''} alt="{$issue->getLocalizedCoverImageAltText()|escape}"
+					{/if} data-toggle="modal" data-target="#issueCover">
+
+
+				{* Image cover modal *}
+				<div class="modal fade modal-img" id="issueCover" tabindex="-1" role="dialog"
+					aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+										aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title" id="myModalLabel">{$issue->getIssueSeries()|escape}</h4>
+							</div>
+							<div class="modal-body">
+								<img class="modal-img" src="{$issueCover|escape}"
+									{if $issue->getLocalizedCoverImageAltText() !=''}
+									alt="{$issue->getLocalizedCoverImageAltText()|escape}" {/if}>
+							</div>
+							<div class="modal-footer">
+								<button class="modal-resize close"><span class="glyphicon glyphicon-fullscreen aria-hidden="
+										true"></span></button>
+						</div>
+					</div>
+				</div>
+			</div>
 
 		</div> {* /.col *}
 
 		<div class="issue-details col-md-{$issueDetailsCol} col-xs-12">
+			<p>{$issueSeries|escape}</p>
+			{* Published date *}
+			{if $issue->getDatePublished() && $page!=="index" && $issue->getData('urlPath') !== 'just_accepted'}
+			<p class="published">
 
+				{translate key="plugins.themes.ibsscustom.submissions.published"}:
 
-					{* Published date *}
-					{if $issue->getDatePublished() && $page!=="index" && !$issue->getData('urlPath') === 'just_accepted'}
-					<p class="published">
-						<strong>
-							{translate key="plugins.themes.ibsscustom.submissions.published"}:
-						</strong>
-						{$issue->getDatePublished()|escape|date_format:$dateFormatShort}
-					</p>
-					{/if}
+				{$issue->getDatePublished()|escape|date_format:$dateFormatShort}
+			</p>
+			{/if}
 
 			{if $issue->hasDescription() && $page!=="index"}
 			<div class="description">
@@ -100,8 +105,8 @@
 	</div>
 	{/if}
 
-{* Full-issue galleys *}
-{if $issueGalleys}
+	{* Full-issue galleys *}
+	{if $issueGalleys}
 	<div class="galleys">
 		<div class="page-header">
 			<h2>

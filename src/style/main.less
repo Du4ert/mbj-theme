@@ -130,6 +130,76 @@ div.alert.alert-info {
 	}
 }
 
+// Иконки для ссылок скачивания документов
+
+a[title="download_pdf"] {
+	&:before {
+		vertical-align: middle;
+		content: '';
+		position: relative;
+		top: -1px;
+		display: inline-block;
+		width: 32px;
+		height: 32px;
+		margin: 0;
+		margin-right: 5px;
+		padding: 0px;
+		background: url('@{path_to_img}/pdf-icon32.png') center top no-repeat;
+		background-size: contain ;
+	}
+	&:hover {
+		color: inherit;
+		background: inherit;
+	}
+}
+
+a[title="download_doc"] {
+	&:before {
+		vertical-align: middle;
+		content: '';
+		position: relative;
+		top: -1px;
+		display: inline-block;
+		width: 32px;
+		height: 32px;
+		margin: 0;
+		margin-right: 5px;
+		padding: 0px;
+		background: url('@{path_to_img}/doc-icon32.png') center top no-repeat;
+		background-size: contain ;
+	  }
+	  &:hover {
+		color: inherit;
+		background: inherit;
+	  }
+}
+
+a[title="download_file"] {
+	&:before {
+		vertical-align: middle;
+		content: '';
+		position: relative;
+		top: -1px;
+		display: inline-block;
+		width: 32px;
+		height: 32px;
+		margin: 0;
+		margin-right: 5px;
+		padding: 0px;
+		background: url('@{path_to_img}/download-icon32.png') center top no-repeat;
+		background-size: contain ;
+	  }
+	  &:hover {
+		color: inherit;
+		background: inherit;
+	  }
+}
+
+// Коррекция скролла с закрепленной шапкой 
+#author_guidelines {
+	scroll-margin-top: @navbar-height;
+  }
+
 
 // Версия для слабовидящих
 .special {

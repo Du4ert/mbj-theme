@@ -24,7 +24,7 @@
 	 {* /Page Title *}
     {if $currentLocale == "ru_RU"} {*! hardcode alert. Need to be redisigned*}
         <div class="alert alert-info submission-download">
-            <a href="https://marine-biology.ru/mbj/libraryFiles/downloadPublic/6" target="_blank" rel="noopener">Шаблон рукописи (.doc)</a>
+            <a href="https://marine-biology.ru/mbj/libraryFiles/downloadPublic/6" title="download_doc" class="download-link" target="_blank" rel="noopener">Шаблон рукописи (.doc)</a>
         </div>
      {/if} {*! / hardcode ends*}
 

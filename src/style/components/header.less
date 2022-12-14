@@ -52,7 +52,29 @@ header.header-custom {
     }
 }
 
+.leftTop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
+.homeTopLink {
+    font-size: @font-size-nav;
+    font-weight: 400;
+    // padding: 2px 10px;
+    color: @header-link-color;
+    // line-height: @navbar-height;
+    padding-left: @padding-large-horizontal;
+    vertical-align: bottom;
+    span {
+        font-size: 1.2em;
+        margin-right: @padding-small-horizontal/2;
+        color: inherit
+    }
+    a {
+        color: inherit;
+    }
+}
 
 .hero-logo {
     color: @header-link-color;
@@ -186,3 +208,4 @@ header.header-custom {
 }
 
 
+@import url(lightrope.less);

@@ -1,0 +1,208 @@
+.christmas-tree {
+    font-size: 25px;
+    // text-align: bottom;
+    vertical-align: bottom;
+    position: relative;
+    top: -15px;
+    opacity: 0.93;
+}
+
+.lightrope {
+    z-index: 101;
+    margin: 50px 0 0 0;
+}
+
+// header.fixed {
+// .lightrope {
+//     margin: 45px 0 0 0;
+// }
+// }
+
+.lightrope {
+text-align: center;
+white-space: nowrap;
+// overflow: hidden;
+position: fixed;
+z-index: 100;
+margin: -44px 0 0 0;
+padding: 0;
+pointer-events: none;
+width: 100%;
+display: flex;
+justify-content: space-around;
+}
+
+.lightrope li {
+position: relative;
+animation-fill-mode: both;
+animation-iteration-count: infinite;
+list-style: none;
+margin: 0;
+padding: 0;
+display: block;
+width: 12px;
+height: 28px;
+border-radius: 50%;
+margin: 20px;
+display: inline-block;
+background: rgba(0, 247, 165, 1);
+box-shadow: 0px 4.6666666667px 24px 3px rgba(0, 247, 165, 1);
+animation-name: flash-1;
+animation-duration: 2s;
+}
+.lightrope li:nth-child(2n+1) {
+background: rgba(0, 255, 255, 1);
+box-shadow: 0px 4.6666666667px 24px 3px rgba(0, 255, 255, 0.5);
+animation-name: flash-2;
+animation-duration: 0.4s;
+}
+.lightrope li:nth-child(4n+2) {
+background: rgba(247, 0, 148, 1);
+box-shadow: 0px 4.6666666667px 24px 3px rgba(247, 0, 148, 1);
+animation-name: flash-3;
+animation-duration: 1.1s;
+}
+.lightrope li:nth-child(odd) {
+animation-duration: 1.8s;
+}
+.lightrope li:nth-child(3n+1) {
+animation-duration: 1.4s;
+}
+.lightrope li:before {
+content: "";
+position: absolute;
+background: #222;
+width: 10px;
+height: 9.3333333333px;
+border-radius: 3px;
+top: -4.6666666667px;
+left: 1px;
+}
+.lightrope li:after {
+content: "";
+top: -14px;
+left: 9px;
+position: absolute;
+width: 50px;
+height: 18.6666666667px;
+border-bottom: solid #222 2px;
+border-radius: 50%;
+}
+.lightrope li:last-child:after {
+content: none;
+}
+.lightrope li:first-child {
+margin-left: -40px;
+}
+@keyframes flash-1 {
+0%, 100% {
+    background: rgba(0, 247, 165, 1);
+    box-shadow: 0px 4.6666666667px 24px 3px rgba(0, 247, 165, 1);
+}
+50% {
+    background: rgba(0, 247, 165, 0.4);
+    box-shadow: 0px 4.6666666667px 24px 3px rgba(0, 247, 165, 0.2);
+}
+}
+@keyframes flash-2 {
+0%, 100% {
+    background: rgba(0, 255, 255, 1);
+    box-shadow: 0px 4.6666666667px 24px 3px rgba(0, 255, 255, 1);
+}
+50% {
+    background: rgba(0, 255, 255, 0.4);
+    box-shadow: 0px 4.6666666667px 24px 3px rgba(0, 255, 255, 0.2);
+}
+}
+@keyframes flash-3 {
+0%, 100% {
+    background: rgba(247, 0, 148, 1);
+    box-shadow: 0px 4.6666666667px 24px 3px rgba(247, 0, 148, 1);
+}
+50% {
+    background: rgba(247, 0, 148, 0.4);
+    box-shadow: 0px 4.6666666667px 24px 3px rgba(247, 0, 148, 0.2);
+}
+}
+
+
+
+// .header-hero {
+//     position: relative;
+// }
+
+@snow: '@{path_to_img}/snow.png';
+@snow-crop: '@{path_to_img}/snow-crop.png';
+
+.more-snow {    
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -3000%;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-color: rgba(black, 0.01);
+    //   background-image: url(http://www.freepngimg.com/download/winter_snow/4-2-white-snow-png.png);
+    background-image: url(@snow);
+      background-size: 30%;
+      -webkit-animation-name: MOVE-BG;
+      -webkit-animation-duration: 500s;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+    }
+  }
+  body {
+    &:before {
+      filter: blur(6px);
+      opacity: 0.8;
+    }
+    &:after {
+      filter: blur(0.2px);
+      top: -1500%;
+      background-image: url(@snow);
+    //   background-image: url(http://www.freepngimg.com/download/winter_snow/4-2-white-snow-png.png);
+      background-size: 30%;
+      animation-duration: 500s;
+    }
+  }
+  .more-snow {
+    &:before {
+      filter: blur(4px);
+      opacity: 0.2;
+      top: -2500%;
+      background-size: 30%;
+      animation-duration: 400s;
+    }
+    &:after {
+      filter: blur(1px);
+      opacity: 0.5;
+      top: -2000%;
+      background-image: @snow;
+    //   background-image: url(https://laviwebfiles.com/stage/codepen/4-2-white-snow-png.png);
+      background-size: 20%;
+      animation-duration: 250s;
+    }
+  }
+  
+  @-webkit-keyframes MOVE-BG {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(70%);
+    }
+  }
+
+  @media screen and (max-width: @screen-sm) {
+    .lightrope {
+        // display: none;
+    }
+    .more-snow {
+        display: none;
+    }
+}
+
+

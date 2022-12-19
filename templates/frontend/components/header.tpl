@@ -127,7 +127,7 @@
                                     <img src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}" class="hero-logo-img"
                                         {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"
                                         {/if}>
-                                        <span class="glyphicon glyphicon-tree-conifer christmas-tree" aria-hidden="true"></span>
+                                        {* <span class="glyphicon glyphicon-tree-conifer christmas-tree" aria-hidden="true"></span> *}
                                 </a>
                             {/if}
                             {if $displayPageHeaderTitle}

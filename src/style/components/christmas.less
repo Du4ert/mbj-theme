@@ -193,3 +193,32 @@ margin-left: -40px;
 }
 
 
+.hero-logo{
+  position: relative;
+  &:after {
+    content: '';
+    // position: absolute;
+    z-index: 1000;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    vertical-align: bottom;
+    background: url('@{path_to_img}/christmas-tree1.png');
+    background-size: contain;
+  }
+  // &:before {
+  //   content: '';
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   display: inline-block;
+  //   width: 100px;
+  //   height: 100px;
+  //   background: url('@{path_to_img}/logo-christmas.png') no-repeat top center;
+  //   background-size: contain;
+  // }
+  }
+
+.hero-logo-img {
+//  content:  url('@{path_to_img}/logo-christmas.png');
+}

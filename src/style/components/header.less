@@ -21,6 +21,8 @@ header.header-custom {
     background: @header-nav-bg-color;
 }
 
+
+
 .header-hero {
     height: 200px;
     padding: @padding-large-vertical @padding-large-horizontal;
@@ -56,14 +58,17 @@ header.header-custom {
     display: flex;
     flex-direction: row;
     align-items: center;
+
+}
+
+.top-navigation-left {
+    height: 45px;
 }
 
 .homeTopLink {
     font-size: @font-size-nav;
     font-weight: 400;
-    // padding: 2px 10px;
     color: @header-link-color;
-    // line-height: @navbar-height;
     padding-left: @padding-large-horizontal;
     vertical-align: bottom;
     span {
@@ -72,6 +77,9 @@ header.header-custom {
         color: inherit
     }
     a {
+        &:hover {
+            text-decoration: none;
+        }
         color: inherit;
     }
 }

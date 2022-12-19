@@ -85,7 +85,7 @@
                                 {/foreach}
                             </ul>
                         </div>
-                        <div class="pull-left leftTop">
+                        <div class="pull-left leftTop top-navigation-left">
                         {if $activeTheme->getOption('specialVisionOn')}
                             <div class="special">
                                 <a id="specialButton" href="#"><img

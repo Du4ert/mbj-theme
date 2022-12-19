@@ -148,24 +148,10 @@ margin-left: -40px;
     //   background-image: url(http://www.freepngimg.com/download/winter_snow/4-2-white-snow-png.png);
     background-image: url(@snow);
       background-size: 30%;
-      -webkit-animation-name: MOVE-BG;
-      -webkit-animation-duration: 500s;
-      -webkit-animation-timing-function: linear;
-      -webkit-animation-iteration-count: infinite;
-    }
-  }
-  body {
-    &:before {
-      filter: blur(6px);
-      opacity: 0.8;
-    }
-    &:after {
-      filter: blur(0.2px);
-      top: -1500%;
-      background-image: url(@snow);
-    //   background-image: url(http://www.freepngimg.com/download/winter_snow/4-2-white-snow-png.png);
-      background-size: 30%;
+      animation-name: MOVE-BG;
       animation-duration: 500s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
     }
   }
   .more-snow {
@@ -187,7 +173,7 @@ margin-left: -40px;
     }
   }
   
-  @-webkit-keyframes MOVE-BG {
+  @keyframes MOVE-BG {
     from {
       transform: translateY(0);
     }
@@ -195,6 +181,7 @@ margin-left: -40px;
       transform: translateY(70%);
     }
   }
+  
 
   @media screen and (max-width: @screen-sm) {
     .lightrope {

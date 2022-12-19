@@ -39,6 +39,31 @@
         <header class="header-custom navbar navbar-default" id="headerNavigationContainer" role="banner">
             {* User profile, login, etc, navigation menu*}
             <div class="container-fluid">
+            <div class="row">
+            <ul class="lightrope">
+                         <li class="hidden-sm"></li>
+                         <li class="hidden-sm"></li>
+                         <li class="hidden-sm"></li>
+                         <li class="hidden-sm"></li>
+                         <li class="hidden-sm"></li>
+                         <li class="hidden-sm"></li>
+                         <li class="hidden-sm"></li>
+                         <li class="hidden-sm"></li>
+                         <li class="hidden-sm"></li>
+                         <li class="hidden-sm"></li>
+                         <li class="hidden-sm"></li>
+                         <li class="hidden-xs"></li>
+                         <li class="hidden-xs"></li>
+                         <li class="hidden-xs"></li>
+                         <li class="hidden-xs"></li>
+                         <li class="hidden-xs"></li>
+                         <li class="hidden-xs"></li>
+                         <li class="hidden-xs"></li>
+                         <li></li>
+                         <li></li>
+                         <li></li>
+            </ul>
+        </div>
                 <div class="row">
                     <nav aria-label="{translate|escape key="common.navigation.user"}"
                         class="navbar navbar-default top-navigation">
@@ -60,6 +85,7 @@
                                 {/foreach}
                             </ul>
                         </div>
+                        <div class="pull-left leftTop">
                         {if $activeTheme->getOption('specialVisionOn')}
                             <div class="special">
                                 <a id="specialButton" href="#"><img
@@ -67,13 +93,26 @@
                                         alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ" title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ" /></a>
                             </div>
                         {/if}
+                            <div class="homeTopLink">
+                                {capture assign="homeLinkUrl"}
+                                    {if $currentJournal && $multipleContexts}
+                                        {url page="index" router=$smarty.const.ROUTE_PAGE}
+                                    {else}
+                                        {url context="index" router=$smarty.const.ROUTE_PAGE}
+                                    {/if}
+                                {/capture}
+                                    <a href="{$homeLinkUrl}" id="homeButton">
+                                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a>
+                            </div>
+                        </div>
                     </nav>
                 </div><!-- .row -->
             </div><!-- .container-fluid -->
 
             <div class="container">
                 <div class="row">
-                <div class="header-hero clearfix">
+
+                <div class="header-hero clearfix more-snow">
                    	 {* Logo or site title. Only use <h1> heading on the homepage.
 						   Otherwise that should go to the page title. *}
                             {capture assign="homeUrl"}
@@ -88,6 +127,7 @@
                                     <img src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}" class="hero-logo-img"
                                         {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"
                                         {/if}>
+                                        {* <span class="glyphicon glyphicon-tree-conifer christmas-tree" aria-hidden="true"></span> *}
                                 </a>
                             {/if}
                             {if $displayPageHeaderTitle}
@@ -101,7 +141,7 @@
                                         {$displayPageHeaderTitle}
                                     </a>
                                     {elseif is_array($displayPageHeaderTitle)}
-                                        <a href="{$homeUrl}" class="hero-logo-img">
+                                    <a href="{$homeUrl}" class="hero-logo-img">
                                             <img src="{$publicFilesDir}/{$displayPageHeaderTitle.uploadName|escape:"url"}"
                                                 alt="{$displayPageHeaderTitle.altText|escape}">
                                     </a>

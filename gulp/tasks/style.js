@@ -7,8 +7,8 @@ module.exports = function() {
         .on("error", $.gp.notify.onError({
             title: 'style'
         }))
-        .pipe($.gp.if($.env === 'production', $.gp.csso()))
         .pipe($.gp.if($.env === 'development',$.gp.sourcemaps.write()))
+        // .pipe($.gp.if($.env === 'production', $.gp.csso()))
         .pipe($.gulp.dest('styles/'))
         .pipe($.bs.reload({
             stream: true

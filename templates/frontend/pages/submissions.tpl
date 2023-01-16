@@ -22,11 +22,11 @@
 		 <h1>{translate key="plugins.themes.ibsscustom.submissions.title"}</h1>
 	 </div>
 	 {* /Page Title *}
-    {if $currentLocale == "ru_RU"} {*! hardcode alert. Need to be redisigned*}
-        <div class="alert alert-info submission-download">
-            <a href="https://marine-biology.ru/mbj/libraryFiles/downloadPublic/8" title="download_doc" class="download-link" target="_blank" rel="noopener">Шаблон рукописи (.rtf)</a>
-        </div>
-     {/if} {*! / hardcode ends*}
+    {* {if $currentLocale == "ru_RU"} ! hardcode alert. Need to be redisigned *}
+        {* <div class="alert alert-info submission-download"> *}
+            {* <a href="https://marine-biology.ru/mbj/libraryFiles/downloadPublic/8" title="download_doc" class="download-link" target="_blank" rel="noopener">Шаблон рукописи (.rtf)</a> *}
+        {* </div> *}
+     {* {/if} ! / hardcode ends *}
 
 	 {* Login/register prompt *}
 	 {assign var="contactEmail" value=$currentContext->getData('contactEmail')|escape}

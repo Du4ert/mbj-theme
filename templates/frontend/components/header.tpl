@@ -40,7 +40,8 @@
             {* User profile, login, etc, navigation menu*}
             <div class="container-fluid">
             <div class="row">
-            <ul class="lightrope">
+            {* Christmass *}
+            {* <ul class="lightrope">
                          <li class="hidden-sm"></li>
                          <li class="hidden-sm"></li>
                          <li class="hidden-sm"></li>
@@ -62,7 +63,8 @@
                          <li></li>
                          <li></li>
                          <li></li>
-            </ul>
+            </ul> *}
+            {* Christmass end *}
         </div>
                 <div class="row">
                     <nav aria-label="{translate|escape key="common.navigation.user"}"

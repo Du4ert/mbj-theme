@@ -187,7 +187,7 @@
                             <li class="article-meta-item edn">
                                 {capture assign=translatedEdn}{translate key="plugins.pubIds.edn.readerDisplayName"}{/capture}
                                 <strong>{translate key="semicolon" label=$translatedEdn}</strong>
-                                <a href="{$ednUrl}">
+                                <a href="{$ednUrl}" target="_blank">
                                     {$pubId|upper}
                                 </a>
                             </li>

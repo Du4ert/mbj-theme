@@ -154,9 +154,9 @@
 
                 {* DOI (requires plugin) *}
                 {foreach from=$pubIdPlugins item=pubIdPlugin}
-                    {if $pubIdPlugin->getPubIdType() != 'doi'}
-                        {continue}
-                    {/if}
+                    {if $pubIdPlugin->getPubIdType() === 'doi'}
+                        {* {continue} *}
+                    
                     {if $issue->getPublished()}
                         {assign var=pubId value=$article->getStoredPubId($pubIdPlugin->getPubIdType())}
                     {else}
@@ -172,6 +172,27 @@
                             </a>
                         </li>
                     {/if}
+                    {else}
+                         {* EDN (requires plugin) *}
+                        {if $pubIdPlugin->getPubIdType() != 'edn'}
+                            {continue}
+                        {/if}
+                        {if $issue->getPublished()}
+                            {assign var=pubId value=$article->getStoredPubId($pubIdPlugin->getPubIdType())}
+                        {else}
+                            {assign var=pubId value=$pubIdPlugin->getPubId($article)}{* Preview pubId *}
+                        {/if}
+                        {if $pubId}
+                            {assign var="ednUrl" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId|lower)|escape}
+                            <li class="article-meta-item edn">
+                                {capture assign=translatedEdn}{translate key="plugins.pubIds.edn.readerDisplayName"}{/capture}
+                                <strong>{translate key="semicolon" label=$translatedEdn}</strong>
+                                <a href="{$ednUrl}">
+                                    {$pubId|upper}
+                                </a>
+                            </li>
+                        {/if}
+                {/if}
                 {/foreach}
 
 

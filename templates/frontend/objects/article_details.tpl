@@ -178,17 +178,17 @@
                             {continue}
                         {/if}
                         {if $issue->getPublished()}
-                            {assign var=pubId value=$article->getStoredPubId($pubIdPlugin->getPubIdType())}
+                            {assign var=edn value=$article->getStoredPubId($pubIdPlugin->getPubIdType())}
                         {else}
-                            {assign var=pubId value=$pubIdPlugin->getPubId($article)}{* Preview pubId *}
+                            {assign var=edn value=$pubIdPlugin->getPubId($article)}{* Preview pubId *}
                         {/if}
-                        {if $pubId}
-                            {assign var="ednUrl" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId|lower)|escape}
+                        {if $edn}
+                            {assign var="ednUrl" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $edn|lower)|escape}
                             <li class="article-meta-item edn">
                                 {capture assign=translatedEdn}{translate key="plugins.pubIds.edn.readerDisplayName"}{/capture}
                                 <strong>{translate key="semicolon" label=$translatedEdn}</strong>
                                 <a href="{$ednUrl}" target="_blank">
-                                    {$pubId|upper}
+                                    {$edn|upper}
                                 </a>
                             </li>
                         {/if}

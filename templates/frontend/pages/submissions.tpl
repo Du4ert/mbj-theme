@@ -18,7 +18,7 @@
 
 	 {* Page Title *}
 	 <div class="page-header">
-		 {include file="frontend/components/editLink.tpl" page="management" op="settings" path="publication" anchor="submissionStage" sectionTitleKey="about.submissionPreparationChecklist"}
+		 {include file="frontend/components/editLink.tpl" page="management" op="settings" path="workflow" anchor="submission"}
 		 <h1>{translate key="plugins.themes.ibsscustom.submissions.title"}</h1>
 	 </div>
 	 {* /Page Title *}

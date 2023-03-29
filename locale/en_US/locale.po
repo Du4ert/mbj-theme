@@ -244,3 +244,6 @@ msgstr "File extension"
 
 msgid "plugins.themes.ibsscustom.article.galley.file.size"
 msgstr "File size"
+
+msgid "plugins.themes.ibsscustom.about.submissions.template"
+msgstr "Manuscript template"

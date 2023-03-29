@@ -22,10 +22,9 @@
 		 <h1>{translate key="plugins.themes.ibsscustom.submissions.title"}</h1>
 	 </div>
 	 {* /Page Title *}
-        <div class="alert alert-info submission-download">
-            <p><a href="https://marine-biology.ru/mbj/libraryFiles/downloadPublic/8" title="download_doc" class="download-link" target="_blank" rel="noopener">Шаблон рукописи RUS (.rtf)</a></p>
-			<p><a href="https://marine-biology.ru/mbj/libraryFiles/downloadPublic/11" title="download_doc" class="download-link" target="_blank" rel="noopener">Manuscript template ENG (.rtf)</a></p>
-        </div>
+        
+		{include file="common/submission-files.tpl"} {*TODO journal mansucript template.  TODO*}
+
 
 	 {* Login/register prompt *}
 	 {assign var="contactEmail" value=$currentContext->getData('contactEmail')|escape}

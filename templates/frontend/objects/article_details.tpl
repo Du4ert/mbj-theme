@@ -157,26 +157,23 @@
                     {if $pubIdPlugin->getPubIdType() === 'doi'}
                         {* {continue} *}
                     
-                    {if $issue->getPublished()}
-                        {assign var=pubId value=$article->getStoredPubId($pubIdPlugin->getPubIdType())}
-                    {else}
-                        {assign var=pubId value=$pubIdPlugin->getPubId($article)}{* Preview pubId *}
-                    {/if}
-                    {if $pubId}
-                        {assign var="doiUrl" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}
-                        <li class="article-meta-item doi">
-                            {capture assign=translatedDoi}{translate key="plugins.pubIds.doi.readerDisplayName"}{/capture}
-                            <strong>{translate key="semicolon" label=$translatedDoi}</strong>
-                            <a href="{$doiUrl}">
-                                {$doiUrl|substr:16}
-                            </a>
-                        </li>
-                    {/if}
-                    {else}
-                         {* EDN (requires plugin) *}
-                        {if $pubIdPlugin->getPubIdType() != 'edn'}
-                            {continue}
+                        {if $issue->getPublished()}
+                            {assign var=pubId value=$article->getStoredPubId($pubIdPlugin->getPubIdType())}
+                        {else}
+                            {assign var=pubId value=$pubIdPlugin->getPubId($article)}{* Preview pubId *}
                         {/if}
+                        {if $pubId}
+                            {assign var="doiUrl" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}
+                            <li class="article-meta-item doi">
+                                {capture assign=translatedDoi}{translate key="plugins.pubIds.doi.readerDisplayName"}{/capture}
+                                <strong>{translate key="semicolon" label=$translatedDoi}</strong>
+                                <a href="{$doiUrl}">
+                                    {$doiUrl|substr:16}
+                                </a>
+                            </li>
+                        {/if}
+                    {elseif $pubIdPlugin->getPubIdType() === 'edn'}
+                        {* EDN (requires plugin) *}
                         {if $issue->getPublished()}
                             {assign var=edn value=$article->getStoredPubId($pubIdPlugin->getPubIdType())}
                         {else}
@@ -192,7 +189,23 @@
                                 </a>
                             </li>
                         {/if}
-                {/if}
+
+                    {* UDC (requires plugin) *}
+                    {elseif $pubIdPlugin->getPubIdType() === 'udc'}
+                        {if $issue->getPublished()}
+                            {assign var=udc value=$article->getStoredPubId($pubIdPlugin->getPubIdType())}
+                        {else}
+                            {assign var=udc value=$pubIdPlugin->getPubId($article)}{* Preview pubId *}
+                        {/if}
+                        {if $udc}
+                            {assign var="udcUrl" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $udc|lower)|escape}
+                            <li class="article-meta-item udc">
+                                {capture assign=translatedUdc}{translate key="plugins.pubIds.udc.readerDisplayName"}{/capture}
+                                <strong>{translate key="semicolon" label=$translatedUdc}</strong>
+                                    {$udc|upper}
+                            </li>
+                        {/if}
+                    {/if}
                 {/foreach}
 
 

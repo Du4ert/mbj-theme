@@ -18,15 +18,13 @@
 
 	 {* Page Title *}
 	 <div class="page-header">
-		 {include file="frontend/components/editLink.tpl" page="management" op="settings" path="publication" anchor="submissionStage" sectionTitleKey="about.submissionPreparationChecklist"}
+		 {include file="frontend/components/editLink.tpl" page="management" op="settings" path="workflow" anchor="submission"}
 		 <h1>{translate key="plugins.themes.ibsscustom.submissions.title"}</h1>
 	 </div>
 	 {* /Page Title *}
-    {* {if $currentLocale == "ru_RU"} ! hardcode alert. Need to be redisigned *}
-        {* <div class="alert alert-info submission-download"> *}
-            {* <a href="https://marine-biology.ru/mbj/libraryFiles/downloadPublic/8" title="download_doc" class="download-link" target="_blank" rel="noopener">Шаблон рукописи (.rtf)</a> *}
-        {* </div> *}
-     {* {/if} ! / hardcode ends *}
+        
+		{include file="common/submission-files.tpl"} {*TODO journal mansucript template.  TODO*}
+
 
 	 {* Login/register prompt *}
 	 {assign var="contactEmail" value=$currentContext->getData('contactEmail')|escape}

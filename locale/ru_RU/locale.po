@@ -252,5 +252,8 @@ msgstr "Плата за публикацию"
 msgid "plugins.themes.ibsscustom.navigation.retraction"
 msgstr "Порядок ретракции"
 
+msgid "plugins.themes.ibsscustom.about.submissions.template"
+msgstr "Шаблон рукописи"
+
 msgid "default.groups.name.author"
 msgstr "автор"

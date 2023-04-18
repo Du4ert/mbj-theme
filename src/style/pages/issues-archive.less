@@ -36,11 +36,56 @@
 }
 .issues-series-custom {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   justify-content: center;
   flex-wrap: wrap-reverse;
     a{
       display: inline-block;
+      width: 25%;
       padding: 5px;
     }
+}
+
+.archive-journal {
+  display: flex;
+  // justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+
+  .journal-data {
+    width: 100%;
+    margin-left: auto;
   }
+
+  .journal-title {
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .journal-issues {
+    width: 100%;
+  }
+
+  .journal-thumbnail {
+    width: 150px;
+    margin-right: 30px;
+      img {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: @screen-sm) {
+  .issues-series-custom {
+    a {
+      width: 50%;
+    }
+  }
+
+  .archive-journal {
+    .journal-thumbnail {
+      display: none;
+      margin-right: 0;
+    }
+  }
+}

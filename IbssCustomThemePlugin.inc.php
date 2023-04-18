@@ -68,6 +68,8 @@ class IbsscustomThemePlugin extends ThemePlugin {
 		$this->addMenuArea(array('primary', 'user', 'sidebar'));
 
 		// HookRegistry::register('Themes::ibsscustom::custom', array($this, 'customCallback'));
+		HookRegistry::register('TemplateManager::display', array($this, 'loadMultijournalArchive'));
+
 	}
 
 	public function customCallback($hookName, $args) {
@@ -89,5 +91,45 @@ class IbsscustomThemePlugin extends ThemePlugin {
 	 */
 	function getDescription() {
 		return 'An example theme for OJS or OMP built with our amazing documentation.';
+	}
+
+	public function loadMultijournalArchive($hookName, $args) {
+		// Retrieve the TemplateManager
+		$templateMgr = $args[0];
+		$template = $args[1];
+
+		// Don't do anything if we're not loading the right template
+		if ($template != 'frontend/pages/issueArchive.tpl') {
+			return;
+		}
+
+		$journalDao = DAORegistry::getDAO('JournalDAO');
+		$journals = $journalDao->getAll(true)->toArray();
+		$journalFilesPath = Application::get()->getRequest()->getBaseUrl() . '/' . Config::getVar('files', 'public_files_dir') . '/journals/';
+
+		if (count($journals) < 2) {
+			return false;
+		}
+		
+		$allIssues = [];
+
+		foreach ($journals as $journal) {
+			$id = $journal->getId();
+			$params = array(
+				'contextId' => $id,
+				'orderBy' => 'seq',
+				'orderDirection' => 'ASC',
+				'isPublished' => true,
+			);
+			$issues = iterator_to_array(Services::get('issue')->getMany($params));
+
+			$allIssues[$id] = $issues;
+		}
+
+		$templateMgr->assign([
+			'journals' => $journals,
+			'allIssues' => $allIssues,
+			'journalFilesPath' => $journalFilesPath,
+		]);
 	}
 }

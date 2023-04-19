@@ -26,9 +26,6 @@
 <div id="main-content" class="page page_issue_archive">
   {include file="frontend/components/breadcrumbs.tpl" currentTitle=$pageTitle}
 
-  {* Just accepted functional *}
-  {assign var="just_accepted" value=null}
-
   {if $journals < 2}
     {* No issues have been published *}
       {include file="frontend/objects/issues.tpl" issues=$issues}

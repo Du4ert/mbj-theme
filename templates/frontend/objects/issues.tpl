@@ -3,6 +3,8 @@
       {translate key="current.noCurrentIssueDesc"}
     </div>
   {else}
+      {* Just accepted functional *}
+      {assign var="just_accepted" value=null}
       {* List issues *}
       {assign var=currentYear value=''}
       <div class="issues media-list">
@@ -57,7 +59,7 @@
   
           {if !!$just_accepted}
             <div class="just-accepted"><a class="btn btn-primary"
-                href="{url op="view" path=$just_accepted->getBestIssueId($currentJournal)}">{$just_accepted->getLocalizedTitle()|escape}</a>
+                href="{url journal=$journal->getPath() page="issue" op="view"  path=$just_accepted->getBestIssueId($currentJournal)}">{$just_accepted->getLocalizedTitle()|escape}</a>
             </div>
           {/if}
         </div>

@@ -23,6 +23,10 @@
 .issues-head-custom {
     background: @brand-primary;
     color: @body-bg;
+
+    .issues-series-custom {
+      justify-content: space-around;
+    }
 }
 .issues-body-custom {
   tr:nth-child(even) {
@@ -37,7 +41,7 @@
 .issues-series-custom {
   display: flex;
   flex-direction: row-reverse;
-  justify-content: center;
+  justify-content: flex-end;
   flex-wrap: wrap-reverse;
     a{
       display: inline-block;

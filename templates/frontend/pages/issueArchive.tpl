@@ -24,7 +24,6 @@
 {include file="frontend/components/header.tpl" pageTitleTranslated=$pageTitle}
 
 <div id="main-content" class="page page_issue_archive">
-{debug}
   {include file="frontend/components/breadcrumbs.tpl" currentTitle=$pageTitle}
 
   {if $journals < 2}

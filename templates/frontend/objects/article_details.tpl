@@ -25,6 +25,13 @@
 
 <article class="article-details">
 
+{** funding*}
+{if $publication->getData('funding')} {* requires extraFields plugin*}
+    {assign var='funding' value=$publication->getLocalizedData('funding')}
+    {elseif $publication->getData('supportingAgencies')}
+        {assign var='funding' value='<br/>'|implode:$publication->getLocalizedData('supportingAgencies')}
+{/if}
+
 {* Notification that this is an old version *}
 {if $currentPublication->getId() !== $publication->getId()}
     <div class="alert alert-warning" role="alert">
@@ -331,6 +338,9 @@
                             {if $parsedCitations || $publication->getData('citationsRaw')}<li role="presentation"><a href="#references"
                                 aria-controls="references" role="tab" data-toggle="tab">{translate
     							key="submission.citations"}</a></li>{/if}
+                    {if $funding}<li role="presentation"><a href="#funding"
+                        aria-controls="funding" role="tab" data-toggle="tab">{translate
+                        key="plugins.themes.ibsscustom.article.funding"}</a></li>{/if}
                     {if $supplementaryGalleys}<li role="presentation"><a href="#supplementary"
                                 aria-controls="supplementary" role="tab" data-toggle="tab">{translate
     							key="plugins.themes.ibsscustom.article.supplementaries"}</a></li>{/if}
@@ -416,6 +426,21 @@
                         </div>
                     {/if}
 
+                    {** funding requires extraField plugin*}
+                    {if $publication->getData('supportingAgencies') }
+                        <div class="tab-pane" role="tabpanel" id="funding">
+                            <h2 class="article-more-title">{translate key="plugins.themes.ibsscustom.article.funding"}</h2>
+                            <div class="funding">
+                                 {$funding|strip_unsafe_html}
+                            {** Doesn't require plugin, but needs to enable supportingAgencies in journal workflow*}
+                            {* {foreach from=$publication->getLocalizedData('supportingAgencies') item=funding}
+                                    {$funding|strip_unsafe_html}
+                            {/foreach} *}
+                            {** ends*}
+                            </div>
+                        </div>
+                    {/if}
+
                     {* Statistics *}
                 
                     <div class="tab-pane" role="tabpanel" id="statistics">
@@ -431,9 +456,10 @@
                             </div>
                         </div>
                     </div>
+
                     
 
-                    {* Licensing info Спрятал лицензию V false ниже*}
+                    {** Licensing info Спрятал лицензию V false ниже*}
                     {if $copyright || $licenseUrl && false}
                         <div class="panel panel-default copyright">
                             <div class="panel-body">

@@ -427,7 +427,7 @@
                     {/if}
 
                     {** funding requires extraField plugin*}
-                    {if $publication->getData('supportingAgencies') }
+                    {if $funding }
                         <div class="tab-pane" role="tabpanel" id="funding">
                             <h2 class="article-more-title">{translate key="plugins.themes.ibsscustom.article.funding"}</h2>
                             <div class="funding">

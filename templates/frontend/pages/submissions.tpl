@@ -23,7 +23,7 @@
 	 </div>
 	 {* /Page Title *}
         
-		{include file="common/submission-files.tpl"} {*TODO journal mansucript template.  TODO*}
+		{include file="frontend/objects/submission-files.tpl"} {*TODO journal mansucript template.  TODO*}
 
 
 	 {* Login/register prompt *}

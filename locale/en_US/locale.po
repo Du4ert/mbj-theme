@@ -38,6 +38,9 @@ msgstr "Download fulltext"
 msgid "plugins.themes.ibsscustom.issue.supplementary"
 msgstr "Supplementary"
 
+msgid "plugins.themes.ibsscustom.article.funding"
+msgstr "Funding"
+
 msgid "plugins.themes.ibsscustom.editorial.principle"
 msgstr "The principle of the Editorial Board (RU)"
 

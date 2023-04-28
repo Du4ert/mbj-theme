@@ -60,6 +60,9 @@ msgstr "Скачать полный текст"
 msgid "plugins.themes.ibsscustom.issue.supplementary"
 msgstr "Приложение"
 
+msgid "plugins.themes.ibsscustom.article.funding"
+msgstr "Финансирование"
+
 msgid "plugins.themes.ibsscustom.editorial.principle"
 msgstr "Положение о редколлегии МБЖ"
 

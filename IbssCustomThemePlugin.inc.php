@@ -1,12 +1,14 @@
 <?php
 import('lib.pkp.classes.plugins.ThemePlugin');
-class IbsscustomThemePlugin extends ThemePlugin {
+class IbsscustomThemePlugin extends ThemePlugin
+{
 
 	/**
 	 * Load the custom styles for our theme
 	 * @return null
 	 */
-	public function init() {
+	public function init()
+	{
 		// Options
 		$this->addOption('yandexMetricOn', 'FieldOptions', [
 			'label' => 'Метрики',
@@ -36,8 +38,8 @@ class IbsscustomThemePlugin extends ThemePlugin {
 			],
 			'default' => false,
 		]);
-		
-		
+
+
 		// Load jQuery from a CDN or, if CDNs are disabled, from a local copy.
 		$min = Config::getVar('general', 'enable_minified') ? '.min' : '';
 		$request = Application::get()->getRequest();
@@ -67,13 +69,14 @@ class IbsscustomThemePlugin extends ThemePlugin {
 		// Add navigation menu areas for this theme
 		$this->addMenuArea(array('primary', 'user', 'sidebar'));
 
-		// HookRegistry::register('Themes::ibsscustom::custom', array($this, 'customCallback'));
-		HookRegistry::register('TemplateManager::display', array($this, 'loadMultijournalArchive'));
 
+		// issueArchive page now contains all journals issues
+		HookRegistry::register('TemplateManager::display', array($this, 'loadMultijournalArchive'));
 	}
 
-	public function customCallback($hookName, $args) {
-		
+	public function customCallback($hookName, $args)
+	{
+
 		return false;
 	}
 
@@ -81,7 +84,8 @@ class IbsscustomThemePlugin extends ThemePlugin {
 	 * Get the display name of this theme
 	 * @return string
 	 */
-	function getDisplayName() {
+	function getDisplayName()
+	{
 		return 'Ibss custom theme';
 	}
 
@@ -89,11 +93,13 @@ class IbsscustomThemePlugin extends ThemePlugin {
 	 * Get the description of this plugin
 	 * @return string
 	 */
-	function getDescription() {
+	function getDescription()
+	{
 		return 'An example theme for OJS or OMP built with our amazing documentation.';
 	}
 
-	public function loadMultijournalArchive($hookName, $args) {
+	public function loadMultijournalArchive($hookName, $args)
+	{
 		// Retrieve the TemplateManager
 		$templateMgr = $args[0];
 		$template = $args[1];
@@ -110,7 +116,7 @@ class IbsscustomThemePlugin extends ThemePlugin {
 		if (count($journals) < 2) {
 			return false;
 		}
-		
+
 		$allIssues = [];
 
 		foreach ($journals as $journal) {

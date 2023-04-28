@@ -30,7 +30,7 @@
     {* No issues have been published *}
       {include file="frontend/objects/issues.tpl" issues=$issues journal=$currentJournal}
       {else}
-        {foreach from=$journals|@array_reverse item="journal"}
+        {foreach from=$journals item="journal"}
           {capture assign="url"}{url journal=$journal->getPath()}{/capture}
 					{assign var="thumb" value=$journal->getLocalizedSetting('journalThumbnail')}
 						<div class="archive-journal">

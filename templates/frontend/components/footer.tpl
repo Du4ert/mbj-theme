@@ -32,6 +32,8 @@
 					{$pageFooter}
 					{if $activeTheme->getOption('yandexMetricOn') && $activeTheme->getOption('yandexMetricId')}
 						{assign var="yandexMetricId" value=$activeTheme->getOption('yandexMetricId')}
+
+						<noscript><div><img src="https://mc.yandex.ru/watch/{$yandexMetricId}" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 					 <!-- Yandex.Metrika informer -->
 					 <a href="https://metrika.yandex.ru/stat/?id={$yandexMetricId}&amp;from=informer"
 					 target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/{$yandexMetricId}/3_1_EEEEEEFF_EEEEEEFF_0_pageviews"

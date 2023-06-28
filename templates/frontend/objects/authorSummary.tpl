@@ -10,7 +10,7 @@
     {assign var="affiliations" value=[] }
     {foreach from=$article->getAuthors() item=author key=myId}
         {if !$author->getLocalizedAffiliation()}
-            {break}
+            {continue}
         {/if}
         {assign var="multiAffiliations" value=($author->getLocalizedAffiliation()|explode:" / ")}
         {foreach from=$multiAffiliations item=item}

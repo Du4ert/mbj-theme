@@ -219,10 +219,10 @@ msgid "plugins.themes.ibsscustom.article.video"
 msgstr "Video"
 
 msgid "plugins.themes.ibsscustom.article.supplementary"
-msgstr "Supplementary"
+msgstr "Supplementary files"
 
 msgid "plugins.themes.ibsscustom.article.supplementaries"
-msgstr "Supplementary"
+msgstr "Supplementary files"
 
 msgid "plugins.themes.ibsscustom.article.affiliations"
 msgstr "Affiliations"

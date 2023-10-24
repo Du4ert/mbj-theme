@@ -308,7 +308,7 @@
                 <script src="https://yastatic.net/share2/share.js"></script>
                 <div class="ya-share2" data-curtain data-size="s" data-lang="en" data-shape="normal"
                     data-image="httpsgulp:{$issue->getLocalizedCoverImageUrl()|escape}"
-                    data-services="vkontakte,twitter,facebook,odnoklassniki,telegram,viber,whatsapp"></div>
+                    data-services="vkontakte,odnoklassniki,telegram,whatsapp,viber,skype"></div>
             </div>
 
             {/if}

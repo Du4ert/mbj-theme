@@ -24,38 +24,81 @@
 	{include file="frontend/components/editLink.tpl" page="management" op="settings" path="" anchor="" sectionTitleKey=""}
 
 	{call_hook name="Templates::Index::journal"}
-<div class="row journal-description journal-description-main">
-	<div class="col-md-3 col-sm-3 col-xs-12">
+	<div class="row journal-description journal-description-main">
+		<div class="col-md-3 col-sm-3 col-xs-12">
 
+		</div>
+		<div class="col-xs-12">
+			{if $homepageImage}
+				<div class="homepage-image pull-right col-xs-hidden">
+					<img class="img-responsive" src="{$publicFilesDir}/{$homepageImage.uploadName|escape:"url"}"
+						alt="{$homepageImageAltText|escape}">
+					<div class="metrics">
+					{* <h4>Основные показатели:</h4> *}
+						<div class="metric metric-elibrary">
+							<div class="metric-title">
+								Elibrary:
+							</div>
+							<div class="metric-values">
+								<a href="https://elibrary.ru/title_profile.asp?id=58449">
+									<span class="badge badge-elibrary">Sc Index: 783</span>
+								</a>
+								<a href="https://www.scimagojr.com/journalsearch.php?q=21100944725&tip=sid&exact=no">
+									<span class="badge badge-elibrary">Percentile: 20</span>
+								</a>
+							</div>
+						</div>
+						<div class="metric metric-scopus">
+							<div class="metric-title">
+								Scopus:
+							</div>
+							<div class="metric-values">
+								<a href="https://www.scopus.com/sourceid/21100944725">
+									<span class="badge badge-scopus">CiteScore: 0.9</span>
+								</a>
+								<a href="https://www.scopus.com/sourceid/21100944725">
+									<span class="badge badge-scopus">SJR: 0.288</span>
+								</a>
+							</div>
+						</div>
+						<div class="metric metric-scimago">
+							<div class="metric-title">
+								Scimago:
+							</div>
+							<div class="metric-values">
+								<a href="https://www.scimagojr.com/journalsearch.php?q=21100944725&tip=sid&exact=no">
+									<span class="badge badge-scimago">H-index: 7</span>
+								</a>
+								<a href="https://www.scimagojr.com/journalsearch.php?q=21100944725&tip=sid&exact=no">
+									<span class="badge badge-scimago">SJR: 0.29</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			{/if}
+
+			{if $journalDescription}
+				<h1 class="journal-description-title">
+					{if $displayPageHeaderTitle}
+						{$displayPageHeaderTitle}
+						<hr />
+					{/if}
+				</h1>
+				<div class="journal-description-content">
+					{$journalDescription}
+				</div>
+			{/if}
+
+
+			{if $additionalHomeContent}
+				<section class="additional_content">
+					{$additionalHomeContent}
+				</section>
+			{/if}
+
+		</div>
 	</div>
-	<div class="col-xs-12">
-		{if $homepageImage}
-			<div class="homepage-image pull-right col-xs-hidden">
-				<img class="img-responsive" src="{$publicFilesDir}/{$homepageImage.uploadName|escape:"url"}" alt="{$homepageImageAltText|escape}">
-			</div>
-		{/if}
-
-		{if $journalDescription}
-			<h1 class="journal-description-title">
-				{if $displayPageHeaderTitle}
-					{$displayPageHeaderTitle}
-					<hr />
-				{/if}
-			</h1>
-			<div class="journal-description-content">
-				{$journalDescription}
-			</div>
-		{/if}
-
-
-		{if $additionalHomeContent}
-			<section class="additional_content">
-				{$additionalHomeContent}
-			</section>
-		{/if}
-		
-	</div>
-</div>
 
 	{* Announcements *}
 	{if $numAnnouncementsHomepage && $announcements|count}
@@ -82,7 +125,7 @@
 		<section id="current_issue" class="current_issue">
 			<div class="page-header">
 				<h2>
-				{translate key="journal.currentIssue"}
+					{translate key="journal.currentIssue"}
 				</h2>
 			</div>
 			<p class="current_issue_title lead">

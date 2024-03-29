@@ -5,10 +5,13 @@
                     </div>
                     <div class="metric-values">
                         <a href="https://elibrary.ru/title_profile.asp?id=58449">
-                            <span class="badge badge-elibrary">Sc Index: 783</span>
+                            <span class="badge badge-elibrary">SI: 783</span>
                         </a>
                         <a href="https://www.scimagojr.com/journalsearch.php?q=21100944725&tip=sid&exact=no">
                             <span class="badge badge-elibrary">Percentile: 20</span>
+                        </a>
+                         <a href="https://www.scimagojr.com/journalsearch.php?q=21100944725&tip=sid&exact=no">
+                        <span class="badge badge-elibrary">SI Биология: 85</span>
                         </a>
                     </div>
                 </div>
@@ -34,7 +37,7 @@
                             <span class="badge badge-scimago">H-index: 7</span>
                         </a>
                         <a href="https://www.scimagojr.com/journalsearch.php?q=21100944725&tip=sid&exact=no">
-                            <span class="badge badge-scimago">SJR: 0.29</span>
+                            <span class="badge badge-scimago">Q3 Aquatic Science</span>
                         </a>
                     </div>
                 </div>

@@ -48,15 +48,20 @@
 					{/if}
 				</h1> *}
 				<div class="journal-description-content">
-				{include file="frontend/pages/temp_description.tpl"}
-					{* {$journalDescription} *}
+				{* {include file="frontend/pages/temp_description.tpl"} *}
+					{$journalDescription}
 				</div>
 			{/if}
 
-
 			{if $additionalHomeContent}
-				<section class="additional_content">
-					{$additionalHomeContent}
+				<div> </div>
+				<section class="additional_content description-additional">
+				<div class="additional-title" data-toggle="collapse" data-target="#additional-content">
+					Дополнительно <span class="glyphicon glyphicon-chevron-down"></span>
+				</div>
+				<div class="collapse additional-content" id="additional-content">
+				{$additionalHomeContent}
+				</div>
 				</section>
 			{/if}
 

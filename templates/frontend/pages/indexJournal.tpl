@@ -34,7 +34,7 @@
 					<img class="img-responsive" src="{$publicFilesDir}/{$homepageImage.uploadName|escape:"url"}"
 						alt="{$homepageImageAltText|escape}">
 					<div class="metrics">
-						{include file="frontend/pages/temp_metrics.tpl"}
+						{include file="frontend/components/metrics.tpl"}
 					</div>
 				</div>
 			{/if}
@@ -48,7 +48,6 @@
 					{/if}
 				</h1> *}
 				<div class="journal-description-content">
-				{* {include file="frontend/pages/temp_description.tpl"} *}
 					{$journalDescription}
 				</div>
 			{/if}
@@ -57,7 +56,7 @@
 				<div> </div>
 				<section class="additional_content description-additional">
 				<div class="additional-title" data-toggle="collapse" data-target="#additional-content">
-					Подробнее  <span class="glyphicon glyphicon-chevron-down"></span>
+					{translate key="plugins.themes.ibsscustom.index.additional.button"}  <span class="glyphicon glyphicon-chevron-down"></span>
 				</div>
 				<div class="collapse additional-content" id="additional-content">
 				{$additionalHomeContent}

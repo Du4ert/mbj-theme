@@ -260,3 +260,6 @@ msgstr "Шаблон рукописи"
 
 msgid "default.groups.name.author"
 msgstr "автор"
+
+msgid "plugins.themes.ibsscustom.index.additional.button"
+msgstr "Подробнее"

@@ -1,14 +1,13 @@
 
 .metrics {
     font-size: @font-size-featured;
-    // padding: 5px;
-    // border: 1px solid #ccc;
 }
 
 .metric {
     position: relative;
     padding: 5px 0;
     display: flex;
+    justify-content: start;
 
     &:after {
         content: "";
@@ -22,30 +21,14 @@
 }
 
 .metric-title {
+    text-align: left;
+    min-width: 60px;
     width: 20%;
-
-    // &:before {
-    //     content: '';
-    //     margin: 0 0 0 0;
-    //     display: inline-block;
-    //     vertical-align: middle;
-    //     background-size: cover;
-    //     width: 15px;
-    //     height: 15px;
-    // }
-
-    // .title-elibrary:before {
-	// 	background-image: url('@{path_to_img}/elibrary.svg');
-	// }
-
-	// .title-scopus-custom:before {
-	// 	background-image: url('@{path_to_img}/scopus.png');
-	// }
-
 }
 
 .metric-values {
     width: 80%;
+    margin: 0 auto;
     text-align: center;
 }
 

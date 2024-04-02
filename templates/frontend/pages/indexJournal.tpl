@@ -57,7 +57,7 @@
 				<div> </div>
 				<section class="additional_content description-additional">
 				<div class="additional-title" data-toggle="collapse" data-target="#additional-content">
-					Дополнительно <span class="glyphicon glyphicon-chevron-down"></span>
+					Подробнее  <span class="glyphicon glyphicon-chevron-down"></span>
 				</div>
 				<div class="collapse additional-content" id="additional-content">
 				{$additionalHomeContent}

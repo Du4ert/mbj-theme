@@ -111,8 +111,18 @@ header.header-custom {
 .main-navigation-item {
     position: relative;
     &:hover {
-        background: @gray-dark;
+        a {
+            background-color: @header-link-color-hover !important;
+        }
     }
+    .dropdown-toggle:focus {
+        background-color: @header-link-color-hover !important;
+    }
+
+    .dropdown-menu {
+        background-color: @header-link-color-hover !important;
+    }
+
     &:not(:last-child):after {
         content: '';
         position: absolute;

@@ -32,6 +32,9 @@
 		{if $homepageImage}
 			<div class="homepage-image pull-right col-xs-hidden">
 				<img class="img-responsive" src="{$publicFilesDir}/{$homepageImage.uploadName|escape:"url"}" alt="{$homepageImageAltText|escape}">
+				<div class="metrics">
+						{include file="frontend/components/metrics.tpl"}
+				</div>
 			</div>
 		{/if}
 

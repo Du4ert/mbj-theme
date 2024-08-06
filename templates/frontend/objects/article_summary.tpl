@@ -20,7 +20,7 @@
 {/if}
 
 <div class="article-summary media">
-	{if $article->getLocalizedCoverImage()}
+	{if $article->getLocalizedData('coverImage')}
 		<div class="cover media-left">
 			<a href="{url page="article" op="view" path=$articlePath}" class="file">
 				<img class="media-object" src="{$article->getLocalizedCoverImageUrl()|escape}">
@@ -46,7 +46,7 @@
 				<div class="meta">
 					{if $showAuthor}
 						<div class="authors">
-							{$article->getAuthorString()|escape}
+							{$article->getCurrentPublication()->getAuthorString($authorUserGroups)|escape}
 						</div>
 					{/if}
 				</div>

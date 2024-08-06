@@ -8,27 +8,27 @@
     <strong>{capture assign=authors}{translate key="article.authors"}{/capture}{translate
         key="semicolon" label=$authors}</strong>
     {assign var="affiliations" value=[] }
-    {foreach from=$article->getAuthors() item=author key=myId}
+    {foreach from=$publication->getData('authors') item=author key=myId}
         {if !$author->getLocalizedAffiliation()}
             {continue}
         {/if}
         {assign var="multiAffiliations" value=($author->getLocalizedAffiliation()|explode:" / ")}
         {foreach from=$multiAffiliations item=item}
-            {$item = $item|trim}
-            {if !$item|@in_array:$affiliations}
+            {$item = trim($item)}
+            {if !in_array($item, $affiliations)}
                 {$affiliations[] = $item}
             {/if}
         {/foreach}
     {/foreach}
 
-    {foreach from=$article->getAuthors() item=author key=myId}
+    {foreach from=$publication->getData('authors') item=author key=myId}
         {assign var="affiliationNumber" value=''}
         {assign var="multiAffiliations" value=($author->getLocalizedAffiliation()|explode:" / ")}
         {if $affiliations|@count > 1}
         
             {foreach from=$multiAffiliations item=item key=key name=name}
-                {$item = $item|trim}
-                {assign var="position" value=($item|@array_search:$affiliations)}
+                {$item = trim($item)}
+                {assign var="position" value=(array_search($item, $affiliations))}
                 {if $position === false }
                     {* {$affiliations[] = $item} *}
                     {$position = $affiliations|@count -1}
@@ -43,7 +43,7 @@
         {/if}
         <span class="author-short">
             {assign var="authorFullName" value=($author->getFullName()|replace:' ':'&nbsp;')}
-            {$authorFullName}<sup>{$affiliationNumber}</sup></span>{($article->getAuthors()|@count -1 !== $myId)?',':''}
+            {$authorFullName}<sup>{$affiliationNumber}</sup></span>{($publication->getData('authors')|@count -1 !== $myId)?',':''}
     {/foreach}
 </li>
 

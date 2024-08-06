@@ -71,23 +71,11 @@
 	{* Submission Checklist *}
 	{if $submissionChecklist}
 		<div class="submission_checklist">
-			<div class="page-header">
-				<h2>
-					{translate key="about.submissionPreparationChecklist"}
-				</h2>
-			</div>
-			<p class="lead description submission-description-custom">
-				{translate key="plugins.themes.ibsscustom.submissionPreparationChecklist.description"}
-			</p>
-			<ul class="list-group">
-				{foreach from=$submissionChecklist item=checklistItem}
-					<li class="list-group-item">
-						<span class="glyphicon glyphicon-check" aria-hidden="true"></span>
-						<span class="item-content">{$checklistItem.content|nl2br}</span>
-					</li>
-				{/foreach}
-			</ul>
-
+			<h2 class="page-header">
+				{translate key="about.submissionPreparationChecklist"}
+				{include file="frontend/components/editLink.tpl" page="management" op="settings" path="workflow" anchor="submission/instructions" sectionTitleKey="about.submissionPreparationChecklist"}
+			</h2>
+			{$submissionChecklist}
 		</div>
 	{/if}
 	{* /Submission Checklist *}

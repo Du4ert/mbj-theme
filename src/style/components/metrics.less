@@ -1,0 +1,46 @@
+
+.metrics {
+    font-size: @font-size-featured;
+}
+
+.metric {
+    position: relative;
+    padding: 5px 0;
+    display: flex;
+    justify-content: start;
+
+    &:after {
+        content: "";
+        background: #ccc;
+        position: absolute;
+        bottom: 0;
+        left: 5%;
+        height: 1px;
+        width: 90%;
+    }
+}
+
+.metric-title {
+    text-align: left;
+    min-width: 60px;
+    width: 20%;
+}
+
+.metric-values {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.badge-elibrary {
+    background-color: #ef7459;
+}
+
+.badge-scopus {
+    background-color: #006471;
+}
+
+.badge-scimago {
+    background-color: #fc902b;
+}
+

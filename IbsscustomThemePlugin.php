@@ -1,5 +1,13 @@
 <?php
-import('lib.pkp.classes.plugins.ThemePlugin');
+namespace APP\plugins\themes\ibsscustom;
+
+use APP\core\Application;
+use APP\i18n\AppLocale;
+use PKP\config\Config;
+use PKP\facades\Locale;
+use PKP\plugins\Hook;
+use PKP\plugins\ThemePlugin;
+use PKP\db\DAORegistry;
 class IbsscustomThemePlugin extends ThemePlugin
 {
 
@@ -38,6 +46,114 @@ class IbsscustomThemePlugin extends ThemePlugin
 			],
 			'default' => false,
 		]);
+		
+
+		$this->addOption('elibraryMetricLink', 'FieldText', [
+			'label' => 'Elibrary Metric link',
+			'default' => '',
+		]);
+
+		$this->addOption('elibrary1', 'FieldText', [
+			'label' => 'elibrary 1',
+			'default' => '',
+			'showWhen' => 'elibraryMetricLink'
+		]);
+
+		$this->addOption('elibrary2', 'FieldText', [
+			'label' => 'elibrary 2',
+			'default' => '',
+			'showWhen' => 'elibrary1'
+		]);
+
+
+		$this->addOption('elibrary3', 'FieldText', [
+			'label' => 'elibrary 3',
+			'default' => '',
+			'showWhen' => 'elibrary2'
+		]);
+
+		$this->addOption('elibrary4', 'FieldText', [
+			'label' => 'elibrary 4',
+			'default' => '',
+			'showWhen' => 'elibrary3'
+		]);
+
+		$this->addOption('elibrary5', 'FieldText', [
+			'label' => 'elibrary 5',
+			'default' => '',
+			'showWhen' => 'elibrary4'
+		]);
+
+		$this->addOption('scopusMetricLink', 'FieldText', [
+			'label' => 'Scopus Metric link',
+			'default' => '',
+		]);
+
+		$this->addOption('scopus1', 'FieldText', [
+			'label' => 'scopus 1',
+			'showWhen' => 'scopusMetricLink',
+		]);
+
+		$this->addOption('scopus2', 'FieldText', [
+			'label' => 'scopus 2',
+			'default' => '',
+			'showWhen' => 'scopus1'
+		]);
+
+
+		$this->addOption('scopus3', 'FieldText', [
+			'label' => 'scopus 3',
+			'default' => '',
+			'showWhen' => 'scopus2'
+		]);
+
+		$this->addOption('scopus4', 'FieldText', [
+			'label' => 'scopus 4',
+			'default' => '',
+			'showWhen' => 'scopus3'
+		]);
+
+		$this->addOption('scopus5', 'FieldText', [
+			'label' => 'scopus 5',
+			'default' => '',
+			'showWhen' => 'scopus4'
+		]);
+
+		$this->addOption('scimagoMetricLink', 'FieldText', [
+			'label' => 'Scimago Metric link',
+			'default' => '',
+		]);
+		
+
+		$this->addOption('scimago1', 'FieldText', [
+			'label' => 'scimago 1',
+			'showWhen' => 'scimagoMetricLink'
+		]);
+
+		$this->addOption('scimago2', 'FieldText', [
+			'label' => 'scimago 2',
+			'default' => '',
+			'showWhen' => 'scimago1'
+		]);
+
+
+		$this->addOption('scimago3', 'FieldText', [
+			'label' => 'scupus 3',
+			'default' => '',
+			'showWhen' => 'scimago2'
+		]);
+
+		$this->addOption('scimago4', 'FieldText', [
+			'label' => 'scupus 4',
+			'default' => '',
+			'showWhen' => 'scimago3'
+		]);
+
+		$this->addOption('scimago5', 'FieldText', [
+			'label' => 'scupus 5',
+			'default' => '',
+			'showWhen' => 'scimago4'
+		]);
 
 
 		// Load jQuery from a CDN or, if CDNs are disabled, from a local copy.
@@ -71,7 +187,7 @@ class IbsscustomThemePlugin extends ThemePlugin
 
 
 		// issueArchive page now contains all journals issues
-		HookRegistry::register('TemplateManager::display', array($this, 'loadMultijournalArchive'));
+		Hook::register('TemplateManager::display', array($this, 'loadMultijournalArchive'));
 	}
 
 	public function customCallback($hookName, $args)
@@ -138,4 +254,8 @@ class IbsscustomThemePlugin extends ThemePlugin
 			'journalFilesPath' => $journalFilesPath,
 		]);
 	}
+}
+
+if (!PKP_STRICT_MODE) {
+    class_alias('\APP\plugins\themes\ibsscustom\IbsscustomThemePlugin', '\IbsscustomThemePlugin');
 }

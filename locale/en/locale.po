@@ -209,10 +209,10 @@ msgstr "Views"
 msgid "plugins.themes.ibsscustom.article.downloads"
 msgstr "Downloads"
 
-msgid "plugins.themes.ibsscustom.article.ru_RU"
+msgid "plugins.themes.ibsscustom.article.ru"
 msgstr "RUS"
 
-msgid "plugins.themes.ibsscustom.article.en_US"
+msgid "plugins.themes.ibsscustom.article.en"
 msgstr "ENG"
 
 msgid "plugins.themes.ibsscustom.article.video"

@@ -74,7 +74,7 @@
                             <span class="blockTitle" style="display:none;">{translate key="common.language"}</span>
                             <ul class="langul pull-right">
 
-                                {assign 'languageToggleLocales' ['ru_RU'=> 'Русский', 'en_US' => 'English']}
+                                {assign 'languageToggleLocales' ['ru'=> 'Русский', 'en' => 'English']}
                                 {foreach from=$languageToggleLocales item=localeName key=localeKey}
                                     <li
                                         class="pull-left locale_{$localeKey|escape}{if $localeKey == $currentLocale} current{/if} langli">

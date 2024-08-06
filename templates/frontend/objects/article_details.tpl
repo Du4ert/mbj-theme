@@ -29,7 +29,7 @@
 {if $publication->getData('funding')} {* requires extraFields plugin*}
     {assign var='funding' value=$publication->getLocalizedData('funding')}
     {elseif $publication->getData('supportingAgencies')}
-        {assign var='funding' value='<br/>'|implode:$publication->getLocalizedData('supportingAgencies')}
+        {assign var='funding' value=implode('<br/>', $publication->getLocalizedData('supportingAgencies'))}
 {/if}
 
 {* Notification that this is an old version *}
@@ -284,7 +284,7 @@
             {/if}
             <div class="article-sidebar-item googleScholar">
                 <a class="google-scholar-link btn"
-                    href='https://scholar.google.com/scholar?q="{$scholarQuery|urlencode}"' target="_blank"
+                    href='https://scholar.google.com/scholar?q="{urlencode($scholarQuery)}"' target="_blank"
                     rel="noreferrer">
                     <img class="google-scholar-img"
                         src="/plugins/themes/{$currentContext->getData('themePluginPath')}/img/scholar.png"

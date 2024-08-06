@@ -16,6 +16,6 @@
  *
  */
 
-require_once('IbsscustomThemePlugin.inc.php');
+namespace APP\plugins\themes\ibsscustom;
 
 return new IbsscustomThemePlugin();

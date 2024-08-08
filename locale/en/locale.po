@@ -250,3 +250,6 @@ msgstr "File size"
 
 msgid "plugins.themes.ibsscustom.about.submissions.template"
 msgstr "Manuscript template"
+
+msgid "plugins.themes.ibsscustom.displayStats.noStats"
+msgstr "There are no statistics yet"

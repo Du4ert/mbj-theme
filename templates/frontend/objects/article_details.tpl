@@ -99,7 +99,7 @@
 
         <section class="col-md-7 col-lg-7 col-md-8">
             {* Screen-reader heading for easier navigation jumps *}
-            <h2 class="sr-only">{translate key="plugins.themes.bootstrap3.article.main"}</h2>
+            <h2 class="sr-only">{translate key="plugins.themes.ibsscustom.article.main"}</h2>
 
             <ul class="article-meta-list">
                 {* Authors *}
@@ -349,7 +349,7 @@
 
                 <div class="tab-content article-more-content panel-body">
                     {* Screen-reader heading for easier navigation jumps *}
-                    <h2 class="sr-only article-more-title">{translate key="plugins.themes.bootstrap3.article.details"}
+                    <h2 class="sr-only article-more-title">{translate key="plugins.themes.ibsscustom.article.details"}
                     </h2>
 
                     {* Article abstract *}
@@ -461,14 +461,14 @@
                                     {$activeTheme->displayUsageStatsGraph($article->getId())}
                                     <section class="item downloads_chart">
                                         <h2 class="label">
-                                            {translate key="plugins.themes.bootstrap3.displayStats.downloads"}
+                                            {translate key="plugins.themes.ibsscustom.displayStats.downloads"}
                                         </h2>
                                         <div class="value">
                                             <canvas class="usageStatsGraph" data-object-type="Submission"
                                                 data-object-id="{$article->getId()|escape}"></canvas>
                                             <div class="usageStatsUnavailable" data-object-type="Submission"
                                                 data-object-id="{$article->getId()|escape}">
-                                                {translate key="plugins.themes.bootstrap3.displayStats.noStats"}
+                                                {translate key="plugins.themes.ibsscustom.displayStats.noStats"}
                                             </div>
                                         </div>
                                     </section>

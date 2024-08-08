@@ -44,11 +44,9 @@
             </h3>
             {if $showAuthor}
                 <div class="meta">
-                    {if $showAuthor}
                         <div class="authors">
-                            {$article->getData('authors')|escape}
+                            {$article->getCurrentPublication()->getAuthorString($authorUserGroups)|escape}
                         </div>
-                    {/if}
                 </div>
             {/if}
 

@@ -12,7 +12,7 @@
         {if !$author->getLocalizedAffiliation()}
             {continue}
         {/if}
-        {assign var="multiAffiliations" value=($author->getLocalizedAffiliation()|explode:" / ")}
+        {assign var="multiAffiliations" value=(explode(" / ", $author->getLocalizedAffiliation()|default:''))}
         {foreach from=$multiAffiliations item=item}
             {$item = trim($item)}
             {if !in_array($item, $affiliations)}
@@ -21,11 +21,15 @@
         {/foreach}
     {/foreach}
 
+            {assign var='authorsCount' value=$publication->getData('authors')|@count}
+            {assign var="currentIndex" value=0}
     {foreach from=$publication->getData('authors') item=author key=myId}
+        {assign var='currentIndex' value=$currentIndex+1}
         {assign var="affiliationNumber" value=''}
-        {assign var="multiAffiliations" value=($author->getLocalizedAffiliation()|explode:" / ")}
+        {assign var="multiAffiliations" value=(explode(" / ", $author->getLocalizedAffiliation()|default:''))}
         {if $affiliations|@count > 1}
         
+            
             {foreach from=$multiAffiliations item=item key=key name=name}
                 {$item = trim($item)}
                 {assign var="position" value=(array_search($item, $affiliations))}
@@ -43,7 +47,7 @@
         {/if}
         <span class="author-short">
             {assign var="authorFullName" value=($author->getFullName()|replace:' ':'&nbsp;')}
-            {$authorFullName}<sup>{$affiliationNumber}</sup></span>{($publication->getData('authors')|@count -1 !== $myId)?',':''}
+            {$authorFullName}<sup>{$affiliationNumber}</sup></span>{($currentIndex < $authorsCount)?', ':''}
     {/foreach}
 </li>
 

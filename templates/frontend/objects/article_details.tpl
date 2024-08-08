@@ -103,7 +103,7 @@
 
             <ul class="article-meta-list">
                 {* Authors *}
-                {if $publication->getData('authors') && !$section->getData('hideAuthor')}
+                {if $publication->getData('authors') && !$section->getData('hideAuthor') && count($publication->getData('authors'))}
                     {include file="frontend/objects/authorSummary.tpl"}
                 {/if}
 

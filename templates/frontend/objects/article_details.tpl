@@ -153,7 +153,19 @@
                     </li>
                 {/if}
 
-
+            {* DOI *}
+			{assign var=doiObject value=$article->getCurrentPublication()->getData('doiObject')}
+			{if $doiObject}
+                {assign var="doi" value=$doiObject->getData('doi')|escape}
+				{assign var="doiUrl" value=$doiObject->getData('resolvingUrl')|escape}
+                <li class="article-meta-item doi">
+                                {capture assign=translatedDoi}{translate key="doi.readerDisplayName"}{/capture}
+                                <strong>{translate key="semicolon" label=$translatedDoi}</strong>
+                                <a href="{$doiUrl}">
+                                    {$doi}
+                                </a>
+                </li>
+			{/if}
 
                 {* DOI (requires plugin) *}
                 {foreach from=$pubIdPlugins item=pubIdPlugin}
@@ -449,8 +461,8 @@
                         <h2 class="article-more-title">{translate key="plugins.themes.ibsscustom.article.statistics"}
                         </h2>
                         <div class="statistics">
-                            {if $pubId}
-                                {include file="frontend/components/badges.tpl" doi=$pubId altmetricsHide="true"}
+                            {if $doi}
+                                {include file="frontend/components/badges.tpl" doi=$doi altmetricsHide="true"}
                             {/if}
                             <div class="statistics-more">
                                 {* Graph *}

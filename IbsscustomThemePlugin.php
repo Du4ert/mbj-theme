@@ -47,6 +47,26 @@ class IbsscustomThemePlugin extends ThemePlugin
 			'default' => false,
 		]);
 		
+		$this->addOption('displayStats', 'FieldOptions', [
+            'type' => 'radio',
+            'label' => __('plugins.themes.default.option.displayStats.label'),
+            'options' => [
+                [
+                    'value' => 'none',
+                    'label' => __('plugins.themes.default.option.displayStats.none'),
+                ],
+                [
+                    'value' => 'bar',
+                    'label' => __('plugins.themes.default.option.displayStats.bar'),
+                ],
+                [
+                    'value' => 'line',
+                    'label' => __('plugins.themes.default.option.displayStats.line'),
+                ],
+            ],
+            'default' => 'none',
+        ]);
+		
 
 		$this->addOption('elibraryMetricLink', 'FieldText', [
 			'label' => 'Elibrary Metric link',

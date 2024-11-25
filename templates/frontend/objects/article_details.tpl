@@ -231,7 +231,7 @@
                         {capture assign=translatedDatePublished}{translate
             					key="plugins.themes.ibsscustom.submission.published"}{/capture}
                         <strong>{translate key="semicolon" label=$translatedDatePublished}</strong>
-                        {$publication->getData('datePublished')|date_format}
+                        {$publication->getData('datePublished')|date_format:$dateFormatShort}
                         {* If this is an updated version *}
                     </li>
                     {if $firstPublication->getID() !== $publication->getId()}

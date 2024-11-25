@@ -2,12 +2,11 @@
 namespace APP\plugins\themes\ibsscustom;
 
 use APP\core\Application;
-use APP\i18n\AppLocale;
 use PKP\config\Config;
-use PKP\facades\Locale;
 use PKP\plugins\Hook;
 use PKP\plugins\ThemePlugin;
 use PKP\db\DAORegistry;
+use APP\facades\Repo;
 class IbsscustomThemePlugin extends ThemePlugin
 {
 
@@ -257,13 +256,8 @@ class IbsscustomThemePlugin extends ThemePlugin
 
 		foreach ($journals as $journal) {
 			$id = $journal->getId();
-			$params = array(
-				'contextId' => $id,
-				'orderBy' => 'seq',
-				'orderDirection' => 'ASC',
-				'isPublished' => true,
-			);
-			$issues = iterator_to_array(Services::get('issue')->getMany($params));
+
+			$issues = iterator_to_array(Repo::issue()->getCollector()->filterByContextIds([$id])->orderBy('seq')->filterByPublished(true)->getMany());
 
 			$allIssues[$id] = $issues;
 		}

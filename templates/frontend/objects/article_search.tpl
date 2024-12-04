@@ -22,7 +22,8 @@
 <div class="article-summary media">
     {if $article->getLocalizedData('coverImage')}
         <div class="cover media-left">
-            <a href="{url page="article" op="view" path=$articlePath}" class="file">
+    {* <a href="{url page="article" op="view" path=$articlePath}" class="file"> *}
+    <a href="{if $journal}{url journal=$journal->getPath() page=$articlePath op="view" path=$articlePath}{else}{url page="article" op="view" path=$articlePath}{/if}" class="file">
                 <img class="media-object" src="{$article->getLocalizedCoverImageUrl()|escape}">
             </a>
         </div>
@@ -33,7 +34,8 @@
 
 
             <h3 class="media-heading">
-                <a href="{url page="article" op="view" path=$articlePath}">
+                {* <a href="{url page="article" op="view" path=$articlePath}"> *}
+            <a href="{if $journal}{url journal=$journal->getPath() page="article" op="view" path=$articlePath}{else}{url page="article" op="view" path=$articlePath}{/if}">
                     {$article->getLocalizedTitle()|strip_unsafe_html}
                     {if $article->getLocalizedSubtitle()}
                         <p>
@@ -50,6 +52,12 @@
                 </div>
             {/if}
 
+            {if $journal}
+                <h5 class="meta">
+                    {$journal->getLocalizedName()|escape}
+                </h5>
+            {/if}
+
             {* Page numbers for this article *}
             {if $article->getPages()}
                 <p class="pages">
@@ -59,8 +67,8 @@
             {/if}
 
             {if $issue}
-                <a class="title" href="{url|escape page=" issue" op="view"
-                path=$issue->getBestIssueId($currentJournal)|escape}">
+                <a href="{if $journal}{url journal=$journal->getPath() page="issue" op="view" path=$issue->getBestIssueId($journal)|escape}{else}{url|escape page=" issue" op="view"
+                path=$issue->getBestIssueId($journal)|escape}{/if}" class="title">
                     {$issue->getIssueSeries()|escape}
                 </a>
             {/if}
@@ -87,7 +95,7 @@
                             {assign var="hasArticleAccess" value=1}
                         {/if}
                         {if !$isSupplementary}
-                            {include file="frontend/objects/galley_link.tpl" summary=true parent=$article hasAccess=$hasArticleAccess isSupplementary=$isSupplementary}
+                            {include file="frontend/objects/galley_link.tpl" summary=true parent=$article journalOverride=$journal hasAccess=$hasArticleAccess isSupplementary=$isSupplementary}
                         {/if}
                     {/foreach}
                 </div>

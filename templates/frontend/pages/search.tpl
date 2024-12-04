@@ -37,7 +37,7 @@
 			</label>
 
 			<div class="input-group">
-				<input type="text" id="query" name="query" value="{$query|escape}" class="query form-control" placeholder="{translate key="common.search"}">
+				<input type="search" id="query" name="query" value="{$query|escape}" class="query form-control" placeholder="{translate key="common.search"}">
 				<span class="input-group-btn">
 					<input type="submit" value="{translate key="common.search"}" class="btn btn-default">
 				</span>
@@ -86,7 +86,10 @@
 					</div>
 				</div>
 			</div>
+			{call_hook name="Templates::Search::SearchResults::AdditionalFilters"}
 		</fieldset>
+
+		{call_hook name="Templates::Search::SearchResults::PreResults"}
 
 		{* Search results *}
 		<div class="search-results">
@@ -94,7 +97,8 @@
 				{translate key="search.searchResults"}
 			</h2>
 			{iterate from=results item=result}
-				{include file="frontend/objects/article_search.tpl"  issue=$result.issue article=$result.publishedSubmission showDatePublished=true hideGalleys=false primaryGenreIds=["1"]}
+				{include file="frontend/objects/article_search.tpl"  issue=$result.issue article=$result.publishedSubmission showDatePublished=true 
+				journal=$result.journal hideGalleys=false primaryGenreIds=["1"]}
 				{*? primapyGenreIds задано вручную. Выяснить откуда берется и подставить. *}
 			{/iterate}
 		</div>

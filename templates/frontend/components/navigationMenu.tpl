@@ -12,7 +12,7 @@
  * @uses ulClass string Class name(s) to assign the outer <ul>
  * @uses liClass string Class name(s) to assign all <li> elements
  *}
-{if !$currentContext && $id === "sidebar-nav" || $id === "main-navigation"}
+{if !$currentContext && {$id === "sidebar-nav" || $id === "main-navigation"}}
 	{assign var="isDisplayed" value=true}
 {/if}
 

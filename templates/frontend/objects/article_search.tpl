@@ -84,12 +84,10 @@
                 <div class="btn-group" role="group">
                     {foreach from=$article->getGalleys() item=galley}
                         {assign var="isSupplementary" value=false}
-                        {if $primaryGenreIds}
-                            {assign var="file" value=$galley->getFile()}
-                            {if !$galley->getRemoteUrl() && !($file && in_array($file->getGenreId(), $primaryGenreIds))}
+                            {if $galley->getLabel() !== "fulltext"}
                                 {assign var="isSupplementary" value=true}
                             {/if}
-                        {/if}
+                       
                         {assign var="hasArticleAccess" value=$hasAccess}
                         {if ($article->getData('accessStatus') == $smarty.const.ARTICLE_ACCESS_OPEN)}
                             {assign var="hasArticleAccess" value=1}

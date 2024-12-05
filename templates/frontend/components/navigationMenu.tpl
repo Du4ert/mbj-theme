@@ -12,11 +12,14 @@
  * @uses ulClass string Class name(s) to assign the outer <ul>
  * @uses liClass string Class name(s) to assign all <li> elements
  *}
+{if !$currentContext && $id === "sidebar-nav" || $id === "main-navigation"}
+	{assign var="isDisplayed" value=true}
+{/if}
 
 {if $navigationMenu}
 	<ul id="{$id|escape}" class="{$ulClass|escape}">
 		{foreach key=field item=navigationMenuItemAssignment from=$navigationMenu->menuTree}
-			{if !$navigationMenuItemAssignment->navigationMenuItem->getIsDisplayed()}
+			{if !$navigationMenuItemAssignment->navigationMenuItem->getIsDisplayed() && !$isDisplayed}
 				{continue}
 			{/if}
 			{assign var="hasChildren" value=false}
@@ -33,7 +36,7 @@
 				{if !empty($navigationMenuItemAssignment->children)}
 					<ul class="dropdown-menu {if $id === 'navigationUser'}dropdown-menu-right{/if}">
 						{foreach key=childField item=childNavigationMenuItemAssignment from=$navigationMenuItemAssignment->children}
-							{if $childNavigationMenuItemAssignment->navigationMenuItem->getIsDisplayed()}
+							{if $childNavigationMenuItemAssignment->navigationMenuItem->getIsDisplayed() && !$isDisplayed}
 								<li class="{$liClass|escape}">
 									<a href="{$childNavigationMenuItemAssignment->navigationMenuItem->getUrl()}">
 										{$childNavigationMenuItemAssignment->navigationMenuItem->getLocalizedTitle()}

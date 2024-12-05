@@ -81,7 +81,7 @@
                                         <a
                                             href="{url router=$smarty.const.ROUTE_PAGE page="user" op="setLocale" path=$localeKey source=$smarty.server.REQUEST_URI}">
                                             <img title="{$localeName}"
-                                                src="/plugins/themes/{$currentContext->getData('themePluginPath')}/locale/{$localeKey}/flag.png" />
+                                                src="/plugins/themes/ibsscustom/locale/{$localeKey}/flag.png" />
                                         </a>
                                     </li>
                                 {/foreach}
@@ -91,7 +91,7 @@
                         {if $activeTheme->getOption('specialVisionOn')}
                             <div class="special">
                                 <a id="specialButton" href="#"><img
-                                        src="/plugins/themes/{$currentContext->getData('themePluginPath')}/img/special_white.png"
+                                        src="/plugins/themes/ibsscustom/img/special_white.png"
                                         alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ" title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ" /></a>
                             </div>
                         {/if}

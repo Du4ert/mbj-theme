@@ -52,7 +52,7 @@
                 </div>
             {/if}
 
-            {if $journal}
+            {if $journal && $currentContext == null}
                 <h5 class="meta">
                     {$journal->getLocalizedName()|escape}
                 </h5>

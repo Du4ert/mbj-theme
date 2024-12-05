@@ -99,7 +99,6 @@
 			{iterate from=results item=result}
 				{include file="frontend/objects/article_search.tpl"  issue=$result.issue article=$result.publishedSubmission showDatePublished=true 
 				journal=$result.journal hideGalleys=false}
-				{*? primapyGenreIds задано вручную. Выяснить откуда берется и подставить. *}
 			{/iterate}
 		</div>
 

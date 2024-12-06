@@ -36,7 +36,7 @@
 				{if !empty($navigationMenuItemAssignment->children)}
 					<ul class="dropdown-menu {if $id === 'navigationUser'}dropdown-menu-right{/if}">
 						{foreach key=childField item=childNavigationMenuItemAssignment from=$navigationMenuItemAssignment->children}
-							{if $childNavigationMenuItemAssignment->navigationMenuItem->getIsDisplayed() && $isDisplayed}
+							{if $childNavigationMenuItemAssignment->navigationMenuItem->getIsDisplayed()}
 								<li class="{$liClass|escape}">
 									<a href="{$childNavigationMenuItemAssignment->navigationMenuItem->getUrl()}">
 										{$childNavigationMenuItemAssignment->navigationMenuItem->getLocalizedTitle()}

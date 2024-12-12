@@ -20,6 +20,37 @@
 }
 
 
+.downloads-button-toggle {
+	vertical-align: baseline;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	
+	strong {
+	  // border-bottom: 1px solid #ccc;
+	}
+	&:after {
+	  content: '';
+	  display: inline-block;
+	  position: relative;
+	  bottom: -1px;
+	  transform: rotate(135deg);
+	  transform-origin: 50% 50%;
+	  border-left: 2px solid #000;
+	  border-bottom: 2px solid #000;
+	  margin-left: 2px;
+	  width: 10px;
+	  height: 10px;
+	  text-align: center;
+	  vertical-align: middle;
+	}
+  
+	&.collapsed:after {
+	  transform: rotate(-45deg);
+	  bottom: 3px;
+	}
+  }
+
+
 .article-details {
 	#citationOutput {
 		margin: 0;

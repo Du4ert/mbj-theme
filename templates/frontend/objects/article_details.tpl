@@ -257,12 +257,30 @@
                         <strong>{translate key="plugins.themes.ibsscustom.article.views"}:</strong>
                         {$article->getViews()|escape}
                         <strong>{translate key="plugins.themes.ibsscustom.article.downloads"}:</strong>
-                        {if $fullTextDownloads}
-                            {$fullTextDownloads}
-                        {else}
-                            0
-                        {/if}
+                            {if $fullTextDownloads}
+                                {$fullTextDownloads}
+                                {if $primaryGalleys|count > 1}
+                                    <span class="downloads-button-toggle collapsed" data-toggle="collapse" data-target="#downloads"></span>
+                                {/if}
+                            {else}
+                                0
+                            {/if}
                     </li>
+
+                    {if $primaryGalleys|count > 1}
+                    <div id="downloads" class="collapse">
+                        {foreach from=$primaryGalleys item=galley}
+                            <li class="article-meta-item article-views">
+                            <strong>{translate key="plugins.themes.ibsscustom.article.downloads"} ({$galley->getLocale()|upper}): </strong>
+                            {$galley->getViews()}
+                            {* {assign var='fullTextDownloads' value=$galley->getViews()} *}
+                            </li>
+                        {/foreach}
+                    </div>
+                    {/if}
+                    
+
+
                 {/if}
 
             </ul><!-- /list-group -->

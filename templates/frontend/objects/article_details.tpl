@@ -155,7 +155,7 @@
 
             {* DOI *}
 			{assign var=doiObject value=$article->getCurrentPublication()->getData('doiObject')}
-			{if $doiObject}
+			{if $doiObject  && !$just_accepted}
                 {assign var="doi" value=$doiObject->getData('doi')|escape}
 				{assign var="doiUrl" value=$doiObject->getData('resolvingUrl')|escape}
                 <li class="article-meta-item doi">
@@ -373,8 +373,10 @@
                     {if $supplementaryGalleys}<li role="presentation"><a href="#supplementary"
                                 aria-controls="supplementary" role="tab" data-toggle="tab">{translate
     							key="plugins.themes.ibsscustom.article.supplementaries"}</a></li>{/if}
+                    {if !$just_accepted}
                     <li role="presentation"><a href="#statistics" aria-controls="statistics" role="tab"
                             data-toggle="tab">{translate key="plugins.themes.ibsscustom.article.statistics"}</a></li>
+                    {/if}
                 </ul>
 
                 <div class="tab-content article-more-content panel-body">
@@ -474,7 +476,7 @@
                     {/if}
 
                     {* Statistics *}
-
+                {if !$just_accepted}
                     <div class="tab-pane" role="tabpanel" id="statistics">
                         <h2 class="article-more-title">{translate key="plugins.themes.ibsscustom.article.statistics"}
                         </h2>
@@ -504,6 +506,7 @@
                             </div>
                         </div>
                     </div>
+        {/if}
 
 
 
